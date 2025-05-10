@@ -9,7 +9,7 @@ mkdir -p "$output_dir"
 MAX_JOBS=8  # Adjust based on your CPU/core limits
 job_count=0
 
-for i in $(seq 1 100); do
+for i in $(seq 1 1); do
     formatted_counter=$(printf "%.2f" "$counter")
     FLOW_VARIANT="${DESIGN}_run_${i}"
     new_config="${output_dir}/config_${i}.mk"

@@ -3,11 +3,48 @@ def extract_sections_from_file(file_path):
     instances = []
     nets = []
 
+    in_instance_section = False
+    in_net_section = False
+
+    with open(file_path, 'r') as f:
+
+        for _ in range(9):
+        next(f)
+    
+    for line in f:
+        tokens = line.strip().split()
+
+        if "Instance information" in line:
+            in_instance_section = True
+            in_net_section = False
+            continue
+
+        if "Nets information" in line:
+            in_instance_section = False
+            in_net_section = True
+            continue
+
+        if in_instance_section and len(tokens) >= 10:
+            cell_name = tokens[2]
+            cell_types_set.add(cell_name)
+
+# Create one-hot encoding mapping
+cell_types = sorted(list(cell_types_set))
+for i, cell_type in enumerate(cell_types):
+    one_hot = [0] * len(cell_types)
+    one_hot[i] = 1
+    cell_type_to_onehot[cell_type] = one_hot
+
+    
+
+
     with open(file_path, 'r') as f:
         lines = f.readlines()[9:]  # Skip the first 4 header lines
 
     in_instance_section = False
     in_net_section = False
+
+
 
     for line in lines:
         line = line.strip()
@@ -92,6 +129,9 @@ def get_node_features(pins, instances, nets):
                 pin = pin_dict[node_id]
                 feature = {
                     "id": node_id,
+                    "name" : pin['name'],
+                    "direction" : pin['direction'],
+                    "cell_type" : 'pin',
                     "x": pin['x'],
                     "y": pin['y'],
                     "is_fixed": True,  # Pins are always fixed
@@ -101,6 +141,8 @@ def get_node_features(pins, instances, nets):
                 inst = instance_dict[node_id]
                 feature = {
                     "id": node_id, 
+                    "name" : inst["name"],
+                    "cell_type": inst["cell_type"],
                     "x": inst['x'],
                     "y": inst['y'],
                     "is_fixed": inst['is_fixed'],

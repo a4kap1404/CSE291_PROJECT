@@ -1,0 +1,68 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 8 thread(s).
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /work/project/flow/platforms/nangate45/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation gcd (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 1738 rc segments
+[INFO RCX-0439] Coupling Cap extraction gcd ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 48% of 3516 wires extracted
+[INFO RCX-0442] 100% of 3516 wires extracted
+[INFO RCX-0045] Extract 667 nets, 2371 rsegs, 2371 caps, 5313 ccs
+[INFO RCX-0443] 667 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Supply voltage   : 1.10e+00 V
+Worstcase voltage: 1.09e+00 V
+Average voltage  : 1.10e+00 V
+Average IR drop  : 3.47e-03 V
+Worstcase IR drop: 7.46e-03 V
+Percentage drop  : 0.68 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 1.26e-02 V
+Average voltage  : 5.35e-03 V
+Average IR drop  : 5.35e-03 V
+Worstcase IR drop: 1.26e-02 V
+Percentage drop  : 1.15 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               273     318.40
+  Tap cell                                 48      12.77
+  Buffer                                   13      23.67
+  Clock buffer                              6       7.45
+  Timing Repair Buffer                     89      85.65
+  Inverter                                 85      59.85
+  Clock inverter                            2       1.60
+  Sequential cell                          35     159.33
+  Multi-Input combinational cell          369     480.40
+  Total                                   920    1149.12
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 818 u^2 71% utilization.
+[WARNING GUI-0076] QStandardPaths: runtime directory '/mnt/wslg/runtime-dir' is not owned by UID 0, but a directory permissions 0777 owned by UID 1000 GID 1000
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_all.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_routing.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_placement.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_ir_drop.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_clocks.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/cts_core_clock.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/cts_core_clock_layout.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/nangate45/gcd/floorplan/final_resizer.webp.png
+Elapsed time: 0:03.25[h:]min:sec. CPU time: user 2.58 sys 0.53 (95%). Peak memory: 277756KB.

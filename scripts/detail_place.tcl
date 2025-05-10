@@ -39,3 +39,5 @@ if {$result != 0} {
 report_metrics 3 "detailed place" true false
 
 write_db $::env(RESULTS_DIR)/3_5_place_dp.odb
+#read_db  $::env(RESULTS_DIR)/3_5_place_dp.odb
+write_def $::env(RESULTS_DIR)/3_place.def

@@ -149,8 +149,8 @@ def get_node_features(pins, instances, nets):
                     "direction": 'false',
                     "cell_type": inst["cell_type"],
                     "cell_type_onehot": inst["cell_type_onehot"],
-                    "x": inst['x'],
-                    "y": inst['y'],
+                    "x": core_x_center,
+                    "y": core_y_center,
                     "is_fixed": inst['is_fixed'],
                     "area": inst['area']
                 }
@@ -183,11 +183,14 @@ def extract_area_info(file_path):
                 for c in coords:
                     key, val = c.strip().split("=")
                     area_info[key.strip()] = int(val.strip())
+     
     return area_info
 
 
 # Extract area info
 area_info = extract_area_info("gcd_nangate45.txt")
+core_x_center = (area_info["lx"] + area_info["ux"]) // 2
+core_y_center = (area_info["ly"] + area_info["uy"]) // 2
 
 # Prepare string to prepend
 area_info_str = "### Design Area Information ###\n"

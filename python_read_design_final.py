@@ -151,12 +151,8 @@ def get_insts(design, inst_map, file_name, vertex_id):
     f.write(str(isMacro) + " ")
     f.write(str(isSeq) + " ")
     f.write(str(isFixed) + " ")
-    if (isMacro == True or isFixed == True):
-      f.write(str(x_center) + " ")
-      f.write(str(y_center) + " ")
-    else:
-      f.write(str(-1) + " ")
-      f.write(str(-1) + " ")
+    f.write(str(x_center) + " ")
+    f.write(str(y_center) + " ")
     f.write(str(width) + " ")
     f.write(str(height) + " ")
     f.write("\n")
@@ -322,7 +318,7 @@ if __name__ == "__main__":
     #floorplan_odb_file = path + "/3_2_place_iop.odb"
     #sdc_file = path + "/2_floorplan.sdc"
 
-    floorplan_odb_file = path + "/3_5_place_dp.odb"
+    floorplan_odb_file = path + "/3_place.odb"
     sdc_file = path + "/3_place.sdc"
     # Load the design
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file)

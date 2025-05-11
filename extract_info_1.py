@@ -33,6 +33,9 @@ def one_hot_encoding(file_path):
                 cell_name = tokens[2]
                 cell_types_set.add(cell_name)
 
+
+    cell_types_set.add('pin') 
+
     # Create one-hot encoding mapping
     cell_types = sorted(list(cell_types_set))
 
@@ -79,9 +82,12 @@ def extract_sections_from_file(file_path, cell_type_to_onehot):
 
         if not in_instance_section and not in_net_section and len(tokens) == 5:
             vertex_id, name, direction, x, y = tokens
+            one_hot = cell_type_to_onehot.get('pin', [])
             pins.append({
                 "vertex_id": int(vertex_id),
                 "name": name,
+                "cell_type":'pin',
+                "cell_type_onehot": one_hot,
                 "direction": direction,
                 "x": int(x),
                 "y": int(y)
@@ -129,6 +135,7 @@ def get_node_features(pins, instances, nets):
                     "name": pin['name'],
                     "direction": pin['direction'],
                     "cell_type": 'pin',
+                    "cell_type_onehot": pin['cell_type_onehot'],
                     "x": pin['x'],
                     "y": pin['y'],
                     "is_fixed": True,

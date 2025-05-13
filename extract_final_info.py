@@ -44,9 +44,11 @@ def extract_ids_and_locations(input_file, output_file):
             if in_instance_section and len(tokens) >= 10:
                 try:
                     inst_id = tokens[0]
+                    inst_type = tokens[2]
                     x_center = float(tokens[6])
                     y_center = float(tokens[7])
-                    extracted.append((inst_id, x_center, y_center))
+                    if not inst_type.startswith('BUF_'):
+                        extracted.append((inst_id, x_center, y_center))
                 except ValueError:
                     print(f"Skipping invalid instance line: {line}")
                 continue

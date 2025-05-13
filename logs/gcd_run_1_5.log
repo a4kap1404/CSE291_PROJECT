@@ -1,0 +1,10 @@
+mkdir -p results/nangate45/gcd/gcd_run_1_5/
+echo .41 > results/nangate45/gcd/gcd_run_1_5/clock_period.txt
+mkdir -p ./results/nangate45/gcd/gcd_run_1_5 ./logs/nangate45/gcd/gcd_run_1_5 ./reports/nangate45/gcd/gcd_run_1_5 ./objects/nangate45/gcd/gcd_run_1_5
+(env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /opt/oss-cad-suite/bin/yosys -v 3 -c /work/project/flow/scripts/synth_canonicalize.tcl) 2>&1 | tee /work/project/flow/logs/nangate45/gcd/gcd_run_1_5/1_1_yosys_canonicalize.log
+1. Executing Verilog-2005 frontend: /work/project/flow/designs/src/gcd/gcd.v
+2. Executing Liberty frontend: ./objects/nangate45/gcd/gcd_run_1_5/lib/NangateOpenCellLibrary_typical.lib
+Command terminated by signal 11
+Elapsed time: 0:00.50[h:]min:sec. CPU time: user 0.13 sys 0.09 (45%). Peak memory: 12896KB.
+make[1]: *** [Makefile:296: do-yosys-canonicalize] Error 139
+make: *** [Makefile:299: results/nangate45/gcd/gcd_run_1_5/1_synth.rtlil] Error 2

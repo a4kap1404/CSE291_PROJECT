@@ -3,12 +3,12 @@
 counter_i=0.5
 counter_j=40
 counter_k=0.4
-DESIGN=gcd
+DESIGN=ibex
 tech_node=nangate45
 label=1
 
-base_config=./designs/$tech_node/gcd/config.mk
-output_dir=./designs/$tech_node/gcd/configs
+base_config=./designs/$tech_node/$DESIGN/config.mk
+output_dir=./designs/$tech_node/$DESIGN/configs
 results_dir=./results/$tech_node/$DESIGN/
 mkdir -p "$output_dir"
 

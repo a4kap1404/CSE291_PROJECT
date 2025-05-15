@@ -50,4 +50,6 @@ export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.
 export CORE_UTILIZATION ?= 50
 export PLACE_DENSITY_LB_ADDON = 0.20
 export TNS_END_PERCENT        = 100
+export CORE_ASPECT_RATIO = 0.60
+export PLACE_DENSITY = 0.4
 

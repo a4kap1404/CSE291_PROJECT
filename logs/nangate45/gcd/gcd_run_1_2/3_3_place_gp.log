@@ -2,7 +2,21 @@ OpenROAD v2.0-19576-gec1bf1a13
 Features included (+) or not (-): +GPU +GUI +Python : None
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
-[INFO ORD-0030] Using 8 thread(s).
+[INFO ORD-0030] Using 16 thread(s).
+[INFO GPL-0100] Timing-driven iteration 5/5, virtual: false.
+[INFO GPL-0101]    Iter: 377, overflow: 0.144, keep rsz at: 0.3, HPWL: 4594060
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |       574
+    final |     -0.2% |       2 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 2 instances.
+[INFO GPL-0106] Timing-driven: worst slack -1.32e-11
+[INFO GPL-0103] Timing-driven: weighted 56 nets.
+[INFO GPL-0107] Timing-driven: repair_design delta area: -1.330 um^2 (-0.22%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 0.6264794
 [INFO GPL-0002] DBU: 2000
 [INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
 [INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 35.340 35.000 ) um
@@ -66,8 +80,19 @@ global_placement -density 0.6676778888702393 -pad_left 0 -pad_right 0 -routabili
 [INFO GPL-0028] BinCnt:        16     16
 [INFO GPL-0029] BinSize: (  2.138  2.100 )
 [INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter:  380 overflow: 0.135 HPWL: 4594154
 [NesterovSolve] Iter:    1 overflow: 0.961 HPWL: 1817707
+[NesterovSolve] Iter:  390 overflow: 0.116 HPWL: 4613405
 [NesterovSolve] Iter:   10 overflow: 0.938 HPWL: 2054509
+[NesterovSolve] Finished with Overflow: 0.098951
+Took 280 seconds: global_placement -density 0.6676778888702393 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 603 u^2 53% utilization.
+Elapsed time: 4:42.56[h:]min:sec. CPU time: user 1046.64 sys 9.76 (373%). Peak memory: 358768KB.
 [NesterovSolve] Iter:   20 overflow: 0.938 HPWL: 2057169
 [NesterovSolve] Iter:   30 overflow: 0.939 HPWL: 2055866
 [NesterovSolve] Iter:   40 overflow: 0.939 HPWL: 2055874
@@ -182,11 +207,11 @@ Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
 [NesterovSolve] Iter:  380 overflow: 0.135 HPWL: 4594154
 [NesterovSolve] Iter:  390 overflow: 0.116 HPWL: 4613405
 [NesterovSolve] Finished with Overflow: 0.098951
-Took 197 seconds: global_placement -density 0.6676778888702393 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+Took 275 seconds: global_placement -density 0.6676778888702393 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
 Report metrics stage 3, global place...
 
 ==========================================================================
 global place report_design_area
 --------------------------------------------------------------------------
 Design area 603 u^2 53% utilization.
-Elapsed time: 3:17.60[h:]min:sec. CPU time: user 392.65 sys 1.23 (199%). Peak memory: 349524KB.
+Elapsed time: 4:41.43[h:]min:sec. CPU time: user 1042.77 sys 8.91 (373%). Peak memory: 346892KB.

@@ -305,12 +305,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Example script to perform global placement initialization using OpenROAD.")
     parser.add_argument("-d", default="ibex", help="Give the design name")
     parser.add_argument("-t", default="nangate45", help="Give the technology node")
+    parser.add_argument("-p", default="nangate45", help="Give the result_path")
     parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
 
     tech_node = args.t
     design = args.d
+    path = args.p
     large_net_threshold = int(args.large_net_threshold)
     hg_file_name = str(design) + "_" + str(tech_node) + "_final.txt"
     f = open(hg_file_name, "w")
@@ -319,11 +321,11 @@ if __name__ == "__main__":
     #path = "./results/" + tech_node + "/" + design + "/base"
     path = "./results/" + tech_node + "/" + design + "/" + design +"_run_1"
 
-    #floorplan_odb_file = path + "/3_2_place_iop.odb"
-    #sdc_file = path + "/2_floorplan.sdc"
+    floorplan_odb_file = path + "/3_2_place_iop.odb"
+    sdc_file = path + "/2_floorplan.sdc"
 
-    floorplan_odb_file = path + "/3_5_place_dp.odb"
-    sdc_file = path + "/3_place.sdc"
+    #floorplan_odb_file = path + "/3_5_place_dp.odb"
+    #sdc_file = path + "/3_place.sdc"
     # Load the design
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file)
     # Get basic information

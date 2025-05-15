@@ -152,12 +152,16 @@ def get_insts(design, inst_map, file_name, vertex_id):
     f.write(str(isMacro) + " ")
     f.write(str(isSeq) + " ")
     f.write(str(isFixed) + " ")
-    if (isMacro == True or isFixed == True):
-      f.write(str(x_center) + " ")
-      f.write(str(y_center) + " ")
+    if mode == "0":
+        if (isMacro == True or isFixed == True):
+            f.write(str(x_center) + " ")
+            f.write(str(y_center) + " ")
+        else:
+            f.write(str(0) + " ")
+            f.write(str(0) + " ")
     else:
-      f.write(str(0) + " ")
-      f.write(str(0) + " ")
+        f.write(str(x_center) + " ")
+        f.write(str(y_center) + " ")        
     f.write(str(width) + " ")
     f.write(str(height) + " ")
     f.write("\n")

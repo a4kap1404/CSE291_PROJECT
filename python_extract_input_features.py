@@ -29,6 +29,7 @@ def one_hot_encoding(file_path):
             if in_instance_section and len(tokens) >= 10:
                 cell_name = tokens[2]
                 cell_types_set.add(cell_name)
+    f.close()
 
 
     cell_types_set.add('pin') 
@@ -40,6 +41,7 @@ def one_hot_encoding(file_path):
         f.write("Cell types found:\n")
         for cell_type in cell_types:
             f.write(f"{cell_type}\n")
+    f.close()
 
     cell_type_to_onehot = {}
     for i, cell_type in enumerate(cell_types):
@@ -58,6 +60,7 @@ def extract_sections_from_file(file_path):
 
     with open(file_path, 'r') as f:
         lines = f.readlines()[9:]  # Skip header lines
+    f.close()
 
     in_instance_section = False
     in_net_section = False
@@ -189,6 +192,7 @@ def extract_area_info(file_path):
                 for c in coords:
                     key, val = c.strip().split("=")
                     area_info[key.strip()] = int(val.strip())
+    f.close()
      
     return area_info
 
@@ -241,6 +245,7 @@ if __name__ == "__main__":
         f.write(area_info_str)
         for items in net_features:
             f.write('%s\n' % items)
+    f.close()
 
     # Prepend to nets.txt
     #with open("nets.txt", "r") as f:

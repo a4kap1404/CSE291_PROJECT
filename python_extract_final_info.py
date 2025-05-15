@@ -1,3 +1,8 @@
+import sys
+import os
+import argparse
+import time
+from pathlib import Path
      
 def extract_ids_and_locations(input_file, output_file):
     in_instance_section = False
@@ -52,19 +57,40 @@ def extract_ids_and_locations(input_file, output_file):
                 except ValueError:
                     print(f"Skipping invalid instance line: {line}")
                 continue
+    f.close()
 
     # Write output
     with open(output_file, "w") as out_file:
-        out_file.write("Instance ID, x_center, y_center\n")
+        out_file.write("Instance ID x_center y_center\n")
         for inst_id, x, y in extracted:
-            out_file.write(f"{inst_id}, {x}, {y}\n")
+            out_file.write(f"{inst_id} {x} {y}\n")
+    out_file.close()
 
-# Example usage
-input_file = 'gcd_nangate45_final.txt'
-output_file = 'extracted_locations_gcd_nangate45.txt'
-extract_ids_and_locations(input_file, output_file)
 
-print(f"Extracted pins and instances written to {output_file}.")
+if __name__ == "__main__":
+    # You can run this script in this manner:  openroad -python python_read_design.py
+    parser = argparse.ArgumentParser(description="Example script to perform global placement initialization using OpenROAD.")
+    parser.add_argument("-d", default="ibex", help="Give the design name")
+    parser.add_argument("-t", default="nangate45", help="Give the technology node")
+    parser.add_argument("-p", default="nangate45", help="Give the result_path")
+    parser.add_argument("-f", default="nangate45", help="Give the flow variant")
+    parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
+    
+    args = parser.parse_args()
+
+    tech_node = args.t
+    design = args.d
+    path = args.p
+    flow = args.f
+    large_net_threshold = int(args.large_net_threshold)
+
+    # Example usage
+    input_file = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label.txt"
+    output_file = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label_formatted.txt"
+
+    extract_ids_and_locations(input_file, output_file)
+
+    print(f"Extracted pins and instances written to {output_file}.")
 
 
 

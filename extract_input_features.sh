@@ -27,7 +27,7 @@ for i in $(seq 1 5); do #5
                 (
                     echo "Starting $FLOW_VARIANT global_place and detailed_place"
                     #export FLOW_VARIANT=$FLOW_VARIANT
-                    python python_extract_input_features.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -f "$FLOW_VARIANT"
+                    python python_extract_input_features.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -f "$FLOW_VARIANT" -i "$counter_i" -j "$counter_j" -k "$counter_k"
                     #DESIGN_CONFIG="$new_config" make place > "logs/${FLOW_VARIANT}.log" 2>&1
                     echo "Finished $FLOW_VARIANT"
                 ) &

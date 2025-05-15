@@ -204,6 +204,9 @@ if __name__ == "__main__":
     parser.add_argument("-t", default="nangate45", help="Give the technology node")
     parser.add_argument("-p", default="nangate45", help="Give the result_path")
     parser.add_argument("-f", default="nangate45", help="Give the flow variant")
+    parser.add_argument("-i", default="0.5", help="Give the core aspect ratio")
+    parser.add_argument("-j", default="40", help="Give the utilization")
+    parser.add_argument("-k", default="0.4", help="Give the place density")
     parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
@@ -212,6 +215,9 @@ if __name__ == "__main__":
     design = args.d
     path = args.p
     flow = args.f
+    aspect_ratio = float(args.i)
+    util = float(args.j)
+    place_density = float(args.k)
     large_net_threshold = int(args.large_net_threshold)
     file_path = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + ".txt"
     hg_file_name = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
@@ -243,6 +249,9 @@ if __name__ == "__main__":
     # Write to file
     with open(hg_file_name, 'a') as f:
         f.write(area_info_str)
+        f.write(f"Core Aspect Ratio = " + str(aspect_ratio) + "\n") 
+        f.write("Utilization = " + str(util) + "\n")
+        f.write("Place Density = " + str(place_density) + "\n\n")  
         for items in net_features:
             f.write('%s\n' % items)
     f.close()

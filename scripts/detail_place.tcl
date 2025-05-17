@@ -1,7 +1,7 @@
 utl::set_metrics_stage "detailedplace__{}"
 source $::env(SCRIPTS_DIR)/load.tcl
 erase_non_stage_variables place
-load_design 3_4_place_resized.odb 2_floorplan.sdc
+load_design 3_3_place_gp.odb 2_floorplan.sdc
 
 source $::env(PLATFORM_DIR)/setRC.tcl
 

@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     # Example usage
     input_file = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label.txt"
-    output_file = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label_formatted.txt"
+    output_file = "./raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label_formatted.txt"
 
     extract_ids_and_locations(input_file, output_file)
 

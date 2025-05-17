@@ -299,8 +299,9 @@ if __name__ == "__main__":
         floorplan_odb_file = path + "/3_2_place_iop.odb"
         sdc_file = path + "/2_floorplan.sdc"
     else:
-        floorplan_odb_file = path + "/3_5_place_dp.odb"
-        sdc_file = path + "/3_place.sdc"       
+        #floorplan_odb_file = path + "/3_5_place_dp.odb"
+        floorplan_odb_file = path + "/3_place.odb"
+        sdc_file = path + "/2_floorplan.sdc"       
 
     #floorplan_odb_file = path + "/3_5_place_dp.odb"
     #sdc_file = path + "/3_place.sdc"

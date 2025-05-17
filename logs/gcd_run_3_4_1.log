@@ -1,8 +1,3 @@
-/work/CSE291/project/CSE291_PROJECT/util/preprocessLib.py -i /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib -o objects/nangate45/gcd/gcd_run_3_4_1/lib/NangateOpenCellLibrary_typical.lib
-Opening file for replace: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
-Commented 0 lines containing "original_pin"
-Replaced malformed functions 0
-Writing replaced file: objects/nangate45/gcd/gcd_run_3_4_1/lib/NangateOpenCellLibrary_typical.lib
 mkdir -p results/nangate45/gcd/gcd_run_3_4_1/
 echo .41 > results/nangate45/gcd/gcd_run_3_4_1/clock_period.txt
 mkdir -p ./results/nangate45/gcd/gcd_run_3_4_1 ./logs/nangate45/gcd/gcd_run_3_4_1 ./reports/nangate45/gcd/gcd_run_3_4_1 ./objects/nangate45/gcd/gcd_run_3_4_1
@@ -40,10 +35,10 @@ Warning: Ignoring module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e because it contains p
 Warning: Ignoring module LtComparator_0x422b1f52edd46a85 because it contains processes (run 'proc' command first).
 8. Executing RTLIL backend.
 Warnings: 8 unique messages, 8 total
-End of script. Logfile hash: 0096d17645, CPU: user 0.84s system 0.08s, MEM: 30.78 MB peak
+End of script. Logfile hash: 0096d17645, CPU: user 0.32s system 0.03s, MEM: 30.71 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 90% 4x read_liberty (0 sec), 3% 4x read_verilog (0 sec), ...
-Elapsed time: 0:01.21[h:]min:sec. CPU time: user 1.10 sys 0.10 (98%). Peak memory: 33740KB.
+Time spent: 91% 4x read_liberty (0 sec), 3% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.40 sys 0.03 (98%). Peak memory: 33672KB.
 mkdir -p ./results/nangate45/gcd/gcd_run_3_4_1 ./logs/nangate45/gcd/gcd_run_3_4_1 ./reports/nangate45/gcd/gcd_run_3_4_1 ./objects/nangate45/gcd/gcd_run_3_4_1
 (env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /opt/oss-cad-suite/bin/yosys -v 3 -c /work/CSE291/project/CSE291_PROJECT/scripts/synth.tcl) 2>&1 | tee /work/CSE291/project/CSE291_PROJECT/logs/nangate45/gcd/gcd_run_3_4_1/1_1_yosys.log
 1. Executing RTLIL frontend.
@@ -252,18 +247,12 @@ abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty
 21.1. Executing BMUXMAP pass.
 21.2. Executing DEMUXMAP pass.
 exec cp /work/CSE291/project/CSE291_PROJECT/designs/nangate45/gcd/constraint.sdc ./results/nangate45/gcd/gcd_run_3_4_1/1_synth.sdc
-End of script. Logfile hash: 9bb2a37989, CPU: user 1.85s system 0.08s, MEM: 37.33 MB peak
+End of script. Logfile hash: 4ce812dc7d, CPU: user 1.08s system 0.00s, MEM: 37.88 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 27% 2x abc (0 sec), 22% 4x read_liberty (0 sec), ...
-Elapsed time: 0:03.05[h:]min:sec. CPU time: user 2.76 sys 0.14 (95%). Peak memory: 38836KB.
+Time spent: 31% 4x read_liberty (0 sec), 20% 2x abc (0 sec), ...
+Elapsed time: 0:01.47[h:]min:sec. CPU time: user 1.40 sys 0.04 (98%). Peak memory: 39468KB.
 mkdir -p ./results/nangate45/gcd/gcd_run_3_4_1 ./logs/nangate45/gcd/gcd_run_3_4_1 ./reports/nangate45/gcd/gcd_run_3_4_1
 cp ./results/nangate45/gcd/gcd_run_3_4_1/1_1_yosys.v ./results/nangate45/gcd/gcd_run_3_4_1/1_synth.v
-OpenROAD v2.0-19576-gec1bf1a13 
-Features included (+) or not (-): +GPU +GUI +Python : None
-This program is licensed under the BSD-3 license. See the LICENSE file for details.
-Components of this program may be licensed under more restrictive licenses which must be honored.
-[INFO ORD-0030] Using 16 thread(s).
-mkdir -p ./objects/nangate45/gcd/gcd_run_3_4_1
 Running floorplan.tcl, stage 2_1_floorplan
 [INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
 [INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
@@ -292,22 +281,22 @@ Report metrics stage 2, floorplan final...
 floorplan final report_design_area
 --------------------------------------------------------------------------
 Design area 650 u^2 63% utilization.
-Elapsed time: 0:01.22[h:]min:sec. CPU time: user 1.02 sys 0.14 (95%). Peak memory: 121960KB.
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.41 sys 0.02 (98%). Peak memory: 121372KB.
 Running macro_place.tcl, stage 2_2_floorplan_macro
 No macros found: Skipping macro_placement
-Elapsed time: 0:01.37[h:]min:sec. CPU time: user 1.21 sys 0.12 (97%). Peak memory: 119312KB.
+Elapsed time: 0:00.38[h:]min:sec. CPU time: user 0.29 sys 0.08 (99%). Peak memory: 117308KB.
 Running tapcell.tcl, stage 2_3_floorplan_tapcell
 [INFO TAP-0004] Inserted 38 endcaps.
 [INFO TAP-0005] Inserted 0 tapcells.
-Elapsed time: 0:00.92[h:]min:sec. CPU time: user 0.77 sys 0.12 (97%). Peak memory: 118692KB.
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.40 sys 0.06 (103%). Peak memory: 118320KB.
 Running pdn.tcl, stage 2_4_floorplan_pdn
 [INFO PDN-0001] Inserting grid: grid
-Elapsed time: 0:01.12[h:]min:sec. CPU time: user 0.97 sys 0.11 (97%). Peak memory: 120904KB.
+Elapsed time: 0:00.40[h:]min:sec. CPU time: user 0.37 sys 0.02 (98%). Peak memory: 121452KB.
 cp ./results/nangate45/gcd/gcd_run_3_4_1/2_4_floorplan_pdn.odb ./results/nangate45/gcd/gcd_run_3_4_1/2_floorplan.odb
 cp ./results/nangate45/gcd/gcd_run_3_4_1/2_1_floorplan.sdc ./results/nangate45/gcd/gcd_run_3_4_1/2_floorplan.sdc
 Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
 FLOORPLAN_DEF is set. Skipping global placement without IOs
-Elapsed time: 0:01.05[h:]min:sec. CPU time: user 0.88 sys 0.11 (94%). Peak memory: 116868KB.
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.41 sys 0.03 (98%). Peak memory: 117232KB.
 Running io_placement.tcl, stage 3_2_place_iop
 place_pins -hor_layers metal5 -ver_layers metal6
 Found 0 macro blocks.
@@ -319,5 +308,196 @@ Using 2 tracks default min distance between IO pins.
 [INFO PPL-0005] Slots per section         200
 [INFO PPL-0008] Successfully assigned pins to sections.
 [INFO PPL-0012] I/O nets HPWL: 1199.74 um.
-Elapsed time: 0:01.09[h:]min:sec. CPU time: user 0.93 sys 0.09 (94%). Peak memory: 117800KB.
+Elapsed time: 0:00.39[h:]min:sec. CPU time: user 0.32 sys 0.07 (100%). Peak memory: 120036KB.
+Running global_place.tcl, stage 3_3_place_gp
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 39.900 28.000 ) um
+[INFO GPL-0006] NumInstances:               541
+[INFO GPL-0007] NumPlaceInstances:          503
+[INFO GPL-0008] NumFixedInstances:           38
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                    574
+[INFO GPL-0011] NumPins:                   1626
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 41.020 29.315 ) um
+[INFO GPL-0013] CoreBBox: (  1.140  1.400 ) ( 39.900 28.000 ) um
+[INFO GPL-0016] CoreArea:              1031.016 um^2
+[INFO GPL-0017] NonPlaceInstsArea:       10.108 um^2
+[INFO GPL-0018] PlaceInstsArea:         650.104 um^2
+[INFO GPL-0019] Util:                    63.679 %
+[INFO GPL-0020] StdInstsArea:           650.104 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:       826
+[INFO GPL-0032] FillerInit:NumGNets:        574
+[INFO GPL-0033] FillerInit:NumGPins:       1626
+[INFO GPL-0023] TargetDensity:            1.000
+[INFO GPL-0024] AvrgPlaceInstArea:        1.292 um^2
+[INFO GPL-0025] IdealBinArea:             1.292 um^2
+[INFO GPL-0026] IdealBinCnt:                797
+[INFO GPL-0027] TotalBinArea:          1031.016 um^2
+[INFO GPL-0028] BinCnt:        16     16
+[INFO GPL-0029] BinSize: (  2.422  1.663 )
+[INFO GPL-0030] NumBins: 256
+Placement density is 0.7194319820404053, computed from PLACE_DENSITY_LB_ADDON 0.20 and lower bound 0.6367899775505066
+global_placement -density 0.7194319820404053 -pad_left 0 -pad_right 0
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 39.900 28.000 ) um
+[INFO GPL-0006] NumInstances:               541
+[INFO GPL-0007] NumPlaceInstances:          503
+[INFO GPL-0008] NumFixedInstances:           38
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                    574
+[INFO GPL-0011] NumPins:                   1626
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 41.020 29.315 ) um
+[INFO GPL-0013] CoreBBox: (  1.140  1.400 ) ( 39.900 28.000 ) um
+[INFO GPL-0016] CoreArea:              1031.016 um^2
+[INFO GPL-0017] NonPlaceInstsArea:       10.108 um^2
+[INFO GPL-0018] PlaceInstsArea:         650.104 um^2
+[INFO GPL-0019] Util:                    63.679 %
+[INFO GPL-0020] StdInstsArea:           650.104 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[InitialPlace]  Iter: 1 CG residual: 0.00000009 HPWL: 5308840
+[InitialPlace]  Iter: 2 CG residual: 0.00000004 HPWL: 4081521
+[InitialPlace]  Iter: 3 CG residual: 0.00000011 HPWL: 4076893
+[InitialPlace]  Iter: 4 CG residual: 0.00000004 HPWL: 4084359
+[InitialPlace]  Iter: 5 CG residual: 0.00000011 HPWL: 4083249
+[INFO GPL-0031] FillerInit:NumGCells:       576
+[INFO GPL-0032] FillerInit:NumGNets:        574
+[INFO GPL-0033] FillerInit:NumGPins:       1626
+[INFO GPL-0023] TargetDensity:            0.719
+[INFO GPL-0024] AvrgPlaceInstArea:        1.292 um^2
+[INFO GPL-0025] IdealBinArea:             1.796 um^2
+[INFO GPL-0026] IdealBinCnt:                573
+[INFO GPL-0027] TotalBinArea:          1031.016 um^2
+[INFO GPL-0028] BinCnt:        16     16
+[INFO GPL-0029] BinSize: (  2.422  1.663 )
+[INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter:    1 overflow: 0.963 HPWL: 1780466
+[NesterovSolve] Iter:   10 overflow: 0.946 HPWL: 2020283
+[NesterovSolve] Iter:   20 overflow: 0.946 HPWL: 2023755
+[NesterovSolve] Iter:   30 overflow: 0.946 HPWL: 2022519
+[NesterovSolve] Iter:   40 overflow: 0.946 HPWL: 2022523
+[NesterovSolve] Iter:   50 overflow: 0.946 HPWL: 2023286
+[NesterovSolve] Iter:   60 overflow: 0.946 HPWL: 2023003
+[NesterovSolve] Iter:   70 overflow: 0.946 HPWL: 2023005
+[NesterovSolve] Iter:   80 overflow: 0.946 HPWL: 2024326
+[NesterovSolve] Iter:   90 overflow: 0.946 HPWL: 2026098
+[NesterovSolve] Iter:  100 overflow: 0.946 HPWL: 2029038
+[NesterovSolve] Iter:  110 overflow: 0.946 HPWL: 2035772
+[NesterovSolve] Iter:  120 overflow: 0.945 HPWL: 2052031
+[NesterovSolve] Iter:  130 overflow: 0.945 HPWL: 2085670
+[NesterovSolve] Iter:  140 overflow: 0.944 HPWL: 2146234
+[NesterovSolve] Iter:  150 overflow: 0.934 HPWL: 2241923
+[NesterovSolve] Iter:  160 overflow: 0.927 HPWL: 2369002
+[NesterovSolve] Iter:  170 overflow: 0.916 HPWL: 2538014
+[NesterovSolve] Iter:  180 overflow: 0.897 HPWL: 2762421
+[NesterovSolve] Iter:  190 overflow: 0.872 HPWL: 3040587
+[NesterovSolve] Iter:  200 overflow: 0.848 HPWL: 3320629
+[NesterovSolve] Iter:  210 overflow: 0.819 HPWL: 3617465
+[NesterovSolve] Iter:  220 overflow: 0.782 HPWL: 3936964
+[NesterovSolve] Iter:  230 overflow: 0.746 HPWL: 4252374
+[NesterovSolve] Iter:  240 overflow: 0.709 HPWL: 4577989
+[NesterovSolve] Iter:  250 overflow: 0.665 HPWL: 4865530
+[NesterovSolve] Iter:  260 overflow: 0.619 HPWL: 5160619
+[NesterovSolve] Iter:  270 overflow: 0.572 HPWL: 5423218
+[NesterovSolve] Iter:  280 overflow: 0.519 HPWL: 5629906
+[NesterovSolve] Iter:  290 overflow: 0.461 HPWL: 5779210
+[NesterovSolve] Iter:  300 overflow: 0.404 HPWL: 5950442
+[NesterovSolve] Iter:  310 overflow: 0.344 HPWL: 6081280
+[NesterovSolve] Iter:  320 overflow: 0.286 HPWL: 6130860
+[NesterovSolve] Iter:  330 overflow: 0.249 HPWL: 6190512
+[NesterovSolve] Iter:  340 overflow: 0.220 HPWL: 6240624
+[NesterovSolve] Iter:  350 overflow: 0.189 HPWL: 6277703
+[NesterovSolve] Iter:  360 overflow: 0.165 HPWL: 6345459
+[NesterovSolve] Iter:  370 overflow: 0.140 HPWL: 6373196
+[NesterovSolve] Iter:  380 overflow: 0.119 HPWL: 6400949
+[NesterovSolve] Iter:  390 overflow: 0.102 HPWL: 6430719
+[NesterovSolve] Finished with Overflow: 0.099741
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 650 u^2 63% utilization.
+Elapsed time: 0:01.12[h:]min:sec. CPU time: user 9.99 sys 0.19 (907%). Peak memory: 122052KB.
+Running detail_place.tcl, stage 3_5_place_dp
+Placement Analysis
+---------------------------------
+total displacement        520.5 u
+average displacement        1.0 u
+max displacement            3.4 u
+original HPWL            3223.6 u
+legalized HPWL           3636.5 u
+delta HPWL                   13 %
+
+Detailed placement improvement.
+Importing netlist into detailed improver.
+[INFO DPO-0100] Creating network with 541 cells, 54 terminals, 574 edges, 1626 pins, and 0 blockages.
+[INFO DPO-0109] Network stats: inst 595, edges 574, pins 1626
+[INFO DPO-0110] Number of regions is 1
+[INFO DPO-0401] Setting random seed to 1.
+[INFO DPO-0402] Setting maximum displacement 5 1 to 14000 2800 units.
+[INFO DPO-0320] Collected 92 fixed cells.
+[INFO DPO-0318] Collected 503 single height cells.
+[INFO DPO-0321] Collected 0 wide cells.
+[INFO DPO-0322] Image (2280, 2800) - (79800, 56000)
+[INFO DPO-0310] Assigned 503 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPO-0313] Found 0 cells in wrong regions.
+[INFO DPO-0315] Found 0 row alignment problems.
+[INFO DPO-0314] Found 0 site alignment problems.
+[INFO DPO-0311] Found 0 overlaps between adjacent cells.
+[INFO DPO-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPO-0303] Running algorithm for independent set matching.
+[INFO DPO-0300] Set matching objective is wirelength.
+[INFO DPO-0301] Pass   1 of matching; objective is 7.358965e+06.
+[INFO DPO-0302] End of matching; objective is 7.317585e+06, improvement is 0.56 percent.
+[INFO DPO-0303] Running algorithm for global swaps.
+[INFO DPO-0306] Pass   1 of global swaps; hpwl is 7.155760e+06.
+[INFO DPO-0306] Pass   2 of global swaps; hpwl is 7.128600e+06.
+[INFO DPO-0307] End of global swaps; objective is 7.128600e+06, improvement is 2.58 percent.
+[INFO DPO-0303] Running algorithm for vertical swaps.
+[INFO DPO-0308] Pass   1 of vertical swaps; hpwl is 7.112745e+06.
+[INFO DPO-0309] End of vertical swaps; objective is 7.112745e+06, improvement is 0.22 percent.
+[INFO DPO-0303] Running algorithm for reordering.
+[INFO DPO-0304] Pass   1 of reordering; objective is 7.065435e+06.
+[INFO DPO-0305] End of reordering; objective is 7.065435e+06, improvement is 0.67 percent.
+[INFO DPO-0303] Running algorithm for random improvement.
+[INFO DPO-0324] Random improver is using displacement generator.
+[INFO DPO-0325] Random improver is using hpwl objective.
+[INFO DPO-0326] Random improver cost string is (a).
+[INFO DPO-0332] End of pass, Generator displacement called 10060 times.
+[INFO DPO-0335] Generator displacement, Cumulative attempts 10060, swaps 2454, moves  2022 since last reset.
+[INFO DPO-0333] End of pass, Objective hpwl, Initial cost 7.065435e+06, Scratch cost 6.999700e+06, Incremental cost 6.999700e+06, Mismatch? N
+[INFO DPO-0338] End of pass, Total cost is 6.999700e+06.
+[INFO DPO-0327] Pass   1 of random improver; improvement in cost is 0.93 percent.
+[INFO DPO-0328] End of random improver; improvement is 0.930374 percent.
+[INFO DPO-0380] Cell flipping.
+[INFO DPO-0382] Changed 247 cell orientations for row compatibility.
+[INFO DPO-0383] Performed 191 cell flips.
+[INFO DPO-0384] End of flipping; objective is 6.894310e+06, improvement is 1.51 percent.
+[INFO DPO-0313] Found 0 cells in wrong regions.
+[INFO DPO-0315] Found 0 row alignment problems.
+[INFO DPO-0314] Found 0 site alignment problems.
+[INFO DPO-0311] Found 0 overlaps between adjacent cells.
+[INFO DPO-0312] Found 0 edge spacing violations and 0 padding violations.
+Detailed Improvement Results
+------------------------------------------
+Original HPWL             3636.5 u
+Final HPWL                3389.6 u
+Delta HPWL                  -6.8 %
+
+[INFO DPL-0020] Mirrored 51 instances
+[INFO DPL-0021] HPWL before            3389.6 u
+[INFO DPL-0022] HPWL after             3387.9 u
+[INFO DPL-0023] HPWL delta               -0.0 %
+[INFO FLW-0012] Placement violations .
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 650 u^2 63% utilization.
+Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.58 sys 0.05 (98%). Peak memory: 121884KB.
+cp ./results/nangate45/gcd/gcd_run_3_4_1/3_5_place_dp.odb ./results/nangate45/gcd/gcd_run_3_4_1/3_place.odb
 cp ./results/nangate45/gcd/gcd_run_3_4_1/2_floorplan.sdc ./results/nangate45/gcd/gcd_run_3_4_1/3_place.sdc

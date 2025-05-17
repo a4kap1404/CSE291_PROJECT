@@ -2,8 +2,8 @@
 
 counter_i=0.5
 counter_j=40
-counter_k=0.4
-DESIGN=ibex
+counter_k=0.2
+DESIGN=gcd
 tech_node=nangate45
 
 base_config=./designs/$tech_node/$DESIGN/config.mk
@@ -27,7 +27,7 @@ for i in $(seq 1 5); do #5
                 (
                     echo "Starting $FLOW_VARIANT global_place and detailed_place"
                     #export FLOW_VARIANT=$FLOW_VARIANT
-                    openroad -python -exit python_gen_labels.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path"
+                    openroad -python -exit python_gen_labels.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -k "$counter_k"
                     #DESIGN_CONFIG="$new_config" make place > "logs/${FLOW_VARIANT}.log" 2>&1
                     echo "Finished $FLOW_VARIANT"
                 ) &
@@ -43,7 +43,7 @@ for i in $(seq 1 5); do #5
             done
             # Increment counter for utilization
             counter_j=$(echo "$counter_j + 7" | bc)
-            counter_k=0.4
+            counter_k=0.2
     done
     # Increment counter for aspect ratio after all inner loop iterations (j)
     counter_i=$(echo "$counter_i + 0.1" | bc)

@@ -1,4 +1,5 @@
 import sys
+import os
 import argparse
 import pdn, odb, utl
 from openroad import Tech, Design, Timing
@@ -41,10 +42,12 @@ def load_design(techNode, floorplanOdbFile, sdcFile):
   return tech, design
 
 
-def run_incremental_placement(design):
+def run_incremental_placement(design, place_density):
   # Configure and run global placement
   print("###run global placement###")
-  design.evalTclString("global_placement -incremental")
+  print("global_placement -incremental -density " + str(place_density))
+  design.evalTclString("global_placement -incremental -density " + str(place_density))
+  #design.evalTclString("global_placement -incremental")
 
   #print("Please use the generated 3_3_place_gp.def and 3_3_place_gp.odb files for remaining flows.")
   design.writeDef(path + "/3_3_place_gp.def")
@@ -63,6 +66,7 @@ if __name__ == "__main__":
     parser.add_argument("-d", default="ibex", help="Give the design name")
     parser.add_argument("-t", default="nangate45", help="Give the technology node")
     parser.add_argument("-p", default="nangate45", help="Give the result_path")
+    parser.add_argument("-k", default="0.7", help="Give the place density")    
     parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
@@ -70,6 +74,8 @@ if __name__ == "__main__":
     tech_node = args.t
     design = args.d
     path = args.p
+    place_density = float(args.k)
+    #print(place_density)
     large_net_threshold = int(args.large_net_threshold)
 
     #path = "./results/" + tech_node + "/" + design + "/base"
@@ -83,4 +89,4 @@ if __name__ == "__main__":
     # Load the design
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file)
 
-    run_incremental_placement(design)
+    run_incremental_placement(design, place_density)

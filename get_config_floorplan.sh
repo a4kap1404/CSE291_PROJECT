@@ -2,15 +2,15 @@
 
 counter_i=0.5 # aspect ratio
 counter_j=40 # utilization
-counter_k=0.4 # place density
-DESIGN=ibex
+counter_k=0.2 # place density
+DESIGN=gcd
 tech_node=nangate45
 
 base_config=./designs/$tech_node/$DESIGN/config.mk
 output_dir=./designs/$tech_node/$DESIGN/configs
 mkdir -p "$output_dir"
 
-MAX_JOBS=16  # Adjust based on your CPU/core limits
+MAX_JOBS=1  # Adjust based on your CPU/core limits
 job_count=0
 
 for i in $(seq 1 5); do
@@ -24,9 +24,9 @@ for i in $(seq 1 5); do
 
                 # Copy base config and modify clock period
                 cp "$base_config" "$new_config"
-                sed -i "50s/.*/export CORE_UTILIZATION = $formatted_counter_j/" $new_config
-                sed -i "53s/.*/export CORE_ASPECT_RATIO = $formatted_counter_i/" $new_config
-                sed -i "54s/.*/export PLACE_DENSITY = $formatted_counter_k/" $new_config
+                sed -i "12s/.*/export CORE_UTILIZATION = $formatted_counter_j/" $new_config
+                sed -i "16s/.*/export CORE_ASPECT_RATIO = $formatted_counter_i/" $new_config
+                sed -i "13s/.*/export PLACE_DENSITY_LB_ADDON = $formatted_counter_k/" $new_config
 
                 # Launch each make process in the background
                 (
@@ -47,7 +47,7 @@ for i in $(seq 1 5); do
             done
             # Increment counter for utilization
             counter_j=$(echo "$counter_j + 7" | bc)
-            counter_k=0.4
+            counter_k=0.2
     done
     # Increment counter for aspect ratio after all inner loop iterations (j)
     counter_i=$(echo "$counter_i + 0.1" | bc)

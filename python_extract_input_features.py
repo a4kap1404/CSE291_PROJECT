@@ -220,7 +220,7 @@ if __name__ == "__main__":
     place_density = float(args.k)
     large_net_threshold = int(args.large_net_threshold)
     file_path = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + ".txt"
-    hg_file_name = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
+    hg_file_name = "./raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
     os.makedirs(os.path.dirname(hg_file_name), exist_ok=True)
     f = open(hg_file_name, "w")
     f.close()

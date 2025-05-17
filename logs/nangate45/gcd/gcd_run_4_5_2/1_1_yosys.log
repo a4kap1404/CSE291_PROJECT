@@ -4,7 +4,7 @@
 4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_4_5_2/clock_period.txt
-Setting clock period to .41
+Setting clock period to 0.46
 5. Executing HIERARCHY pass (managing design hierarchy).
 5.1. Analyzing design hierarchy..
 5.2. Analyzing design hierarchy..
@@ -187,7 +187,7 @@ Setting clock period to .41
 11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 11.15. Executing OPT_EXPR pass (perform const folding).
 11.16. Finished OPT passes. (There is nothing left to do.)
-abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_4_5_2/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_4_5_2/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.41
+abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_4_5_2/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_4_5_2/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.46
 12. Executing ABC pass (technology mapping using ABC).
 12.1. Extracting gate netlist of module `\gcd' to `<abc-temp-dir>/input.blif'..
 12.1.1. Executing ABC.
@@ -204,7 +204,7 @@ abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty
 21.1. Executing BMUXMAP pass.
 21.2. Executing DEMUXMAP pass.
 exec cp /work/CSE291/project/CSE291_PROJECT/designs/nangate45/gcd/constraint.sdc ./results/nangate45/gcd/gcd_run_4_5_2/1_synth.sdc
-End of script. Logfile hash: a81c951335, CPU: user 0.92s system 0.02s, MEM: 37.46 MB peak
+End of script. Logfile hash: a81c951335, CPU: user 0.96s system 0.04s, MEM: 37.56 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 25% 4x read_liberty (0 sec), 22% 2x abc (0 sec), ...
-Elapsed time: 0:01.32[h:]min:sec. CPU time: user 1.26 sys 0.04 (98%). Peak memory: 39040KB.
+Time spent: 24% 4x read_liberty (0 sec), 22% 2x abc (0 sec), ...
+Elapsed time: 0:01.41[h:]min:sec. CPU time: user 1.29 sys 0.08 (97%). Peak memory: 39120KB.

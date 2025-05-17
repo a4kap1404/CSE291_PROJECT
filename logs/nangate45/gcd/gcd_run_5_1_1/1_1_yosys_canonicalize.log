@@ -4,7 +4,7 @@
 4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_5_1_1/clock_period.txt
-Setting clock period to .41
+Setting clock period to 0.46
 5. Executing HIERARCHY pass (managing design hierarchy).
 6. Executing AST frontend in derive mode using pre-parsed AST for module `\gcd'.
 6.1. Analyzing design hierarchy..
@@ -31,7 +31,7 @@ Warning: Ignoring module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e because it contains p
 Warning: Ignoring module LtComparator_0x422b1f52edd46a85 because it contains processes (run 'proc' command first).
 8. Executing RTLIL backend.
 Warnings: 8 unique messages, 8 total
-End of script. Logfile hash: 4c323940ca, CPU: user 0.33s system 0.02s, MEM: 30.87 MB peak
+End of script. Logfile hash: 4c323940ca, CPU: user 0.36s system 0.05s, MEM: 30.96 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 92% 4x read_liberty (0 sec), 2% 4x read_verilog (0 sec), ...
-Elapsed time: 0:00.43[h:]min:sec. CPU time: user 0.38 sys 0.02 (95%). Peak memory: 33860KB.
+Time spent: 91% 4x read_liberty (0 sec), 4% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.51[h:]min:sec. CPU time: user 0.43 sys 0.08 (99%). Peak memory: 33980KB.

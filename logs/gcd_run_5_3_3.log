@@ -1,5 +1,5 @@
 mkdir -p results/nangate45/gcd/gcd_run_5_3_3/
-echo .41 > results/nangate45/gcd/gcd_run_5_3_3/clock_period.txt
+echo 0.46 > results/nangate45/gcd/gcd_run_5_3_3/clock_period.txt
 mkdir -p ./results/nangate45/gcd/gcd_run_5_3_3 ./logs/nangate45/gcd/gcd_run_5_3_3 ./reports/nangate45/gcd/gcd_run_5_3_3 ./objects/nangate45/gcd/gcd_run_5_3_3
 (env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /opt/oss-cad-suite/bin/yosys -v 3 -c /work/CSE291/project/CSE291_PROJECT/scripts/synth_canonicalize.tcl) 2>&1 | tee /work/CSE291/project/CSE291_PROJECT/logs/nangate45/gcd/gcd_run_5_3_3/1_1_yosys_canonicalize.log
 1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/designs/src/gcd/gcd.v
@@ -8,7 +8,7 @@ mkdir -p ./results/nangate45/gcd/gcd_run_5_3_3 ./logs/nangate45/gcd/gcd_run_5_3_
 4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_5_3_3/clock_period.txt
-Setting clock period to .41
+Setting clock period to 0.46
 5. Executing HIERARCHY pass (managing design hierarchy).
 6. Executing AST frontend in derive mode using pre-parsed AST for module `\gcd'.
 6.1. Analyzing design hierarchy..
@@ -35,10 +35,10 @@ Warning: Ignoring module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e because it contains p
 Warning: Ignoring module LtComparator_0x422b1f52edd46a85 because it contains processes (run 'proc' command first).
 8. Executing RTLIL backend.
 Warnings: 8 unique messages, 8 total
-End of script. Logfile hash: 53d20f3845, CPU: user 0.35s system 0.02s, MEM: 30.84 MB peak
+End of script. Logfile hash: 53d20f3845, CPU: user 0.34s system 0.01s, MEM: 30.77 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 89% 4x read_liberty (0 sec), 5% 1x hierarchy (0 sec), ...
-Elapsed time: 0:00.46[h:]min:sec. CPU time: user 0.42 sys 0.02 (96%). Peak memory: 34092KB.
+Time spent: 89% 4x read_liberty (0 sec), 5% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.45[h:]min:sec. CPU time: user 0.42 sys 0.01 (96%). Peak memory: 33644KB.
 mkdir -p ./results/nangate45/gcd/gcd_run_5_3_3 ./logs/nangate45/gcd/gcd_run_5_3_3 ./reports/nangate45/gcd/gcd_run_5_3_3 ./objects/nangate45/gcd/gcd_run_5_3_3
 (env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /opt/oss-cad-suite/bin/yosys -v 3 -c /work/CSE291/project/CSE291_PROJECT/scripts/synth.tcl) 2>&1 | tee /work/CSE291/project/CSE291_PROJECT/logs/nangate45/gcd/gcd_run_5_3_3/1_1_yosys.log
 1. Executing RTLIL frontend.
@@ -47,7 +47,7 @@ mkdir -p ./results/nangate45/gcd/gcd_run_5_3_3 ./logs/nangate45/gcd/gcd_run_5_3_
 4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_5_3_3/clock_period.txt
-Setting clock period to .41
+Setting clock period to 0.46
 5. Executing HIERARCHY pass (managing design hierarchy).
 5.1. Analyzing design hierarchy..
 5.2. Analyzing design hierarchy..
@@ -230,7 +230,7 @@ Setting clock period to .41
 11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 11.15. Executing OPT_EXPR pass (perform const folding).
 11.16. Finished OPT passes. (There is nothing left to do.)
-abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_5_3_3/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_5_3_3/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.41
+abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_5_3_3/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_5_3_3/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.46
 12. Executing ABC pass (technology mapping using ABC).
 12.1. Extracting gate netlist of module `\gcd' to `<abc-temp-dir>/input.blif'..
 12.1.1. Executing ABC.
@@ -247,10 +247,10 @@ abc -script /work/CSE291/project/CSE291_PROJECT/scripts/abc_area.script -liberty
 21.1. Executing BMUXMAP pass.
 21.2. Executing DEMUXMAP pass.
 exec cp /work/CSE291/project/CSE291_PROJECT/designs/nangate45/gcd/constraint.sdc ./results/nangate45/gcd/gcd_run_5_3_3/1_synth.sdc
-End of script. Logfile hash: 9b419ed50d, CPU: user 0.98s system 0.07s, MEM: 37.90 MB peak
+End of script. Logfile hash: ef1e6fc659, CPU: user 0.95s system 0.04s, MEM: 37.48 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 24% 4x read_liberty (0 sec), 23% 2x abc (0 sec), ...
-Elapsed time: 0:01.55[h:]min:sec. CPU time: user 1.43 sys 0.10 (99%). Peak memory: 39444KB.
+Time spent: 22% 2x abc (0 sec), 22% 4x read_liberty (0 sec), ...
+Elapsed time: 0:01.38[h:]min:sec. CPU time: user 1.31 sys 0.05 (98%). Peak memory: 39064KB.
 mkdir -p ./results/nangate45/gcd/gcd_run_5_3_3 ./logs/nangate45/gcd/gcd_run_5_3_3 ./reports/nangate45/gcd/gcd_run_5_3_3
 cp ./results/nangate45/gcd/gcd_run_5_3_3/1_1_yosys.v ./results/nangate45/gcd/gcd_run_5_3_3/1_synth.v
 Running floorplan.tcl, stage 2_1_floorplan
@@ -281,22 +281,22 @@ Report metrics stage 2, floorplan final...
 floorplan final report_design_area
 --------------------------------------------------------------------------
 Design area 650 u^2 56% utilization.
-Elapsed time: 0:00.45[h:]min:sec. CPU time: user 0.42 sys 0.03 (101%). Peak memory: 123728KB.
+Elapsed time: 0:00.49[h:]min:sec. CPU time: user 0.45 sys 0.02 (99%). Peak memory: 121712KB.
 Running macro_place.tcl, stage 2_2_floorplan_macro
 No macros found: Skipping macro_placement
-Elapsed time: 0:00.38[h:]min:sec. CPU time: user 0.30 sys 0.06 (97%). Peak memory: 116828KB.
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.39 sys 0.04 (99%). Peak memory: 119132KB.
 Running tapcell.tcl, stage 2_3_floorplan_tapcell
 [INFO TAP-0004] Inserted 46 endcaps.
 [INFO TAP-0005] Inserted 0 tapcells.
-Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.28 sys 0.04 (97%). Peak memory: 116380KB.
+Elapsed time: 0:00.36[h:]min:sec. CPU time: user 0.33 sys 0.01 (97%). Peak memory: 115888KB.
 Running pdn.tcl, stage 2_4_floorplan_pdn
 [INFO PDN-0001] Inserting grid: grid
-Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.26 sys 0.06 (97%). Peak memory: 119444KB.
+Elapsed time: 0:00.36[h:]min:sec. CPU time: user 0.30 sys 0.05 (98%). Peak memory: 119708KB.
 cp ./results/nangate45/gcd/gcd_run_5_3_3/2_4_floorplan_pdn.odb ./results/nangate45/gcd/gcd_run_5_3_3/2_floorplan.odb
 cp ./results/nangate45/gcd/gcd_run_5_3_3/2_1_floorplan.sdc ./results/nangate45/gcd/gcd_run_5_3_3/2_floorplan.sdc
 Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
 FLOORPLAN_DEF is set. Skipping global placement without IOs
-Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.28 sys 0.05 (99%). Peak memory: 118260KB.
+Elapsed time: 0:00.35[h:]min:sec. CPU time: user 0.28 sys 0.06 (100%). Peak memory: 117136KB.
 Running io_placement.tcl, stage 3_2_place_iop
 place_pins -hor_layers metal5 -ver_layers metal6
 Found 0 macro blocks.
@@ -308,7 +308,7 @@ Using 2 tracks default min distance between IO pins.
 [INFO PPL-0005] Slots per section         200
 [INFO PPL-0008] Successfully assigned pins to sections.
 [INFO PPL-0012] I/O nets HPWL: 1350.94 um.
-Elapsed time: 0:00.34[h:]min:sec. CPU time: user 0.29 sys 0.04 (99%). Peak memory: 119316KB.
+Elapsed time: 0:00.37[h:]min:sec. CPU time: user 0.30 sys 0.06 (98%). Peak memory: 117860KB.
 Running global_place.tcl, stage 3_3_place_gp
 [INFO GPL-0002] DBU: 2000
 [INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
@@ -419,7 +419,7 @@ Report metrics stage 3, global place...
 global place report_design_area
 --------------------------------------------------------------------------
 Design area 650 u^2 56% utilization.
-Elapsed time: 0:01.20[h:]min:sec. CPU time: user 11.49 sys 0.32 (980%). Peak memory: 120520KB.
+Elapsed time: 0:01.14[h:]min:sec. CPU time: user 10.48 sys 0.29 (944%). Peak memory: 122604KB.
 Running detail_place.tcl, stage 3_5_place_dp
 Placement Analysis
 ---------------------------------
@@ -502,6 +502,6 @@ Report metrics stage 3, detailed place...
 detailed place report_design_area
 --------------------------------------------------------------------------
 Design area 650 u^2 56% utilization.
-Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.57 sys 0.05 (98%). Peak memory: 123544KB.
+Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.61 sys 0.04 (102%). Peak memory: 121900KB.
 cp ./results/nangate45/gcd/gcd_run_5_3_3/3_5_place_dp.odb ./results/nangate45/gcd/gcd_run_5_3_3/3_place.odb
 cp ./results/nangate45/gcd/gcd_run_5_3_3/2_floorplan.sdc ./results/nangate45/gcd/gcd_run_5_3_3/3_place.sdc

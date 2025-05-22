@@ -1,0 +1,10 @@
+#order of scripts
+
+get_config_floorplan.sh # floorplan
+#get_lables.sh # placement
+
+get_nets_text.sh # (label = 0) mode 0
+extract_input_features.sh
+
+get_nets_text.sh # (label = 1) mode 1
+get_formatted_labels.sh

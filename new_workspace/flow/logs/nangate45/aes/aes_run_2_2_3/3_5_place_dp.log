@@ -1,0 +1,87 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+Placement Analysis
+---------------------------------
+total displacement      13332.0 u
+average displacement        0.9 u
+max displacement            4.0 u
+original HPWL          216338.1 u
+legalized HPWL         225836.6 u
+delta HPWL                    4 %
+
+Detailed placement improvement.
+Importing netlist into detailed improver.
+[INFO DPO-0100] Creating network with 15414 cells, 388 terminals, 16165 edges, 56154 pins, and 0 blockages.
+[INFO DPO-0109] Network stats: inst 15802, edges 16165, pins 56154
+[INFO DPO-0110] Number of regions is 1
+[INFO DPO-0401] Setting random seed to 1.
+[INFO DPO-0402] Setting maximum displacement 5 1 to 14000 2800 units.
+[INFO DPO-0320] Collected 735 fixed cells.
+[INFO DPO-0318] Collected 15067 single height cells.
+[INFO DPO-0321] Collected 0 wide cells.
+[INFO DPO-0322] Image (2280, 2800) - (540360, 324800)
+[INFO DPO-0310] Assigned 15067 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPO-0313] Found 0 cells in wrong regions.
+[INFO DPO-0315] Found 0 row alignment problems.
+[INFO DPO-0314] Found 0 site alignment problems.
+[INFO DPO-0311] Found 0 overlaps between adjacent cells.
+[INFO DPO-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPO-0303] Running algorithm for independent set matching.
+[INFO DPO-0300] Set matching objective is wirelength.
+[INFO DPO-0301] Pass   1 of matching; objective is 4.541045e+08.
+[INFO DPO-0302] End of matching; objective is 4.537961e+08, improvement is 0.07 percent.
+[INFO DPO-0303] Running algorithm for global swaps.
+[INFO DPO-0306] Pass   1 of global swaps; hpwl is 4.475064e+08.
+[INFO DPO-0306] Pass   2 of global swaps; hpwl is 4.455504e+08.
+[INFO DPO-0307] End of global swaps; objective is 4.455504e+08, improvement is 1.82 percent.
+[INFO DPO-0303] Running algorithm for vertical swaps.
+[INFO DPO-0308] Pass   1 of vertical swaps; hpwl is 4.445949e+08.
+[INFO DPO-0309] End of vertical swaps; objective is 4.445949e+08, improvement is 0.21 percent.
+[INFO DPO-0303] Running algorithm for reordering.
+[INFO DPO-0304] Pass   1 of reordering; objective is 4.417138e+08.
+[INFO DPO-0305] End of reordering; objective is 4.417138e+08, improvement is 0.65 percent.
+[INFO DPO-0303] Running algorithm for random improvement.
+[INFO DPO-0324] Random improver is using displacement generator.
+[INFO DPO-0325] Random improver is using hpwl objective.
+[INFO DPO-0326] Random improver cost string is (a).
+[INFO DPO-0332] End of pass, Generator displacement called 301340 times.
+[INFO DPO-0335] Generator displacement, Cumulative attempts 301340, swaps 73245, moves 47935 since last reset.
+[INFO DPO-0333] End of pass, Objective hpwl, Initial cost 4.409109e+08, Scratch cost 4.360172e+08, Incremental cost 4.360172e+08, Mismatch? N
+[INFO DPO-0338] End of pass, Total cost is 4.360172e+08.
+[INFO DPO-0327] Pass   1 of random improver; improvement in cost is 1.11 percent.
+[INFO DPO-0332] End of pass, Generator displacement called 301340 times.
+[INFO DPO-0335] Generator displacement, Cumulative attempts 602680, swaps 142712, moves 95284 since last reset.
+[INFO DPO-0333] End of pass, Objective hpwl, Initial cost 4.360172e+08, Scratch cost 4.330998e+08, Incremental cost 4.330998e+08, Mismatch? N
+[INFO DPO-0338] End of pass, Total cost is 4.330998e+08.
+[INFO DPO-0327] Pass   2 of random improver; improvement in cost is 0.67 percent.
+[INFO DPO-0328] End of random improver; improvement is 1.771576 percent.
+[INFO DPO-0380] Cell flipping.
+[INFO DPO-0382] Changed 7551 cell orientations for row compatibility.
+[INFO DPO-0383] Performed 4508 cell flips.
+[INFO DPO-0384] End of flipping; objective is 4.319902e+08, improvement is 0.44 percent.
+[INFO DPO-0313] Found 0 cells in wrong regions.
+[INFO DPO-0315] Found 0 row alignment problems.
+[INFO DPO-0314] Found 0 site alignment problems.
+[INFO DPO-0311] Found 0 overlaps between adjacent cells.
+[INFO DPO-0312] Found 0 edge spacing violations and 0 padding violations.
+Detailed Improvement Results
+------------------------------------------
+Original HPWL           225836.6 u
+Final HPWL              214166.7 u
+Delta HPWL                  -5.2 %
+
+[INFO DPL-0020] Mirrored 1736 instances
+[INFO DPL-0021] HPWL before          214166.7 u
+[INFO DPL-0022] HPWL after           214077.9 u
+[INFO DPL-0023] HPWL delta               -0.0 %
+[INFO FLW-0012] Placement violations .
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 21470 u^2 50% utilization.
+Elapsed time: 0:09.60[h:]min:sec. CPU time: user 9.77 sys 0.09 (102%). Peak memory: 221300KB.

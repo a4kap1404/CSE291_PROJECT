@@ -1,0 +1,126 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 300.770 240.800 ) um
+[INFO GPL-0006] NumInstances:             16610
+[INFO GPL-0007] NumPlaceInstances:        16095
+[INFO GPL-0008] NumFixedInstances:          515
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                  18758
+[INFO GPL-0011] NumPins:                  60707
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 301.775 241.820 ) um
+[INFO GPL-0013] CoreBBox: (  1.140  1.400 ) ( 300.770 240.800 ) um
+[INFO GPL-0016] CoreArea:             71731.422 um^2
+[INFO GPL-0017] NonPlaceInstsArea:      136.990 um^2
+[INFO GPL-0018] PlaceInstsArea:       28787.052 um^2
+[INFO GPL-0019] Util:                    40.209 %
+[INFO GPL-0020] StdInstsArea:         28787.052 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:     41865
+[INFO GPL-0032] FillerInit:NumGNets:      18758
+[INFO GPL-0033] FillerInit:NumGPins:      60707
+[INFO GPL-0023] TargetDensity:            1.000
+[INFO GPL-0024] AvrgPlaceInstArea:        1.789 um^2
+[INFO GPL-0025] IdealBinArea:             1.789 um^2
+[INFO GPL-0026] IdealBinCnt:              40105
+[INFO GPL-0027] TotalBinArea:         71731.422 um^2
+[INFO GPL-0028] BinCnt:       128    128
+[INFO GPL-0029] BinSize: (  2.341  1.871 )
+[INFO GPL-0030] NumBins: 16384
+Placement density is 0.7110425329208374, computed from PLACE_DENSITY_LB_ADDON 0.50 and lower bound 0.4020850658416748
+global_placement -density 0.7110425329208374 -pad_left 0 -pad_right 0
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  1.140  1.400 ) ( 300.770 240.800 ) um
+[INFO GPL-0006] NumInstances:             16610
+[INFO GPL-0007] NumPlaceInstances:        16095
+[INFO GPL-0008] NumFixedInstances:          515
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                  18758
+[INFO GPL-0011] NumPins:                  60707
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 301.775 241.820 ) um
+[INFO GPL-0013] CoreBBox: (  1.140  1.400 ) ( 300.770 240.800 ) um
+[INFO GPL-0016] CoreArea:             71731.422 um^2
+[INFO GPL-0017] NonPlaceInstsArea:      136.990 um^2
+[INFO GPL-0018] PlaceInstsArea:       28787.052 um^2
+[INFO GPL-0019] Util:                    40.209 %
+[INFO GPL-0020] StdInstsArea:         28787.052 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[InitialPlace]  Iter: 1 CG residual: 0.00023839 HPWL: 579618572
+[InitialPlace]  Iter: 2 CG residual: 0.00000878 HPWL: 218752123
+[InitialPlace]  Iter: 3 CG residual: 0.00001203 HPWL: 217739721
+[InitialPlace]  Iter: 4 CG residual: 0.00001877 HPWL: 217143090
+[InitialPlace]  Iter: 5 CG residual: 0.00006881 HPWL: 216317327
+[InitialPlace]  Iter: 6 CG residual: 0.00002899 HPWL: 215959231
+[InitialPlace]  Iter: 7 CG residual: 0.00001350 HPWL: 215441360
+[InitialPlace]  Iter: 8 CG residual: 0.00001633 HPWL: 215383212
+[InitialPlace]  Iter: 9 CG residual: 0.00000412 HPWL: 215067129
+[INFO GPL-0031] FillerInit:NumGCells:     29411
+[INFO GPL-0032] FillerInit:NumGNets:      18758
+[INFO GPL-0033] FillerInit:NumGPins:      60707
+[INFO GPL-0023] TargetDensity:            0.711
+[INFO GPL-0024] AvrgPlaceInstArea:        1.789 um^2
+[INFO GPL-0025] IdealBinArea:             2.515 um^2
+[INFO GPL-0026] IdealBinCnt:              28516
+[INFO GPL-0027] TotalBinArea:         71731.422 um^2
+[INFO GPL-0028] BinCnt:       128    128
+[INFO GPL-0029] BinSize: (  2.341  1.871 )
+[INFO GPL-0030] NumBins: 16384
+[NesterovSolve] Iter:    1 overflow: 0.983 HPWL: 151729391
+[NesterovSolve] Iter:   10 overflow: 0.942 HPWL: 165936411
+[NesterovSolve] Iter:   20 overflow: 0.920 HPWL: 186032558
+[NesterovSolve] Iter:   30 overflow: 0.911 HPWL: 191370744
+[NesterovSolve] Iter:   40 overflow: 0.906 HPWL: 193330762
+[NesterovSolve] Iter:   50 overflow: 0.903 HPWL: 193601432
+[NesterovSolve] Iter:   60 overflow: 0.902 HPWL: 193527216
+[NesterovSolve] Iter:   70 overflow: 0.902 HPWL: 193959553
+[NesterovSolve] Iter:   80 overflow: 0.903 HPWL: 193850118
+[NesterovSolve] Iter:   90 overflow: 0.904 HPWL: 193137395
+[NesterovSolve] Iter:  100 overflow: 0.904 HPWL: 192294122
+[NesterovSolve] Iter:  110 overflow: 0.905 HPWL: 191679134
+[NesterovSolve] Iter:  120 overflow: 0.905 HPWL: 191381702
+[NesterovSolve] Iter:  130 overflow: 0.906 HPWL: 191530063
+[NesterovSolve] Iter:  140 overflow: 0.906 HPWL: 192480565
+[NesterovSolve] Iter:  150 overflow: 0.904 HPWL: 194603773
+[NesterovSolve] Iter:  160 overflow: 0.902 HPWL: 198158071
+[NesterovSolve] Iter:  170 overflow: 0.898 HPWL: 203204695
+[NesterovSolve] Iter:  180 overflow: 0.893 HPWL: 210077721
+[NesterovSolve] Iter:  190 overflow: 0.884 HPWL: 219443395
+[NesterovSolve] Iter:  200 overflow: 0.875 HPWL: 231789776
+[NesterovSolve] Iter:  210 overflow: 0.863 HPWL: 246870699
+[NesterovSolve] Iter:  220 overflow: 0.846 HPWL: 263812291
+[NesterovSolve] Iter:  230 overflow: 0.828 HPWL: 281005509
+[NesterovSolve] Iter:  240 overflow: 0.805 HPWL: 299289903
+[NesterovSolve] Iter:  250 overflow: 0.778 HPWL: 321348584
+[NesterovSolve] Iter:  260 overflow: 0.747 HPWL: 341180931
+[NesterovSolve] Iter:  270 overflow: 0.714 HPWL: 361199005
+[NesterovSolve] Iter:  280 overflow: 0.676 HPWL: 375159660
+[NesterovSolve] Iter:  290 overflow: 0.634 HPWL: 386684082
+[NesterovSolve] Iter:  300 overflow: 0.589 HPWL: 398759995
+[NesterovSolve] Iter:  310 overflow: 0.538 HPWL: 407816191
+[NesterovSolve] Iter:  320 overflow: 0.486 HPWL: 418186590
+[NesterovSolve] Iter:  330 overflow: 0.438 HPWL: 428117345
+[NesterovSolve] Iter:  340 overflow: 0.390 HPWL: 437032843
+[NesterovSolve] Iter:  350 overflow: 0.344 HPWL: 443609083
+[NesterovSolve] Iter:  360 overflow: 0.310 HPWL: 446940197
+[NesterovSolve] Iter:  370 overflow: 0.278 HPWL: 449740443
+[NesterovSolve] Iter:  380 overflow: 0.247 HPWL: 451952865
+[NesterovSolve] Iter:  390 overflow: 0.215 HPWL: 453313055
+[NesterovSolve] Iter:  400 overflow: 0.187 HPWL: 454504223
+[NesterovSolve] Iter:  410 overflow: 0.162 HPWL: 455450940
+[NesterovSolve] Iter:  420 overflow: 0.138 HPWL: 456262785
+[NesterovSolve] Iter:  430 overflow: 0.118 HPWL: 456754091
+[NesterovSolve] Iter:  440 overflow: 0.101 HPWL: 457375786
+[NesterovSolve] Finished with Overflow: 0.099113
+Took 8 seconds: global_placement -density 0.7110425329208374 -pad_left 0 -pad_right 0
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 28787 u^2 40% utilization.
+Elapsed time: 0:15.84[h:]min:sec. CPU time: user 133.98 sys 0.47 (848%). Peak memory: 196784KB.

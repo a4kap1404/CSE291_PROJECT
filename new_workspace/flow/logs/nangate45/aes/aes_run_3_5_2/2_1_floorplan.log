@@ -1,0 +1,1492 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+number instances in verilog is 15057
+[WARNING IFP-0028] Core area lower left (1.000, 1.000) snapped to (1.140, 1.400).
+[INFO IFP-0001] Added 103 rows of 1089 site FreePDK45_38x28_10R_NP_162NW_34O.
+repair_timing -verbose -setup_margin 0 -repair_tns 100
+[WARNING RSZ-0021] no estimated parasitics. Using wire load models.
+[INFO RSZ-0094] Found 160 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 160 out of 160 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   TNS      |  Viol  | Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpt
+--------------------------------------------------------------------------------------------------------------
+        0 |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.260 |      -20.5 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+       10 |       0 |       9 |        0 |      0 |     0 |    +0.0% |   -0.185 |      -18.7 |    160 | sa00_sr\[7\]$_DFF_P_/D
+       20 |       0 |      19 |        0 |      0 |     0 |    +0.0% |   -0.167 |      -17.9 |    160 | u0.u3.d\[1\]$_DFF_P_/D
+       30 |       0 |      29 |        0 |      0 |     0 |    +0.1% |   -0.159 |      -17.7 |    160 | u0.u2.d\[0\]$_DFF_P_/D
+       40 |       2 |      37 |        0 |      0 |     0 |    +0.1% |   -0.147 |      -16.8 |    160 | u0.u2.d\[0\]$_DFF_P_/D
+       50 |       4 |      45 |        0 |      0 |     0 |    +0.1% |   -0.144 |      -16.0 |    160 | sa20_sr\[5\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+       60 |       4 |      54 |        2 |      0 |     0 |    +0.1% |   -0.138 |      -15.0 |    160 | sa31_sr\[6\]$_DFF_P_/D
+       70 |       5 |      63 |        2 |      0 |     0 |    +0.1% |   -0.133 |      -14.6 |    160 | sa02_sr\[0\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29598_/CO
+       80 |       5 |      72 |        2 |      0 |     1 |    +0.2% |   -0.125 |      -14.0 |    160 | sa00_sr\[7\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21196_/ZN
+       90 |       5 |      79 |        2 |      1 |     3 |    +0.2% |   -0.124 |      -13.8 |    160 | sa13_sr\[3\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29598_/CO
+      100 |       5 |      89 |        2 |      1 |     3 |    +0.2% |   -0.119 |      -13.4 |    160 | u0.u2.d\[0\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29598_/CO
+      110 |       5 |      99 |        2 |      1 |     3 |    +0.3% |   -0.112 |      -12.9 |    160 | u0.u2.d\[1\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+      120 |       5 |     109 |        2 |      1 |     3 |    +0.3% |   -0.111 |      -12.6 |    160 | sa10_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+      130 |       5 |     119 |        2 |      1 |     3 |    +0.4% |   -0.123 |      -12.3 |    160 | sa31_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29598_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+      140 |       6 |     128 |        2 |      1 |     3 |    +0.4% |   -0.118 |      -12.1 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29598_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+      150 |       6 |     138 |        2 |      1 |     3 |    +0.4% |   -0.101 |      -11.7 |    160 | u0.u0.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+      160 |       7 |     146 |        2 |      1 |     4 |    +0.4% |   -0.099 |      -11.5 |    160 | sa10_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+      170 |       7 |     156 |        2 |      1 |     4 |    +0.5% |   -0.097 |      -11.2 |    160 | sa33_sr\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20460_/ZN
+      180 |       8 |     163 |        2 |      1 |     6 |    +0.5% |   -0.094 |      -11.2 |    160 | sa11_sr\[5\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+      190 |       8 |     170 |        2 |      1 |     9 |    +0.5% |   -0.093 |      -11.1 |    160 | sa31_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+      200 |       8 |     177 |        2 |      1 |    12 |    +0.6% |   -0.093 |      -10.8 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _19772_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20460_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20450_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _27892_/Z
+      210 |      10 |     183 |        2 |      1 |    14 |    +0.6% |   -0.090 |      -10.6 |    160 | sa20_sr\[3\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16638_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15591_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20460_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20450_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20451_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _19772_/ZN
+      220 |      11 |     190 |        2 |      3 |    14 |    +0.6% |   -0.089 |      -10.5 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20460_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _19772_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20460_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20451_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _20450_/Z
+      230 |      14 |     195 |        2 |      5 |    14 |    +0.6% |   -0.086 |      -10.1 |    160 | u0.u3.d\[1\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+      240 |      15 |     204 |        2 |      5 |    14 |    +0.7% |   -0.085 |      -10.0 |    160 | sa11_sr\[3\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _19824_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+      250 |      15 |     213 |        2 |      5 |    15 |    +0.7% |   -0.084 |       -9.7 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+      260 |      16 |     221 |        2 |      5 |    16 |    +0.7% |   -0.083 |       -9.6 |    160 | sa31_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _27892_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _27248_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29740_/S
+      270 |      19 |     228 |        2 |      5 |    16 |    +0.8% |   -0.080 |       -9.3 |    160 | u0.u3.d\[3\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver sa10_sr\[1\]$_DFF_P_/Q
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver sa10_sr\[1\]$_DFF_P_/Q
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18271_/ZN
+      280 |      21 |     234 |        2 |      6 |    17 |    +0.8% |   -0.080 |       -9.1 |    160 | sa00_sr\[7\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _19824_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _23894_/Z
+      290 |      21 |     242 |        2 |      7 |    18 |    +0.8% |   -0.078 |       -8.9 |    160 | sa13_sr\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21196_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21192_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _21196_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+      300 |      22 |     250 |        2 |      7 |    19 |    +0.9% |   -0.079 |       -8.8 |    160 | u0.u2.d\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver sa10_sr\[1\]$_DFF_P_/Q
+[WARNING RSZ-0075] makeBufferedNet failed for driver _26586_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18271_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29619_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22547_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _22543_/Z
+      310 |      24 |     258 |        2 |      7 |    19 |    +0.9% |   -0.075 |       -8.6 |    160 | sa02_sr\[2\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+      320 |      24 |     268 |        2 |      7 |    19 |    +0.9% |   -0.073 |       -8.0 |    160 | sa00_sr\[7\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29645_/S
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+      330 |      25 |     277 |        2 |      7 |    19 |    +1.0% |   -0.071 |       -7.8 |    160 | sa31_sr\[1\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _27248_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18529_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18529_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18530_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18529_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18584_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18529_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18584_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18530_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18267_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18502_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18583_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18278_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18529_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18584_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18530_/Z
+      339 |      26 |     280 |        2 |      7 |    19 |    +1.0% |   -0.073 |       -7.6 |    160 | sa00_sr\[7\]$_DFF_P_/D
+      340 |      26 |     280 |        2 |      7 |    19 |    +1.0% |   -0.073 |       -7.6 |    160 | sa00_sr\[7\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+      350 |      26 |     287 |        2 |     10 |    19 |    +1.1% |   -0.076 |       -7.6 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+      360 |      26 |     294 |        2 |     13 |    19 |    +1.4% |   -0.074 |       -7.5 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16719_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+      361 |      26 |     294 |        2 |     12 |    19 |    +1.3% |   -0.074 |       -7.5 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+      370 |      27 |     300 |        2 |     12 |    20 |    +1.3% |   -0.074 |       -7.4 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29570_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29570_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16706_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+      380 |      28 |     306 |        2 |     13 |    22 |    +1.4% |   -0.074 |       -7.4 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16685_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16706_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+      380 |      28 |     306 |        2 |     13 |    22 |    +1.4% |   -0.074 |       -7.4 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+      390 |      28 |     314 |        2 |     13 |    23 |    +1.5% |   -0.074 |       -7.3 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17735_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17735_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17735_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17735_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+      400 |      28 |     322 |        2 |     14 |    24 |    +1.6% |   -0.075 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17786_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17735_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15336_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+      410 |      28 |     328 |        2 |     18 |    24 |    +1.8% |   -0.077 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15362_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15362_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15362_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15362_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29594_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15748_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15750_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17749_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17750_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15751_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15752_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15362_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15753_/Z
+      415 |      28 |     320 |        2 |     13 |    24 |    +1.5% |   -0.074 |       -7.3 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15590_/Z
+      420 |      29 |     323 |        2 |     13 |    24 |    +1.5% |   -0.075 |       -7.3 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29564_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16865_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16865_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16691_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16865_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16866_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16691_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16865_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16866_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16691_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+      426 |      28 |     322 |        2 |     13 |    24 |    +1.5% |   -0.078 |       -7.3 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+      430 |      28 |     325 |        2 |     13 |    24 |    +1.5% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+      440 |      29 |     330 |        2 |     16 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+      450 |      29 |     338 |        2 |     17 |    26 |    +1.6% |   -0.079 |       -7.1 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17171_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17171_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17171_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17171_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17174_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17170_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17175_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17264_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17247_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17171_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+      459 |      29 |     334 |        2 |     16 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+      460 |      29 |     334 |        2 |     16 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29564_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16692_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16926_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16691_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16692_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16926_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16684_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15606_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16631_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16632_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16692_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16926_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16691_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _16633_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+      465 |      29 |     335 |        3 |     16 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+      470 |      29 |     338 |        3 |     16 |    26 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15473_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15474_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17166_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15462_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+      480 |      29 |     345 |        3 |     17 |    28 |    +1.6% |   -0.080 |       -7.1 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15460_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15460_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15460_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15456_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _29580_/CO
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17273_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15458_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15457_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15459_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _17272_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15460_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15341_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15342_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _15332_/Z
+      484 |      29 |     340 |        3 |     16 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18290_/ZN
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18279_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18268_/Z
+[WARNING RSZ-0075] makeBufferedNet failed for driver _18422_/Z
+[WARNING RSZ-0075] message limit (1000) reached. This message will no longer print.
+      488 |      29 |     340 |        3 |     18 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+      490 |      29 |     341 |        3 |     18 |    25 |    +1.6% |   -0.078 |       -7.2 |    160 | u0.u1.d\[6\]$_DFF_P_/D
+      493 |      30 |     343 |        3 |     18 |    25 |    +1.6% |   -0.078 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      500 |      31 |     346 |        3 |     20 |    25 |    +1.7% |   -0.079 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      506 |      30 |     347 |        3 |     19 |    25 |    +1.6% |   -0.078 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      510 |      31 |     347 |        3 |     21 |    25 |    +1.6% |   -0.078 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      520 |      31 |     353 |        3 |     25 |    25 |    +1.7% |   -0.081 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      527 |      31 |     354 |        3 |     21 |    25 |    +1.7% |   -0.078 |       -7.1 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      530 |      31 |     356 |        3 |     21 |    25 |    +1.7% |   -0.078 |       -7.0 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      540 |      31 |     363 |        3 |     23 |    26 |    +1.7% |   -0.081 |       -7.0 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      541 |      31 |     360 |        3 |     22 |    26 |    +1.7% |   -0.078 |       -7.0 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      550 |      32 |     365 |        3 |     22 |    28 |    +1.7% |   -0.078 |       -7.0 |    158 | u0.u1.d\[6\]$_DFF_P_/D
+      555 |      32 |     369 |        3 |     22 |    29 |    +1.7% |   -0.078 |       -7.0 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      560 |      32 |     373 |        3 |     22 |    29 |    +1.7% |   -0.078 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      570 |      32 |     379 |        3 |     25 |    30 |    +1.8% |   -0.078 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      580 |      32 |     385 |        3 |     28 |    31 |    +1.9% |   -0.085 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      582 |      32 |     381 |        3 |     23 |    29 |    +1.8% |   -0.078 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      590 |      32 |     385 |        3 |     24 |    31 |    +1.8% |   -0.078 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      600 |      32 |     392 |        3 |     27 |    31 |    +2.0% |   -0.079 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      610 |      32 |     399 |        3 |     30 |    31 |    +2.1% |   -0.085 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      610 |      32 |     389 |        3 |     24 |    31 |    +1.8% |   -0.078 |       -6.9 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      620 |      33 |     393 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      630 |      34 |     399 |        3 |     30 |    32 |    +1.9% |   -0.085 |       -6.7 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      632 |      33 |     397 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      640 |      33 |     402 |        3 |     29 |    32 |    +1.9% |   -0.082 |       -6.7 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      644 |      33 |     401 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    156 | u0.u1.d\[6\]$_DFF_P_/D
+      647 |      34 |     402 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    154 | u0.u1.d\[6\]$_DFF_P_/D
+      650 |      35 |     403 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    154 | u0.u1.d\[6\]$_DFF_P_/D
+      660 |      35 |     410 |        3 |     30 |    32 |    +1.9% |   -0.085 |       -6.7 |    154 | u0.u1.d\[6\]$_DFF_P_/D
+      661 |      35 |     407 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.8 |    154 | u0.u1.d\[6\]$_DFF_P_/D
+      664 |      35 |     409 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.7 |    152 | u0.u1.d\[6\]$_DFF_P_/D
+      670 |      35 |     414 |        3 |     27 |    32 |    +1.8% |   -0.078 |       -6.7 |    152 | u0.u1.d\[6\]$_DFF_P_/D
+      675 |      35 |     418 |        3 |     27 |    33 |    +1.8% |   -0.078 |       -6.7 |    150 | u0.u1.d\[6\]$_DFF_P_/D
+      680 |      35 |     421 |        3 |     28 |    33 |    +1.9% |   -0.078 |       -6.7 |    150 | u0.u1.d\[6\]$_DFF_P_/D
+      690 |      35 |     427 |        3 |     29 |    36 |    +1.9% |   -0.081 |       -6.5 |    150 | sa13_sr\[6\]$_DFF_P_/D
+      700 |      35 |     433 |        3 |     30 |    39 |    +2.0% |   -0.083 |       -6.5 |    150 | sa13_sr\[6\]$_DFF_P_/D
+      701 |      35 |     425 |        3 |     28 |    34 |    +1.9% |   -0.078 |       -6.7 |    150 | sa13_sr\[6\]$_DFF_P_/D
+      703 |      35 |     425 |        3 |     28 |    35 |    +1.9% |   -0.078 |       -6.7 |    148 | sa13_sr\[6\]$_DFF_P_/D
+      710 |      35 |     430 |        3 |     28 |    36 |    +1.9% |   -0.078 |       -6.6 |    148 | sa13_sr\[6\]$_DFF_P_/D
+      720 |      35 |     435 |        3 |     31 |    38 |    +2.1% |   -0.078 |       -6.7 |    148 | sa13_sr\[6\]$_DFF_P_/D
+      729 |      35 |     434 |        3 |     28 |    36 |    +1.9% |   -0.078 |       -6.6 |    148 | sa13_sr\[6\]$_DFF_P_/D
+      730 |      35 |     434 |        3 |     28 |    36 |    +1.9% |   -0.078 |       -6.6 |    148 | sa13_sr\[6\]$_DFF_P_/D
+      732 |      35 |     436 |        3 |     28 |    36 |    +1.9% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      740 |      36 |     439 |        3 |     28 |    39 |    +1.9% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      744 |      36 |     438 |        3 |     28 |    36 |    +1.9% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      750 |      36 |     442 |        3 |     28 |    37 |    +1.9% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      760 |      36 |     451 |        3 |     29 |    37 |    +2.1% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      770 |      36 |     456 |        3 |     33 |    38 |    +2.2% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      774 |      36 |     447 |        3 |     28 |    37 |    +1.9% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      780 |      36 |     450 |        4 |     28 |    38 |    +2.0% |   -0.078 |       -6.6 |    146 | sa13_sr\[6\]$_DFF_P_/D
+      785 |      36 |     453 |        4 |     28 |    40 |    +2.0% |   -0.078 |       -6.6 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      790 |      36 |     457 |        4 |     28 |    40 |    +2.0% |   -0.078 |       -6.5 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      800 |      36 |     465 |        4 |     28 |    42 |    +2.0% |   -0.078 |       -6.4 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      810 |      38 |     468 |        4 |     29 |    46 |    +2.0% |   -0.078 |       -6.3 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      820 |      39 |     473 |        4 |     30 |    49 |    +2.1% |   -0.078 |       -6.3 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      827 |      39 |     476 |        5 |     31 |    51 |    +2.2% |   -0.078 |       -6.3 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      830 |      39 |     478 |        5 |     31 |    51 |    +2.2% |   -0.078 |       -6.3 |    144 | sa13_sr\[6\]$_DFF_P_/D
+      832 |      39 |     479 |        5 |     31 |    52 |    +2.2% |   -0.078 |       -6.3 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      840 |      39 |     486 |        5 |     31 |    52 |    +2.2% |   -0.078 |       -6.3 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      850 |      39 |     493 |        6 |     32 |    53 |    +2.3% |   -0.078 |       -6.3 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      856 |      39 |     496 |        6 |     32 |    54 |    +2.3% |   -0.078 |       -6.2 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      860 |      39 |     497 |        6 |     32 |    56 |    +2.3% |   -0.078 |       -6.3 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      870 |      40 |     503 |        7 |     33 |    57 |    +2.3% |   -0.078 |       -6.1 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      880 |      40 |     509 |        7 |     35 |    59 |    +2.4% |   -0.078 |       -6.1 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      888 |      40 |     512 |        7 |     35 |    60 |    +2.4% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      890 |      40 |     512 |        7 |     35 |    61 |    +2.4% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      900 |      41 |     516 |        7 |     36 |    65 |    +2.4% |   -0.078 |       -6.1 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      900 |      41 |     515 |        7 |     36 |    64 |    +2.4% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      910 |      42 |     520 |        7 |     36 |    67 |    +2.5% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      912 |      42 |     521 |        7 |     36 |    68 |    +2.5% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      920 |      42 |     526 |        7 |     37 |    69 |    +2.5% |   -0.078 |       -6.0 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      930 |      43 |     532 |        7 |     38 |    71 |    +2.5% |   -0.078 |       -5.9 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      940 |      43 |     537 |        7 |     38 |    76 |    +2.6% |   -0.078 |       -5.9 |    142 | sa13_sr\[6\]$_DFF_P_/D
+      944 |      43 |     538 |        7 |     39 |    78 |    +2.6% |   -0.078 |       -5.9 |    140 | sa13_sr\[6\]$_DFF_P_/D
+      946 |      43 |     539 |        7 |     39 |    78 |    +2.6% |   -0.078 |       -5.9 |    138 | sa13_sr\[6\]$_DFF_P_/D
+      950 |      43 |     541 |        7 |     39 |    79 |    +2.6% |   -0.078 |       -5.8 |    138 | sa00_sr\[7\]$_DFF_P_/D
+      960 |      45 |     545 |        7 |     40 |    82 |    +2.6% |   -0.078 |       -5.7 |    138 | sa00_sr\[7\]$_DFF_P_/D
+      965 |      45 |     550 |        7 |     40 |    82 |    +2.6% |   -0.078 |       -5.6 |    136 | sa00_sr\[7\]$_DFF_P_/D
+      970 |      45 |     553 |        7 |     40 |    83 |    +2.6% |   -0.078 |       -5.5 |    136 | sa00_sr\[7\]$_DFF_P_/D
+      980 |      45 |     561 |        8 |     41 |    83 |    +2.7% |   -0.078 |       -5.5 |    136 | sa00_sr\[7\]$_DFF_P_/D
+      990 |      45 |     566 |        8 |     44 |    85 |    +2.8% |   -0.078 |       -5.5 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1000 |      45 |     571 |        8 |     44 |    90 |    +2.8% |   -0.078 |       -5.4 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1007 |      45 |     571 |        8 |     44 |    89 |    +2.8% |   -0.078 |       -5.4 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1010 |      45 |     573 |        8 |     44 |    89 |    +2.8% |   -0.078 |       -5.4 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1020 |      45 |     579 |        8 |     46 |    91 |    +3.0% |   -0.078 |       -5.5 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1030 |      45 |     586 |        8 |     49 |    91 |    +3.1% |   -0.079 |       -5.4 |    136 | u0.u1.d\[6\]$_DFF_P_/D
+     1033 |      45 |     577 |        8 |     44 |    89 |    +2.8% |   -0.078 |       -5.4 |    136 | sa00_sr\[7\]$_DFF_P_/D
+     1037 |      46 |     578 |        9 |     44 |    89 |    +2.9% |   -0.078 |       -5.4 |    134 | sa00_sr\[7\]$_DFF_P_/D
+     1040 |      46 |     580 |        9 |     44 |    89 |    +2.9% |   -0.078 |       -5.4 |    134 | sa00_sr\[7\]$_DFF_P_/D
+     1046 |      46 |     585 |        9 |     44 |    90 |    +2.9% |   -0.078 |       -5.4 |    132 | sa00_sr\[7\]$_DFF_P_/D
+     1050 |      46 |     588 |        9 |     44 |    90 |    +2.9% |   -0.078 |       -5.4 |    132 | sa00_sr\[7\]$_DFF_P_/D
+     1054 |      46 |     590 |        9 |     46 |    90 |    +2.9% |   -0.076 |       -5.3 |    130 | u0.u1.d\[6\]$_DFF_P_/D
+     1060 |      46 |     594 |        9 |     46 |    91 |    +2.9% |   -0.076 |       -5.3 |    130 | u0.u1.d\[6\]$_DFF_P_/D
+     1070 |      48 |     599 |        9 |     47 |    93 |    +3.0% |   -0.076 |       -5.2 |    130 | u0.u1.d\[6\]$_DFF_P_/D
+     1080 |      49 |     604 |        9 |     48 |    96 |    +3.0% |   -0.076 |       -5.2 |    130 | u0.u1.d\[6\]$_DFF_P_/D
+     1081 |      49 |     605 |        9 |     48 |    96 |    +3.0% |   -0.076 |       -5.2 |    128 | u0.u1.d\[6\]$_DFF_P_/D
+     1082 |      49 |     605 |        9 |     48 |    96 |    +3.0% |   -0.076 |       -5.2 |    127 | u0.u1.d\[6\]$_DFF_P_/D
+     1084 |      49 |     606 |        9 |     48 |    96 |    +3.0% |   -0.076 |       -5.2 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1090 |      49 |     608 |        9 |     49 |    98 |    +3.0% |   -0.076 |       -5.2 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1100 |      49 |     614 |        9 |     53 |    98 |    +3.2% |   -0.078 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1105 |      49 |     610 |        9 |     48 |    98 |    +3.0% |   -0.076 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1110 |      49 |     612 |        9 |     48 |   100 |    +3.0% |   -0.076 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1120 |      50 |     618 |        9 |     49 |   102 |    +3.0% |   -0.076 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1130 |      50 |     622 |        9 |     53 |   104 |    +3.2% |   -0.076 |       -5.2 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1130 |      50 |     620 |        9 |     49 |   103 |    +3.1% |   -0.076 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1140 |      53 |     626 |        9 |     49 |   103 |    +3.1% |   -0.077 |       -5.1 |    125 | sa10_sr\[3\]$_DFF_P_/D
+     1150 |      55 |     631 |       10 |     49 |   105 |    +3.1% |   -0.076 |       -5.1 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1160 |      56 |     636 |       10 |     49 |   109 |    +3.1% |   -0.076 |       -5.0 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1170 |      57 |     641 |       10 |     51 |   111 |    +3.2% |   -0.076 |       -4.9 |    125 | u0.u1.d\[6\]$_DFF_P_/D
+     1174 |      57 |     643 |       10 |     51 |   113 |    +3.2% |   -0.076 |       -4.8 |    123 | u0.u1.d\[6\]$_DFF_P_/D
+     1180 |      58 |     645 |       10 |     51 |   115 |    +3.2% |   -0.076 |       -4.8 |    123 | u0.u1.d\[6\]$_DFF_P_/D
+     1184 |      58 |     647 |       10 |     51 |   117 |    +3.2% |   -0.076 |       -4.8 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1190 |      60 |     649 |       10 |     51 |   118 |    +3.2% |   -0.076 |       -4.8 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1198 |      60 |     653 |       10 |     52 |   119 |    +3.2% |   -0.076 |       -4.7 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1200 |      60 |     654 |       10 |     52 |   119 |    +3.2% |   -0.076 |       -4.7 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1210 |      60 |     659 |       10 |     54 |   122 |    +3.3% |   -0.076 |       -4.6 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1220 |      60 |     662 |       10 |     55 |   128 |    +3.3% |   -0.076 |       -4.6 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1221 |      60 |     662 |       10 |     55 |   128 |    +3.3% |   -0.076 |       -4.6 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1230 |      60 |     667 |       10 |     55 |   131 |    +3.3% |   -0.076 |       -4.5 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1240 |      60 |     675 |       10 |     56 |   132 |    +3.4% |   -0.076 |       -4.5 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1250 |      61 |     680 |       10 |     58 |   134 |    +3.5% |   -0.076 |       -4.4 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1250 |      61 |     677 |       10 |     56 |   133 |    +3.4% |   -0.076 |       -4.4 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1260 |      62 |     685 |       10 |     56 |   133 |    +3.4% |   -0.076 |       -4.2 |    121 | u0.u1.d\[6\]$_DFF_P_/D
+     1266 |      62 |     689 |       10 |     57 |   134 |    +3.5% |   -0.076 |       -4.2 |    119 | u0.u1.d\[6\]$_DFF_P_/D
+     1270 |      62 |     692 |       10 |     57 |   134 |    +3.5% |   -0.076 |       -4.2 |    119 | sa00_sr\[7\]$_DFF_P_/D
+     1279 |      62 |     692 |       10 |     57 |   134 |    +3.5% |   -0.076 |       -4.2 |    119 | sa00_sr\[7\]$_DFF_P_/D
+     1280 |      62 |     692 |       10 |     57 |   134 |    +3.5% |   -0.076 |       -4.2 |    119 | sa00_sr\[7\]$_DFF_P_/D
+     1290 |      63 |     699 |       10 |     57 |   136 |    +3.5% |   -0.076 |       -4.0 |    119 | sa00_sr\[7\]$_DFF_P_/D
+     1297 |      64 |     704 |       10 |     57 |   137 |    +3.5% |   -0.076 |       -3.9 |    117 | sa00_sr\[7\]$_DFF_P_/D
+     1300 |      64 |     706 |       10 |     57 |   137 |    +3.5% |   -0.076 |       -3.9 |    117 | sa00_sr\[7\]$_DFF_P_/D
+     1308 |      64 |     712 |       10 |     57 |   139 |    +3.5% |   -0.076 |       -3.9 |    115 | sa00_sr\[7\]$_DFF_P_/D
+     1310 |      64 |     712 |       11 |     57 |   139 |    +3.6% |   -0.076 |       -3.9 |    115 | sa00_sr\[7\]$_DFF_P_/D
+     1320 |      64 |     718 |       11 |     58 |   142 |    +3.6% |   -0.084 |       -3.9 |    115 | sa31_sr\[2\]$_DFF_P_/D
+     1330 |      65 |     723 |       11 |     60 |   144 |    +3.6% |   -0.076 |       -3.8 |    115 | sa00_sr\[7\]$_DFF_P_/D
+     1335 |      65 |     727 |       11 |     60 |   145 |    +3.6% |   -0.076 |       -3.8 |    113 | sa00_sr\[7\]$_DFF_P_/D
+     1340 |      65 |     728 |       11 |     60 |   148 |    +3.6% |   -0.076 |       -3.8 |    113 | sa00_sr\[7\]$_DFF_P_/D
+     1344 |      65 |     731 |       11 |     60 |   149 |    +3.7% |   -0.076 |       -3.8 |    113 | sa00_sr\[7\]$_DFF_P_/D
+     1345 |      65 |     731 |       11 |     60 |   149 |    +3.7% |   -0.076 |       -3.8 |    112 | sa00_sr\[7\]$_DFF_P_/D
+     1349 |      66 |     733 |       11 |     60 |   149 |    +3.7% |   -0.076 |       -3.8 |    110 | sa00_sr\[7\]$_DFF_P_/D
+     1350 |      66 |     733 |       11 |     60 |   149 |    +3.7% |   -0.076 |       -3.8 |    110 | sa00_sr\[7\]$_DFF_P_/D
+     1352 |      66 |     735 |       11 |     60 |   149 |    +3.7% |   -0.076 |       -3.7 |    108 | sa00_sr\[7\]$_DFF_P_/D
+     1360 |      66 |     738 |       11 |     60 |   153 |    +3.7% |   -0.076 |       -3.8 |    108 | sa00_sr\[7\]$_DFF_P_/D
+     1361 |      66 |     736 |       11 |     60 |   152 |    +3.7% |   -0.076 |       -3.7 |    108 | sa00_sr\[7\]$_DFF_P_/D
+     1363 |      66 |     737 |       11 |     60 |   152 |    +3.7% |   -0.076 |       -3.7 |    106 | sa00_sr\[7\]$_DFF_P_/D
+     1370 |      66 |     740 |       11 |     60 |   155 |    +3.7% |   -0.076 |       -3.7 |    106 | sa00_sr\[7\]$_DFF_P_/D
+     1380 |      67 |     748 |       11 |     61 |   155 |    +3.7% |   -0.076 |       -3.7 |    106 | sa00_sr\[7\]$_DFF_P_/D
+     1390 |      68 |     753 |       11 |     63 |   157 |    +3.8% |   -0.076 |       -3.7 |    106 | sa00_sr\[7\]$_DFF_P_/D
+     1390 |      68 |     753 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.7 |    106 | sa00_sr\[7\]$_DFF_P_/D
+     1397 |      69 |     758 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.6 |    104 | sa00_sr\[7\]$_DFF_P_/D
+     1399 |      70 |     758 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.6 |    102 | sa00_sr\[7\]$_DFF_P_/D
+     1400 |      70 |     758 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.6 |    102 | sa00_sr\[7\]$_DFF_P_/D
+     1401 |      70 |     759 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.6 |    100 | sa00_sr\[7\]$_DFF_P_/D
+     1405 |      70 |     762 |       11 |     62 |   156 |    +3.8% |   -0.076 |       -3.6 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1410 |      71 |     764 |       11 |     62 |   157 |    +3.8% |   -0.076 |       -3.6 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1420 |      71 |     773 |       11 |     63 |   157 |    +3.9% |   -0.076 |       -3.6 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1430 |      72 |     779 |       12 |     63 |   159 |    +3.9% |   -0.076 |       -3.6 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1436 |      72 |     781 |       12 |     63 |   161 |    +3.9% |   -0.076 |       -3.5 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1440 |      72 |     783 |       12 |     63 |   162 |    +3.9% |   -0.076 |       -3.5 |     98 | sa00_sr\[7\]$_DFF_P_/D
+     1447 |      72 |     788 |       12 |     63 |   164 |    +4.0% |   -0.076 |       -3.5 |     96 | sa00_sr\[7\]$_DFF_P_/D
+     1450 |      72 |     789 |       12 |     64 |   164 |    +4.0% |   -0.076 |       -3.5 |     96 | sa00_sr\[7\]$_DFF_P_/D
+     1460 |      72 |     794 |       12 |     65 |   168 |    +4.0% |   -0.076 |       -3.5 |     96 | sa00_sr\[7\]$_DFF_P_/D
+     1469 |      72 |     792 |       12 |     65 |   164 |    +4.0% |   -0.076 |       -3.5 |     96 | sa00_sr\[7\]$_DFF_P_/D
+     1470 |      72 |     792 |       12 |     65 |   164 |    +4.0% |   -0.076 |       -3.5 |     96 | sa00_sr\[7\]$_DFF_P_/D
+     1475 |      72 |     793 |       14 |     65 |   166 |    +4.0% |   -0.076 |       -3.5 |     94 | sa00_sr\[7\]$_DFF_P_/D
+     1480 |      73 |     796 |       14 |     65 |   166 |    +4.0% |   -0.077 |       -3.5 |     94 | sa00_sr\[7\]$_DFF_P_/D
+     1483 |      72 |     794 |       14 |     65 |   166 |    +4.0% |   -0.076 |       -3.5 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1490 |      72 |     797 |       14 |     67 |   167 |    +4.1% |   -0.096 |       -3.7 |     93 | sa03_sr\[6\]$_DFF_P_/D
+     1497 |      72 |     795 |       14 |     65 |   166 |    +4.0% |   -0.076 |       -3.5 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1500 |      72 |     796 |       14 |     65 |   167 |    +4.0% |   -0.076 |       -3.5 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1510 |      72 |     802 |       14 |     66 |   170 |    +4.1% |   -0.076 |       -3.4 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1512 |      72 |     801 |       14 |     66 |   170 |    +4.1% |   -0.076 |       -3.4 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1520 |      72 |     806 |       14 |     67 |   171 |    +4.1% |   -0.076 |       -3.4 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1530 |      72 |     812 |       14 |     70 |   172 |    +4.2% |   -0.076 |       -3.3 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1540 |      73 |     817 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.3 |     93 | sa00_sr\[7\]$_DFF_P_/D
+     1543 |      73 |     820 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.3 |     91 | sa00_sr\[7\]$_DFF_P_/D
+     1544 |      73 |     820 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.3 |     90 | sa00_sr\[7\]$_DFF_P_/D
+     1545 |      73 |     820 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.3 |     89 | sa00_sr\[7\]$_DFF_P_/D
+     1550 |      73 |     824 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.2 |     88 | sa00_sr\[7\]$_DFF_P_/D
+     1550 |      73 |     824 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.2 |     87 | sa00_sr\[7\]$_DFF_P_/D
+     1551 |      73 |     824 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.2 |     86 | sa00_sr\[7\]$_DFF_P_/D
+     1552 |      73 |     824 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.2 |     85 | sa00_sr\[7\]$_DFF_P_/D
+     1555 |      73 |     826 |       14 |     72 |   174 |    +4.3% |   -0.076 |       -3.2 |     83 | sa00_sr\[7\]$_DFF_P_/D
+     1560 |      73 |     828 |       14 |     72 |   176 |    +4.3% |   -0.076 |       -3.2 |     83 | sa00_sr\[7\]$_DFF_P_/D
+     1567 |      73 |     832 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.2 |     83 | sa00_sr\[7\]$_DFF_P_/D
+     1570 |      74 |     833 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     83 | sa00_sr\[7\]$_DFF_P_/D
+     1580 |      74 |     842 |       14 |     72 |   180 |    +4.4% |   -0.077 |       -3.1 |     83 | sa00_sr\[7\]$_DFF_P_/D
+     1589 |      74 |     837 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     82 | sa00_sr\[7\]$_DFF_P_/D
+     1590 |      74 |     837 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     82 | sa00_sr\[7\]$_DFF_P_/D
+     1590 |      74 |     837 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     81 | sa00_sr\[7\]$_DFF_P_/D
+     1591 |      74 |     837 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     80 | sa00_sr\[7\]$_DFF_P_/D
+     1592 |      74 |     837 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.1 |     79 | sa00_sr\[7\]$_DFF_P_/D
+     1600 |      74 |     844 |       14 |     72 |   179 |    +4.4% |   -0.077 |       -3.1 |     79 | sa00_sr\[7\]$_DFF_P_/D
+     1610 |      75 |     850 |       14 |     74 |   180 |    +4.4% |   -0.077 |       -3.1 |     79 | sa00_sr\[7\]$_DFF_P_/D
+     1620 |      75 |     855 |       14 |     74 |   185 |    +4.4% |   -0.077 |       -3.1 |     79 | sa00_sr\[7\]$_DFF_P_/D
+     1623 |      74 |     845 |       14 |     72 |   179 |    +4.3% |   -0.076 |       -3.0 |     78 | sa00_sr\[7\]$_DFF_P_/D
+     1628 |      74 |     849 |       14 |     72 |   179 |    +4.4% |   -0.076 |       -3.0 |     76 | sa00_sr\[7\]$_DFF_P_/D
+     1630 |      74 |     850 |       14 |     72 |   179 |    +4.4% |   -0.076 |       -3.0 |     76 | sa00_sr\[7\]$_DFF_P_/D
+     1634 |      74 |     854 |       14 |     72 |   179 |    +4.4% |   -0.076 |       -2.9 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1640 |      74 |     858 |       14 |     72 |   180 |    +4.4% |   -0.077 |       -2.9 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1650 |      76 |     863 |       14 |     75 |   180 |    +4.4% |   -0.077 |       -2.9 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1660 |      76 |     867 |       14 |     75 |   186 |    +4.4% |   -0.077 |       -2.9 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1662 |      74 |     858 |       14 |     72 |   180 |    +4.4% |   -0.076 |       -2.9 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1670 |      74 |     864 |       14 |     72 |   181 |    +4.4% |   -0.076 |       -2.8 |     74 | sa00_sr\[7\]$_DFF_P_/D
+     1673 |      74 |     865 |       14 |     72 |   183 |    +4.4% |   -0.076 |       -2.8 |     72 | sa00_sr\[7\]$_DFF_P_/D
+     1675 |      74 |     866 |       14 |     72 |   183 |    +4.4% |   -0.076 |       -2.8 |     70 | sa00_sr\[7\]$_DFF_P_/D
+     1677 |      75 |     866 |       14 |     72 |   183 |    +4.4% |   -0.076 |       -2.8 |     68 | sa00_sr\[7\]$_DFF_P_/D
+     1680 |      75 |     868 |       14 |     72 |   183 |    +4.4% |   -0.076 |       -2.9 |     68 | sa00_sr\[7\]$_DFF_P_/D
+     1684 |      75 |     869 |       14 |     72 |   184 |    +4.4% |   -0.076 |       -2.9 |     68 | sa00_sr\[7\]$_DFF_P_/D
+     1690 |      75 |     872 |       14 |     73 |   185 |    +4.4% |   -0.076 |       -2.9 |     68 | sa00_sr\[7\]$_DFF_P_/D
+     1694 |      75 |     875 |       14 |     73 |   186 |    +4.5% |   -0.076 |       -2.9 |     66 | sa00_sr\[7\]$_DFF_P_/D
+     1697 |      75 |     877 |       14 |     73 |   186 |    +4.5% |   -0.076 |       -2.9 |     64 | sa00_sr\[7\]$_DFF_P_/D
+     1700 |      75 |     877 |       16 |     73 |   186 |    +4.5% |   -0.076 |       -2.8 |     64 | sa00_sr\[7\]$_DFF_P_/D
+     1702 |      75 |     879 |       16 |     73 |   186 |    +4.5% |   -0.076 |       -2.8 |     62 | sa00_sr\[7\]$_DFF_P_/D
+     1703 |      75 |     879 |       16 |     73 |   186 |    +4.5% |   -0.076 |       -2.8 |     61 | sa00_sr\[7\]$_DFF_P_/D
+     1704 |      75 |     879 |       16 |     73 |   186 |    +4.5% |   -0.076 |       -2.8 |     60 | sa00_sr\[7\]$_DFF_P_/D
+     1710 |      75 |     882 |       16 |     73 |   188 |    +4.5% |   -0.076 |       -2.8 |     59 | sa00_sr\[7\]$_DFF_P_/D
+     1710 |      75 |     882 |       16 |     73 |   188 |    +4.5% |   -0.076 |       -2.8 |     58 | sa00_sr\[7\]$_DFF_P_/D
+     1712 |      75 |     883 |       16 |     73 |   188 |    +4.5% |   -0.076 |       -2.8 |     56 | sa00_sr\[7\]$_DFF_P_/D
+     1716 |      75 |     884 |       16 |     73 |   190 |    +4.5% |   -0.076 |       -2.8 |     54 | sa00_sr\[7\]$_DFF_P_/D
+     1720 |      76 |     885 |       16 |     73 |   191 |    +4.5% |   -0.076 |       -2.8 |     54 | sa00_sr\[7\]$_DFF_P_/D
+     1725 |      76 |     888 |       16 |     73 |   193 |    +4.5% |   -0.076 |       -2.7 |     52 | sa00_sr\[7\]$_DFF_P_/D
+     1730 |      76 |     892 |       16 |     73 |   193 |    +4.5% |   -0.077 |       -2.7 |     52 | sa00_sr\[7\]$_DFF_P_/D
+     1740 |      76 |     901 |       16 |     74 |   193 |    +4.6% |   -0.077 |       -2.7 |     52 | sa00_sr\[7\]$_DFF_P_/D
+     1749 |      76 |     891 |       16 |     73 |   193 |    +4.5% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1750 |      76 |     891 |       16 |     73 |   193 |    +4.5% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1760 |      78 |     898 |       16 |     73 |   194 |    +4.6% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1770 |      78 |     904 |       16 |     75 |   196 |    +4.6% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1770 |      78 |     904 |       16 |     73 |   196 |    +4.6% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1776 |      78 |     906 |       16 |     73 |   199 |    +4.6% |   -0.076 |       -2.7 |     51 | sa00_sr\[7\]$_DFF_P_/D
+     1778 |      78 |     907 |       16 |     73 |   199 |    +4.6% |   -0.076 |       -2.7 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1780 |      78 |     908 |       16 |     73 |   199 |    +4.6% |   -0.076 |       -2.7 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1790 |      78 |     912 |       16 |     73 |   205 |    +4.6% |   -0.076 |       -2.7 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1791 |      78 |     912 |       16 |     74 |   205 |    +4.7% |   -0.076 |       -2.7 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1800 |      78 |     918 |       16 |     75 |   206 |    +4.7% |   -0.076 |       -2.6 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1802 |      78 |     918 |       16 |     76 |   207 |    +4.7% |   -0.076 |       -2.6 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1810 |      78 |     922 |       16 |     76 |   210 |    +4.7% |   -0.076 |       -2.5 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1820 |      78 |     927 |       16 |     76 |   215 |    +4.8% |   -0.076 |       -2.7 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1828 |      78 |     933 |       16 |     76 |   217 |    +4.8% |   -0.076 |       -2.6 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1830 |      78 |     934 |       16 |     76 |   217 |    +4.8% |   -0.076 |       -2.6 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1840 |      79 |     940 |       16 |     76 |   220 |    +4.8% |   -0.090 |       -2.7 |     49 | sa03_sr\[6\]$_DFF_P_/D
+     1841 |      79 |     938 |       16 |     76 |   219 |    +4.8% |   -0.076 |       -2.6 |     49 | sa00_sr\[7\]$_DFF_P_/D
+     1842 |      79 |     938 |       16 |     76 |   219 |    +4.8% |   -0.076 |       -2.6 |     48 | sa00_sr\[7\]$_DFF_P_/D
+     1846 |      79 |     940 |       16 |     76 |   220 |    +4.8% |   -0.076 |       -2.6 |     46 | sa00_sr\[7\]$_DFF_P_/D
+     1850 |      79 |     943 |       16 |     76 |   220 |    +4.8% |   -0.076 |       -2.6 |     46 | sa00_sr\[7\]$_DFF_P_/D
+     1853 |      79 |     943 |       16 |     76 |   223 |    +4.8% |   -0.076 |       -2.6 |     46 | sa00_sr\[7\]$_DFF_P_/D
+     1854 |      79 |     943 |       16 |     76 |   223 |    +4.8% |   -0.076 |       -2.6 |     45 | sa00_sr\[7\]$_DFF_P_/D
+     1860 |      80 |     947 |       16 |     76 |   223 |    +4.8% |   -0.076 |       -2.6 |     44 | sa00_sr\[7\]$_DFF_P_/D
+     1860 |      80 |     947 |       16 |     76 |   223 |    +4.8% |   -0.076 |       -2.6 |     43 | sa00_sr\[7\]$_DFF_P_/D
+     1863 |      80 |     948 |       16 |     76 |   224 |    +4.8% |   -0.076 |       -2.6 |     41 | sa00_sr\[7\]$_DFF_P_/D
+     1864 |      80 |     948 |       16 |     76 |   224 |    +4.8% |   -0.076 |       -2.6 |     40 | sa00_sr\[7\]$_DFF_P_/D
+     1865 |      80 |     948 |       16 |     76 |   224 |    +4.8% |   -0.076 |       -2.6 |     39 | sa00_sr\[7\]$_DFF_P_/D
+     1870 |      80 |     950 |       16 |     76 |   226 |    +4.8% |   -0.076 |       -2.5 |     39 | sa00_sr\[7\]$_DFF_P_/D
+     1877 |      81 |     953 |       16 |     76 |   228 |    +4.8% |   -0.076 |       -2.5 |     39 | sa00_sr\[7\]$_DFF_P_/D
+     1880 |      81 |     955 |       16 |     76 |   228 |    +4.9% |   -0.076 |       -2.5 |     39 | sa00_sr\[7\]$_DFF_P_/D
+     1882 |      81 |     956 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.5 |     37 | sa00_sr\[7\]$_DFF_P_/D
+     1890 |      82 |     962 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.5 |     37 | sa00_sr\[7\]$_DFF_P_/D
+     1895 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     35 | sa00_sr\[7\]$_DFF_P_/D
+     1900 |      82 |     971 |       16 |     76 |   229 |    +4.9% |   -0.077 |       -2.2 |     35 | sa00_sr\[7\]$_DFF_P_/D
+     1902 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     34 | sa00_sr\[7\]$_DFF_P_/D
+     1903 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     33 | sa00_sr\[7\]$_DFF_P_/D
+     1904 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     32 | sa00_sr\[7\]$_DFF_P_/D
+     1910 |      83 |     967 |       16 |     77 |   232 |    +4.9% |   -0.076 |       -2.2 |     32 | sa00_sr\[7\]$_DFF_P_/D
+     1912 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     32 | sa00_sr\[7\]$_DFF_P_/D
+     1913 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     31 | sa00_sr\[7\]$_DFF_P_/D
+     1919 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     30 | sa00_sr\[7\]$_DFF_P_/D
+     1920 |      82 |     967 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     30 | sa00_sr\[7\]$_DFF_P_/D
+     1924 |      82 |     971 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.2 |     28 | sa00_sr\[7\]$_DFF_P_/D
+     1930 |      83 |     975 |       16 |     76 |   229 |    +4.9% |   -0.077 |       -2.1 |     28 | sa00_sr\[7\]$_DFF_P_/D
+     1934 |      82 |     972 |       16 |     76 |   229 |    +4.9% |   -0.076 |       -2.1 |     27 | sa00_sr\[7\]$_DFF_P_/D
+     1940 |      82 |     974 |       16 |     76 |   232 |    +4.9% |   -0.076 |       -2.1 |     27 | sa00_sr\[7\]$_DFF_P_/D
+     1945 |      82 |     974 |       16 |     77 |   232 |    +4.9% |   -0.076 |       -2.1 |     27 | sa00_sr\[7\]$_DFF_P_/D
+     1950 |      82 |     978 |       16 |     77 |   232 |    +5.0% |   -0.076 |       -2.2 |     27 | sa03_sr\[6\]$_DFF_P_/D
+     1960 |      82 |     983 |       16 |     78 |   236 |    +5.0% |   -0.095 |       -2.4 |     27 | sa03_sr\[6\]$_DFF_P_/D
+     1960 |      82 |     977 |       16 |     77 |   232 |    +5.0% |   -0.076 |       -2.1 |     27 | sa00_sr\[7\]$_DFF_P_/D
+     1969 |      82 |     977 |       16 |     77 |   232 |    +5.0% |   -0.076 |       -2.1 |     26 | sa00_sr\[7\]$_DFF_P_/D
+     1970 |      82 |     977 |       16 |     77 |   232 |    +5.0% |   -0.076 |       -2.1 |     26 | sa00_sr\[7\]$_DFF_P_/D
+     1971 |      83 |     977 |       16 |     77 |   232 |    +5.0% |   -0.076 |       -2.1 |     24 | sa00_sr\[7\]$_DFF_P_/D
+     1975 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     22 | sa00_sr\[7\]$_DFF_P_/D
+     1976 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     21 | sa00_sr\[7\]$_DFF_P_/D
+     1977 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     20 | sa00_sr\[7\]$_DFF_P_/D
+     1978 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     19 | sa00_sr\[7\]$_DFF_P_/D
+     1979 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     18 | sa00_sr\[7\]$_DFF_P_/D
+     1980 |      83 |     978 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     18 | sa00_sr\[7\]$_DFF_P_/D
+     1983 |      83 |     980 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     18 | sa00_sr\[7\]$_DFF_P_/D
+     1984 |      83 |     980 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     17 | sa00_sr\[7\]$_DFF_P_/D
+     1986 |      84 |     980 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     15 | sa00_sr\[7\]$_DFF_P_/D
+     1987 |      84 |     980 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     14 | sa00_sr\[7\]$_DFF_P_/D
+     1988 |      84 |     980 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     13 | sa00_sr\[7\]$_DFF_P_/D
+     1990 |      84 |     981 |       17 |     78 |   232 |    +5.0% |   -0.076 |       -2.0 |     13 | sa00_sr\[7\]$_DFF_P_/D
+     2000 |      84 |     988 |       17 |     78 |   235 |    +5.0% |   -0.083 |       -2.1 |     13 | sa03_sr\[6\]$_DFF_P_/D
+     2002 |      84 |     983 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     13 | sa00_sr\[7\]$_DFF_P_/D
+     2003 |      84 |     983 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     12 | sa00_sr\[7\]$_DFF_P_/D
+     2004 |      84 |     983 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     11 | sa00_sr\[7\]$_DFF_P_/D
+     2006 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      9 | sa00_sr\[7\]$_DFF_P_/D
+     2007 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      8 | sa00_sr\[7\]$_DFF_P_/D
+     2008 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      7 | sa00_sr\[7\]$_DFF_P_/D
+     2009 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      6 | sa00_sr\[7\]$_DFF_P_/D
+     2010 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      6 | sa00_sr\[7\]$_DFF_P_/D
+     2010 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      5 | sa00_sr\[7\]$_DFF_P_/D
+     2011 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      4 | sa00_sr\[7\]$_DFF_P_/D
+     2012 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      3 | sa00_sr\[7\]$_DFF_P_/D
+     2013 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      2 | sa00_sr\[7\]$_DFF_P_/D
+     2014 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      1 | sa00_sr\[7\]$_DFF_P_/D
+     2015 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      0 | sa00_sr\[7\]$_DFF_P_/D
+     2016 |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |      0 | sa00_sr\[7\]$_DFF_P_/D
+    2017* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2018* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2019* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2020* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2020* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2021* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2022* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2023* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2024* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2025* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2026* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2027* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2028* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2029* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2030* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2030* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2031* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2032* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2033* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2034* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2035* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2036* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2037* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2038* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2039* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2040* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2040* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2041* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2042* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2043* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2044* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2045* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2046* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2047* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2048* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2049* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2050* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2050* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2051* |      84 |     984 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2056* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2057* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2058* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2059* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2060* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2060* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2061* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2062* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2063* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2064* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2065* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2066* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2067* |      84 |     988 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2069* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2070* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2070* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2071* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2072* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2073* |      84 |     989 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -2.0 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2075* |      84 |     990 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2076* |      84 |     990 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2078* |      84 |     991 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2079* |      84 |     991 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2080* |      84 |     991 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2080* |      84 |     991 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2081* |      84 |     991 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2084* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2085* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2086* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2087* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2088* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2089* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2090* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2090* |      84 |     993 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     75 | sa00_sr\[7\]$_DFF_P_/D
+    2092* |      84 |     994 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     73 | sa00_sr\[7\]$_DFF_P_/D
+    2093* |      84 |     994 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     73 | sa00_sr\[7\]$_DFF_P_/D
+    2094* |      84 |     994 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     73 | sa00_sr\[7\]$_DFF_P_/D
+    2096* |      84 |     995 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     71 | sa00_sr\[7\]$_DFF_P_/D
+    2097* |      84 |     995 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     71 | sa00_sr\[7\]$_DFF_P_/D
+    2098* |      84 |     995 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     70 | sa00_sr\[7\]$_DFF_P_/D
+    2100* |      84 |     996 |       17 |     78 |   234 |    +5.0% |   -0.076 |       -1.9 |     69 | sa00_sr\[7\]$_DFF_P_/D
+    2102* |      84 |     997 |       17 |     78 |   234 |    +5.1% |   -0.076 |       -1.9 |     67 | sa00_sr\[7\]$_DFF_P_/D
+    2103* |      84 |     997 |       17 |     78 |   234 |    +5.1% |   -0.076 |       -1.9 |     67 | sa00_sr\[7\]$_DFF_P_/D
+    2105* |      84 |     998 |       17 |     78 |   234 |    +5.1% |   -0.076 |       -1.9 |     65 | sa00_sr\[7\]$_DFF_P_/D
+    final |      84 |     998 |       17 |     78 |   234 |    +5.1% |   -0.076 |       -1.9 |     65 | sa00_sr\[7\]$_DFF_P_/D
+--------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0059] Removed 84 buffers.
+[INFO RSZ-0045] Inserted 16 buffers, 1 to split loads.
+[INFO RSZ-0041] Resized 998 instances.
+[INFO RSZ-0043] Swapped pins on 234 instances.
+[INFO RSZ-0049] Cloned 78 instances.
+[WARNING RSZ-0062] Unable to repair all setup violations.
+[INFO RSZ-0033] No hold violations found.
+Took 26 seconds: repair_timing -verbose -setup_margin 0 -repair_tns 100
+Default units for flow
+ time 1ns
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 21470 u^2 72% utilization.
+Elapsed time: 0:28.81[h:]min:sec. CPU time: user 28.70 sys 0.05 (99%). Peak memory: 193524KB.

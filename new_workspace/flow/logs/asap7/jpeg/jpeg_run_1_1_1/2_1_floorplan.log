@@ -1,0 +1,34 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef, created 24 layers, 9 vias
+[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.lef, created 212 library cells
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+Warning: There is 1 unconstrained endpoint.
+number instances in verilog is 56667
+[WARNING IFP-0028] Core area lower left (2.000, 2.000) snapped to (2.052, 2.160).
+[INFO IFP-0001] Added 327 rows of 3275 site asap7sc7p5t.
+repair_timing -verbose -setup_margin 0 -repair_tns 100
+[WARNING RSZ-0021] no estimated parasitics. Using wire load models.
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0033] No hold violations found.
+Default units for flow
+ time 1ps
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1pW
+ distance 1um
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 6261 u^2 40% utilization.
+Elapsed time: 0:35.12[h:]min:sec. CPU time: user 34.72 sys 0.34 (99%). Peak memory: 469124KB.

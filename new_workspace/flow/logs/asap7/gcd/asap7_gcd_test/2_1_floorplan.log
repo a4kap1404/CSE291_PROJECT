@@ -10,7 +10,8 @@ Components of this program may be licensed under more restrictive licenses which
 Floorplan check_setup
 --------------------------------------------------------------------------
 number instances in verilog is 315
-[INFO IFP-0001] Added 52 rows of 260 site asap7sc7p5t.
+[WARNING IFP-0028] Core area lower left (1.000, 1.000) snapped to (1.026, 1.080).
+[INFO IFP-0001] Added 21 rows of 216 site asap7sc7p5t.
 repair_timing -verbose -setup_margin 0 -repair_tns 100 -skip_last_gasp
 [WARNING RSZ-0021] no estimated parasitics. Using wire load models.
 [INFO RSZ-0094] Found 1 endpoints with setup violations.
@@ -63,5 +64,5 @@ Report metrics stage 2, floorplan final...
 ==========================================================================
 floorplan final report_design_area
 --------------------------------------------------------------------------
-Design area 38 u^2 19% utilization.
-Elapsed time: 0:01.14[h:]min:sec. CPU time: user 1.10 sys 0.07 (102%). Peak memory: 214408KB.
+Design area 38 u^2 57% utilization.
+Elapsed time: 0:03.89[h:]min:sec. CPU time: user 3.45 sys 0.41 (99%). Peak memory: 214752KB.

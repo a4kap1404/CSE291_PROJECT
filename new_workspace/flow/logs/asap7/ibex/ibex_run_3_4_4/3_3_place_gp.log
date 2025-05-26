@@ -1,0 +1,345 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.054  0.270 ) um
+[INFO GPL-0004] CoreBBox: (  2.052  2.160 ) ( 75.600 53.460 ) um
+[INFO GPL-0006] NumInstances:             19271
+[INFO GPL-0007] NumPlaceInstances:        18699
+[INFO GPL-0008] NumFixedInstances:          572
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                  19431
+[INFO GPL-0011] NumPins:                  69487
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 77.636 55.545 ) um
+[INFO GPL-0013] CoreBBox: (  2.052  2.160 ) ( 75.600 53.460 ) um
+[INFO GPL-0016] CoreArea:              3773.012 um^2
+[INFO GPL-0017] NonPlaceInstsArea:       16.680 um^2
+[INFO GPL-0018] PlaceInstsArea:        2323.206 um^2
+[INFO GPL-0019] Util:                    61.848 %
+[INFO GPL-0020] StdInstsArea:          2323.206 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:     31217
+[INFO GPL-0032] FillerInit:NumGNets:      19431
+[INFO GPL-0033] FillerInit:NumGPins:      69487
+[INFO GPL-0023] TargetDensity:            1.000
+[INFO GPL-0024] AvrgPlaceInstArea:        0.124 um^2
+[INFO GPL-0025] IdealBinArea:             0.124 um^2
+[INFO GPL-0026] IdealBinCnt:              30368
+[INFO GPL-0027] TotalBinArea:          3773.012 um^2
+[INFO GPL-0028] BinCnt:       128    128
+[INFO GPL-0029] BinSize: (  0.575  0.401 )
+[INFO GPL-0030] NumBins: 16384
+Placement density is 0.8192386424541473, computed from PLACE_DENSITY_LB_ADDON 0.50 and lower bound 0.6184772849082947
+global_placement -density 0.8192386424541473 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.054  0.270 ) um
+[INFO GPL-0004] CoreBBox: (  2.052  2.160 ) ( 75.600 53.460 ) um
+[INFO GPL-0006] NumInstances:             19271
+[INFO GPL-0007] NumPlaceInstances:        18699
+[INFO GPL-0008] NumFixedInstances:          572
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                  19431
+[INFO GPL-0011] NumPins:                  69487
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 77.636 55.545 ) um
+[INFO GPL-0013] CoreBBox: (  2.052  2.160 ) ( 75.600 53.460 ) um
+[INFO GPL-0016] CoreArea:              3773.012 um^2
+[INFO GPL-0017] NonPlaceInstsArea:       16.680 um^2
+[INFO GPL-0018] PlaceInstsArea:        2323.206 um^2
+[INFO GPL-0019] Util:                    61.848 %
+[INFO GPL-0020] StdInstsArea:          2323.206 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[InitialPlace]  Iter: 1 CG residual: 0.00009520 HPWL: 91729611
+[InitialPlace]  Iter: 2 CG residual: 0.00000323 HPWL: 30728669
+[InitialPlace]  Iter: 3 CG residual: 0.00000105 HPWL: 30261254
+[InitialPlace]  Iter: 4 CG residual: 0.00000224 HPWL: 30259949
+[InitialPlace]  Iter: 5 CG residual: 0.00000167 HPWL: 30128529
+[INFO GPL-0031] FillerInit:NumGCells:     25286
+[INFO GPL-0032] FillerInit:NumGNets:      19431
+[INFO GPL-0033] FillerInit:NumGPins:      69487
+[INFO GPL-0023] TargetDensity:            0.819
+[INFO GPL-0024] AvrgPlaceInstArea:        0.124 um^2
+[INFO GPL-0025] IdealBinArea:             0.152 um^2
+[INFO GPL-0026] IdealBinCnt:              24878
+[INFO GPL-0027] TotalBinArea:          3773.012 um^2
+[INFO GPL-0028] BinCnt:       128    128
+[INFO GPL-0029] BinSize: (  0.575  0.401 )
+[INFO GPL-0030] NumBins: 16384
+[NesterovSolve] Iter:    1 overflow: 0.969 HPWL: 24738977
+[NesterovSolve] Iter:   10 overflow: 0.946 HPWL: 21629097
+[NesterovSolve] Iter:   20 overflow: 0.929 HPWL: 23665754
+[NesterovSolve] Iter:   30 overflow: 0.921 HPWL: 24460413
+[NesterovSolve] Iter:   40 overflow: 0.916 HPWL: 24763679
+[NesterovSolve] Iter:   50 overflow: 0.915 HPWL: 24919185
+[NesterovSolve] Iter:   60 overflow: 0.914 HPWL: 24909063
+[NesterovSolve] Iter:   70 overflow: 0.914 HPWL: 24896292
+[NesterovSolve] Iter:   80 overflow: 0.913 HPWL: 24917147
+[NesterovSolve] Iter:   90 overflow: 0.913 HPWL: 24921819
+[NesterovSolve] Iter:  100 overflow: 0.914 HPWL: 24944231
+[NesterovSolve] Iter:  110 overflow: 0.913 HPWL: 25052437
+[NesterovSolve] Iter:  120 overflow: 0.912 HPWL: 25355955
+[NesterovSolve] Iter:  130 overflow: 0.911 HPWL: 25964642
+[NesterovSolve] Iter:  140 overflow: 0.908 HPWL: 26795417
+[NesterovSolve] Iter:  150 overflow: 0.905 HPWL: 27891910
+[NesterovSolve] Iter:  160 overflow: 0.899 HPWL: 29468657
+[NesterovSolve] Iter:  170 overflow: 0.891 HPWL: 31581151
+[NesterovSolve] Iter:  180 overflow: 0.880 HPWL: 34151042
+[NesterovSolve] Iter:  190 overflow: 0.865 HPWL: 36900824
+[NesterovSolve] Iter:  200 overflow: 0.846 HPWL: 39702991
+[NesterovSolve] Iter:  210 overflow: 0.822 HPWL: 42986435
+[NesterovSolve] Iter:  220 overflow: 0.792 HPWL: 46090635
+[INFO GPL-0100] Timing-driven iteration 1/5, virtual: true.
+[INFO GPL-0101]    Iter: 222, overflow: 0.785, keep rsz at: 0.3, HPWL: 46677640
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |     19431
+    final |     +4.2% |    2871 |      12 |             1 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1 slew violations.
+[INFO RSZ-0039] Resized 2871 instances.
+[INFO RSZ-0038] Inserted 12 buffers in 1 nets.
+[INFO GPL-0106] Timing-driven: worst slack -1.99e-10
+[INFO GPL-0103] Timing-driven: weighted 1942 nets.
+[NesterovSolve] Iter:  230 overflow: 0.761 HPWL: 48139194
+[NesterovSolve] Iter:  240 overflow: 0.728 HPWL: 51326394
+[NesterovSolve] Iter:  250 overflow: 0.687 HPWL: 54828743
+[NesterovSolve] Iter:  260 overflow: 0.643 HPWL: 58159365
+[INFO GPL-0100] Timing-driven iteration 2/5, virtual: true.
+[INFO GPL-0101]    Iter: 262, overflow: 0.634, keep rsz at: 0.3, HPWL: 58859092
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |     19431
+    final |     +4.8% |    2959 |      14 |             1 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 1 slew violations.
+[INFO RSZ-0039] Resized 2959 instances.
+[INFO RSZ-0038] Inserted 14 buffers in 1 nets.
+[INFO GPL-0106] Timing-driven: worst slack -2.73e-10
+[INFO GPL-0103] Timing-driven: weighted 1940 nets.
+[INFO GPL-0088] Routability snapshot saved at iter = 268
+[NesterovSolve] Iter:  270 overflow: 0.594 HPWL: 61511318
+[NesterovSolve] Iter:  280 overflow: 0.533 HPWL: 65079225
+[NesterovSolve] Iter:  290 overflow: 0.471 HPWL: 68966650
+[NesterovSolve] Iter:  300 overflow: 0.418 HPWL: 72320776
+[NesterovSolve] Iter:  310 overflow: 0.372 HPWL: 74125379
+[NesterovSolve] Iter:  320 overflow: 0.325 HPWL: 75823548
+[INFO GPL-0075] Routability iteration: 1
+[INFO GPL-0036] TileBBox: (    0    0 ) (  540  540 ) DBU
+[INFO GPL-0038] TileCnt:     143  102
+[INFO GPL-0040] NumTiles: 14586
+[INFO GPL-0081] TotalRouteOverflow: 148.6961
+[INFO GPL-0082] OverflowTileCnt: 1534
+[INFO GPL-0083] 0.5%RC: 1.3097
+[INFO GPL-0084] 1.0%RC: 1.2721
+[INFO GPL-0085] 2.0%RC: 1.2283
+[INFO GPL-0086] 5.0%RC: 1.1613
+[INFO GPL-0087] FinalRC: 1.2909286
+[INFO GPL-0078] FinalRC lower than minRC (1000000015047466219876688855040.0000), min RC updated.
+[INFO GPL-0045] InflatedAreaDelta:      205.697 um^2 (+8.85%)
+[INFO GPL-0046] TargetDensity:            0.819
+[INFO GPL-0049] WhiteSpaceArea:        3756.333 um^2
+[INFO GPL-0050] NesterovInstsArea:     2323.206 um^2
+[INFO GPL-0051] TotalFillerArea:        754.127 um^2
+[INFO GPL-0052] TotalGCellsArea:       3077.333 um^2
+[INFO GPL-0053] ExpectedGCellsArea:    3283.030 um^2
+[INFO GPL-0054] NewTargetDensity:         0.874
+[INFO GPL-0055] NewWhiteSpaceArea:     3756.333 um^2
+[INFO GPL-0056] MovableArea:           3283.031 um^2
+[INFO GPL-0057] NewNesterovInstArea:   2528.904 um^2
+[INFO GPL-0058] NewTotalFillerArea:     754.127 um^2
+[INFO GPL-0059] NewTotalGCellsArea:    3283.031 um^2
+[INFO GPL-0089] Routability: revert back to snapshot
+[NesterovSolve] Iter:  330 overflow: 0.606 HPWL: 61511318
+[NesterovSolve] Iter:  340 overflow: 0.528 HPWL: 68148593
+[NesterovSolve] Iter:  350 overflow: 0.490 HPWL: 71507702
+[NesterovSolve] Iter:  360 overflow: 0.444 HPWL: 73587181
+[NesterovSolve] Iter:  370 overflow: 0.401 HPWL: 74903256
+[NesterovSolve] Iter:  380 overflow: 0.362 HPWL: 76914661
+[NesterovSolve] Iter:  390 overflow: 0.325 HPWL: 78505257
+[INFO GPL-0075] Routability iteration: 2
+[INFO GPL-0036] TileBBox: (    0    0 ) (  540  540 ) DBU
+[INFO GPL-0038] TileCnt:     143  102
+[INFO GPL-0040] NumTiles: 14586
+[INFO GPL-0081] TotalRouteOverflow: 114.8440
+[INFO GPL-0082] OverflowTileCnt: 1562
+[INFO GPL-0083] 0.5%RC: 1.2225
+[INFO GPL-0084] 1.0%RC: 1.1997
+[INFO GPL-0085] 2.0%RC: 1.1682
+[INFO GPL-0086] 5.0%RC: 1.1211
+[INFO GPL-0087] FinalRC: 1.2111392
+[INFO GPL-0078] FinalRC lower than minRC (1.2909), min RC updated.
+[INFO GPL-0045] InflatedAreaDelta:      150.515 um^2 (+5.95%)
+[INFO GPL-0046] TargetDensity:            0.874
+[INFO GPL-0049] WhiteSpaceArea:        3756.333 um^2
+[INFO GPL-0050] NesterovInstsArea:     2528.904 um^2
+[INFO GPL-0051] TotalFillerArea:        754.127 um^2
+[INFO GPL-0052] TotalGCellsArea:       3283.031 um^2
+[INFO GPL-0053] ExpectedGCellsArea:    3433.546 um^2
+[INFO GPL-0054] NewTargetDensity:         0.914
+[INFO GPL-0055] NewWhiteSpaceArea:     3756.333 um^2
+[INFO GPL-0056] MovableArea:           3433.546 um^2
+[INFO GPL-0057] NewNesterovInstArea:   2679.419 um^2
+[INFO GPL-0058] NewTotalFillerArea:     754.127 um^2
+[INFO GPL-0059] NewTotalGCellsArea:    3433.546 um^2
+[INFO GPL-0089] Routability: revert back to snapshot
+[NesterovSolve] Iter:  400 overflow: 0.605 HPWL: 62515669
+[NesterovSolve] Iter:  410 overflow: 0.518 HPWL: 71315414
+[NesterovSolve] Iter:  420 overflow: 0.483 HPWL: 74831313
+[NesterovSolve] Iter:  430 overflow: 0.437 HPWL: 76312187
+[NesterovSolve] Iter:  440 overflow: 0.397 HPWL: 77198672
+[NesterovSolve] Iter:  450 overflow: 0.356 HPWL: 79630504
+[NesterovSolve] Iter:  460 overflow: 0.321 HPWL: 80824803
+[INFO GPL-0075] Routability iteration: 3
+[INFO GPL-0036] TileBBox: (    0    0 ) (  540  540 ) DBU
+[INFO GPL-0038] TileCnt:     143  102
+[INFO GPL-0040] NumTiles: 14586
+[INFO GPL-0081] TotalRouteOverflow: 102.7998
+[INFO GPL-0082] OverflowTileCnt: 1594
+[INFO GPL-0083] 0.5%RC: 1.1984
+[INFO GPL-0084] 1.0%RC: 1.1744
+[INFO GPL-0085] 2.0%RC: 1.1485
+[INFO GPL-0086] 5.0%RC: 1.1082
+[INFO GPL-0087] FinalRC: 1.1863782
+[INFO GPL-0078] FinalRC lower than minRC (1.2111), min RC updated.
+[INFO GPL-0045] InflatedAreaDelta:      140.398 um^2 (+5.24%)
+[INFO GPL-0046] TargetDensity:            0.914
+[INFO GPL-0049] WhiteSpaceArea:        3756.333 um^2
+[INFO GPL-0050] NesterovInstsArea:     2679.419 um^2
+[INFO GPL-0051] TotalFillerArea:        754.127 um^2
+[INFO GPL-0052] TotalGCellsArea:       3433.546 um^2
+[INFO GPL-0053] ExpectedGCellsArea:    3573.943 um^2
+[INFO GPL-0054] NewTargetDensity:         0.951
+[INFO GPL-0055] NewWhiteSpaceArea:     3756.333 um^2
+[INFO GPL-0056] MovableArea:           3573.943 um^2
+[INFO GPL-0057] NewNesterovInstArea:   2819.817 um^2
+[INFO GPL-0058] NewTotalFillerArea:     754.127 um^2
+[INFO GPL-0059] NewTotalGCellsArea:    3573.943 um^2
+[INFO GPL-0089] Routability: revert back to snapshot
+[NesterovSolve] Iter:  470 overflow: 0.570 HPWL: 67981283
+[NesterovSolve] Iter:  480 overflow: 0.511 HPWL: 75232665
+[NesterovSolve] Iter:  490 overflow: 0.466 HPWL: 78276267
+[NesterovSolve] Iter:  500 overflow: 0.422 HPWL: 78494896
+[NesterovSolve] Iter:  510 overflow: 0.384 HPWL: 79382330
+[NesterovSolve] Iter:  520 overflow: 0.347 HPWL: 81756189
+[NesterovSolve] Iter:  530 overflow: 0.312 HPWL: 82272559
+[INFO GPL-0075] Routability iteration: 4
+[INFO GPL-0036] TileBBox: (    0    0 ) (  540  540 ) DBU
+[INFO GPL-0038] TileCnt:     143  102
+[INFO GPL-0040] NumTiles: 14586
+[INFO GPL-0081] TotalRouteOverflow: 84.3608
+[INFO GPL-0082] OverflowTileCnt: 1428
+[INFO GPL-0083] 0.5%RC: 1.2030
+[INFO GPL-0084] 1.0%RC: 1.1725
+[INFO GPL-0085] 2.0%RC: 1.1405
+[INFO GPL-0086] 5.0%RC: 1.0965
+[INFO GPL-0087] FinalRC: 1.1877451
+[INFO GPL-0079] MinRC (1.1863782) violation occurred, total count: 1.
+[INFO GPL-0045] InflatedAreaDelta:      121.642 um^2 (+4.31%)
+[INFO GPL-0046] TargetDensity:            0.951
+[INFO GPL-0049] WhiteSpaceArea:        3756.333 um^2
+[INFO GPL-0050] NesterovInstsArea:     2819.817 um^2
+[INFO GPL-0051] TotalFillerArea:        754.127 um^2
+[INFO GPL-0052] TotalGCellsArea:       3573.943 um^2
+[INFO GPL-0053] ExpectedGCellsArea:    3695.585 um^2
+[INFO GPL-0054] NewTargetDensity:         0.984
+[INFO GPL-0055] NewWhiteSpaceArea:     3756.333 um^2
+[INFO GPL-0056] MovableArea:           3695.585 um^2
+[INFO GPL-0057] NewNesterovInstArea:   2941.458 um^2
+[INFO GPL-0058] NewTotalFillerArea:     754.126 um^2
+[INFO GPL-0059] NewTotalGCellsArea:    3695.585 um^2
+[INFO GPL-0089] Routability: revert back to snapshot
+[NesterovSolve] Iter:  540 overflow: 0.535 HPWL: 72784573
+[NesterovSolve] Iter:  550 overflow: 0.502 HPWL: 78852668
+[NesterovSolve] Iter:  560 overflow: 0.454 HPWL: 80707394
+[NesterovSolve] Iter:  570 overflow: 0.412 HPWL: 80049015
+[NesterovSolve] Iter:  580 overflow: 0.372 HPWL: 81759724
+[NesterovSolve] Iter:  590 overflow: 0.336 HPWL: 83583240
+[NesterovSolve] Iter:  600 overflow: 0.304 HPWL: 83516564
+[INFO GPL-0075] Routability iteration: 5
+[INFO GPL-0036] TileBBox: (    0    0 ) (  540  540 ) DBU
+[INFO GPL-0038] TileCnt:     143  102
+[INFO GPL-0040] NumTiles: 14586
+[INFO GPL-0081] TotalRouteOverflow: 70.1820
+[INFO GPL-0082] OverflowTileCnt: 1334
+[INFO GPL-0083] 0.5%RC: 1.1736
+[INFO GPL-0084] 1.0%RC: 1.1483
+[INFO GPL-0085] 2.0%RC: 1.1216
+[INFO GPL-0086] 5.0%RC: 1.0824
+[INFO GPL-0087] FinalRC: 1.1609306
+[INFO GPL-0078] FinalRC lower than minRC (1.1864), min RC updated.
+[INFO GPL-0045] InflatedAreaDelta:      104.731 um^2 (+3.56%)
+[INFO GPL-0046] TargetDensity:            0.984
+Revert Routability Procedure. Target density higher than max, or minRC max violations.
+[INFO GPL-0080] minRcViolatedCnt: 0
+[INFO GPL-0047] SavedMinRC: 1.1609
+[INFO GPL-0048] SavedTargetDensity: 0.9838
+[INFO GPL-0089] Routability: revert back to snapshot
+[NesterovSolve] Iter:  610 overflow: 0.513 HPWL: 74971447
+[NesterovSolve] Iter:  620 overflow: 0.488 HPWL: 79633916
+[NesterovSolve] Iter:  630 overflow: 0.440 HPWL: 80724608
+[NesterovSolve] Iter:  640 overflow: 0.398 HPWL: 80126578
+[NesterovSolve] Iter:  650 overflow: 0.362 HPWL: 82616095
+[NesterovSolve] Iter:  660 overflow: 0.328 HPWL: 83607304
+[NesterovSolve] Iter:  670 overflow: 0.292 HPWL: 83607356
+[INFO GPL-0100] Timing-driven iteration 3/5, virtual: false.
+[INFO GPL-0101]    Iter: 673, overflow: 0.284, keep rsz at: 0.3, HPWL: 83813316
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |     19431
+    final |     +6.1% |    3161 |      20 |             2 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 2 slew violations.
+[INFO RSZ-0039] Resized 3161 instances.
+[INFO RSZ-0038] Inserted 20 buffers in 2 nets.
+[INFO GPL-0106] Timing-driven: worst slack -2.16e-10
+[INFO GPL-0103] Timing-driven: weighted 1942 nets.
+[INFO GPL-0107] Timing-driven: repair_design delta area: 73.029 um^2 (+2.48%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 20 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 20
+[INFO GPL-0110] Timing-driven: new target density: 1.0032693
+[NesterovSolve] Iter:  680 overflow: 0.260 HPWL: 82437459
+[NesterovSolve] Iter:  690 overflow: 0.229 HPWL: 82607634
+[INFO GPL-0100] Timing-driven iteration 4/5, virtual: false.
+[INFO GPL-0101]    Iter: 699, overflow: 0.203, keep rsz at: 0.3, HPWL: 82687985
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |     19431
+    final |     +0.8% |     433 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 433 instances.
+[INFO GPL-0106] Timing-driven: worst slack -2.07e-10
+[INFO GPL-0103] Timing-driven: weighted 1942 nets.
+[INFO GPL-0107] Timing-driven: repair_design delta area: 15.923 um^2 (+0.53%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 1.0075083
+[NesterovSolve] Iter:  700 overflow: 0.200 HPWL: 82718505
+[NesterovSolve] Iter:  710 overflow: 0.176 HPWL: 82934116
+[NesterovSolve] Iter:  720 overflow: 0.153 HPWL: 83045028
+[INFO GPL-0100] Timing-driven iteration 5/5, virtual: false.
+[INFO GPL-0101]    Iter: 725, overflow: 0.143, keep rsz at: 0.3, HPWL: 83079781
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |     19431
+    final |     +0.1% |     172 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 172 instances.
+[INFO GPL-0106] Timing-driven: worst slack -2.08e-10
+[INFO GPL-0103] Timing-driven: weighted 1942 nets.
+[INFO GPL-0107] Timing-driven: repair_design delta area: 2.807 um^2 (+0.09%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 1.0082555
+[NesterovSolve] Iter:  730 overflow: 0.133 HPWL: 83135057
+[NesterovSolve] Iter:  740 overflow: 0.115 HPWL: 83240408
+[NesterovSolve] Iter:  750 overflow: 0.099 HPWL: 83338156
+[NesterovSolve] Finished with Overflow: 0.099427
+Took 64 seconds: global_placement -density 0.8192386424541473 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 2486 u^2 66% utilization.
+Elapsed time: 1:19.74[h:]min:sec. CPU time: user 519.96 sys 2.62 (655%). Peak memory: 729788KB.

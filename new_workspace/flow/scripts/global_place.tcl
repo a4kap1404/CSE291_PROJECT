@@ -10,15 +10,15 @@ fast_route
 set global_placement_args {}
 
 # Parameters for routability mode in global placement
-#append_env_var global_placement_args GPL_ROUTABILITY_DRIVEN -routability_driven 0
+append_env_var global_placement_args GPL_ROUTABILITY_DRIVEN -routability_driven 0
 
 # Parameters for timing driven mode in global placement
-#if {$::env(GPL_TIMING_DRIVEN)} {
-#  lappend global_placement_args {-timing_driven}
-#  if {[info exists ::env(GPL_KEEP_OVERFLOW)]} {
-#    lappend global_placement_args -keep_resize_below_overflow $::env(GPL_KEEP_OVERFLOW)
-#  }
-#}
+if {$::env(GPL_TIMING_DRIVEN)} {
+  lappend global_placement_args {-timing_driven}
+  if {[info exists ::env(GPL_KEEP_OVERFLOW)]} {
+    lappend global_placement_args -keep_resize_below_overflow $::env(GPL_KEEP_OVERFLOW)
+  }
+}
 
 proc do_placement {global_placement_args} {
   set all_args [concat [list -density [place_density_with_lb_addon] \

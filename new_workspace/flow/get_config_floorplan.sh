@@ -3,8 +3,8 @@
 counter_i=0.5 # aspect ratio
 counter_j=40 # utilization
 counter_k=0.2 # place density
-DESIGN=gcd
-tech_node=asap7
+DESIGN=swerv_wrapper
+tech_node=nangate45
 
 base_config=./designs/$tech_node/$DESIGN/config.mk
 output_dir=./designs/$tech_node/$DESIGN/configs
@@ -14,20 +14,20 @@ mkdir -p "$output_dir"
 MAX_JOBS=1  # Adjust based on your CPU/core limits
 job_count=0
 
-for i in $(seq 1 5); do
+for i in $(seq 1 1); do #5
     formatted_counter_i=$(printf "%.2f" "$counter_i")
-    for j in $(seq 1 5); do
+    for j in $(seq 1 1); do #5
         formatted_counter_j=$(printf "%.2f" "$counter_j")
-            for k in $(seq 1 4); do
+            for k in $(seq 1 1); do #4
                 formatted_counter_k=$(printf "%.2f" "$counter_k")
                 FLOW_VARIANT="${DESIGN}_run_${i}_${j}_${k}"
                 new_config="${output_dir}/config_${i}_${j}_${k}.mk"
 
                 # Copy base config and modify clock period
                 cp "$base_config" "$new_config"
-                sed -i "18s/.*/export CORE_UTILIZATION = $formatted_counter_j/" $new_config
-                sed -i "20s/.*/export CORE_ASPECT_RATIO = $formatted_counter_i/" $new_config
-                sed -i "19s/.*/export PLACE_DENSITY_LB_ADDON = $formatted_counter_k/" $new_config
+                sed -i "10s/.*/export CORE_UTILIZATION = $formatted_counter_j/" $new_config
+                sed -i "14s/.*/export CORE_ASPECT_RATIO = $formatted_counter_i/" $new_config
+                sed -i "11s/.*/export PLACE_DENSITY_LB_ADDON = $formatted_counter_k/" $new_config
 
                 # Launch each make process in the background
                 (

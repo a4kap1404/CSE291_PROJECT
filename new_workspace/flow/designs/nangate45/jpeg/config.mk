@@ -11,3 +11,5 @@ export CORE_UTILIZATION ?= 45
 export PLACE_DENSITY_LB_ADDON = 0.20
 export TNS_END_PERCENT        = 100
 
+export CORE_ASPECT_RATIO      = 0.5
+

@@ -27,7 +27,7 @@ def load_design(techNode, floorplanOdbFile, sdcFile):
   print("rcFile: ", rcFile)
 
   # Read technology files
-  libFiles = libDir.glob('*.lib')
+  libFiles = libDir.glob('*.lib*')
   lefFiles = lefDir.glob('*.lef')
   for libFile in libFiles:
     print("Reading library file: %s\n" % libFile)

@@ -1,0 +1,68 @@
+OpenROAD v2.0-19576-gec1bf1a13 
+Features included (+) or not (-): +GPU +GUI +Python : None
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 16 thread(s).
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation gcd (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 2399 rc segments
+[INFO RCX-0439] Coupling Cap extraction gcd ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 56% of 2653 wires extracted
+[INFO RCX-0442] 100% of 2653 wires extracted
+[INFO RCX-0045] Extract 415 nets, 2814 rsegs, 2814 caps, 3408 ccs
+[INFO RCX-0443] 415 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Supply voltage   : 7.70e-01 V
+Worstcase voltage: 7.66e-01 V
+Average voltage  : 7.68e-01 V
+Average IR drop  : 2.40e-03 V
+Worstcase IR drop: 4.16e-03 V
+Percentage drop  : 0.54 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 4.43e-03 V
+Average voltage  : 2.52e-03 V
+Average IR drop  : 2.52e-03 V
+Worstcase IR drop: 4.43e-03 V
+Percentage drop  : 0.57 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               277      21.45
+  Tap cell                                 42       1.22
+  Buffer                                   15       1.92
+  Clock buffer                              7       0.71
+  Timing Repair Buffer                     42       3.19
+  Inverter                                 25       1.22
+  Clock inverter                            1       0.07
+  Sequential cell                          35      10.83
+  Multi-Input combinational cell          240      25.50
+  Total                                   684      66.13
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 43 u^2 66% utilization.
+[WARNING GUI-0076] QStandardPaths: runtime directory '/mnt/wslg/runtime-dir' is not owned by UID 0, but a directory permissions 0777 owned by UID 1000 GID 1000
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_all.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_routing.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_placement.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_ir_drop.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_clocks.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/cts_core_clock.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/cts_core_clock_layout.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: ./reports/asap7/gcd/asap7_gcd_test/final_resizer.webp.png
+Elapsed time: 0:06.49[h:]min:sec. CPU time: user 5.86 sys 0.62 (99%). Peak memory: 354712KB.

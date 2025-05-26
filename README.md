@@ -6,7 +6,7 @@ This repository implements a workflow for predicting node placement coordinates 
 
 Formatted file (*_formatted.txt): Contains core/die bounds (Die Width, Die Height, Core Width, Core Height, lx, ly, ux, uy), global metrics (Core Aspect Ratio, Utilization, Place Density), and a list of net records. Each record is a Python dict with a driver and list of sinks, each having id, name, is_fixed, is_macro, is_seq and area fields.
 
-Label file (*_label_formatted.txt): Contains ground-truth x_center and y_center for each pin, one line per instance: <instanceName> <x> <y>.
+Label file (*_label_formatted.txt): Contains ground-truth x_center and y_center for each pin, one line per instance: &lt;ID&gt; &lt;X&gt; &lt;Y&gt;
 
 # Methodology
 
@@ -28,11 +28,30 @@ Absolute Loss: Mean Squared Error between predicted and target normalized coordi
 Relative Loss: MSE of pairwise distances (driver & sink) between predictions vs ground truth.
 
 Model Architecture: \
-Stacks of graph convolutions (SAGEConv by default; can swap GATv2Conv or GCNConv), each followed by ReLU. \
-Global-feature concatenation and MLP readout to predict 2D coordinates per node.
-
-Further Improvements: \
-Incorporate ArtNet to generate diverse dataset for the model to train from. \
-Append an overlap penalty to further fine-tune the predictions
+Stacks of graph convolutions (SAGEConv by default; can swap GATv2Conv or GCNConv) followed by ReLU. \
+Global-feature concatenation and MLP readout to predict coordinates per node.
 
 
+# Instructions to Run the Code
+1. Data generation: 
+
+```bash
+cd <repo_dir>/new_workspace/flow/
+source get_config_floorplan.sh
+source get_nets_text.sh  #set mode = 0
+source extract_input_features.sh
+source get_nets_text.sh #set mode = 1
+source get_formatted_labels.sh
+```
+
+2. To Train the model: \
+Upload the datasets in the form - *_formatted.txt and *_label_formatted.txt and update the path in RUN_PATH. \
+To use our dataset, the path is - &lt;repo_dir&gt;/new_workspace/flow/raw_graph/. The script already uses this path. 
+
+3. To run inference: \
+The trained code is saved under &lt;repo_dir&gt;/models/base_model/gnn_all.pth. 
+
+# Further Improvements
+1. Incorporate ArtNet to generate diverse dataset for the model to train from. 
+2. Clustering is in progress. Will incorporate the algorithm to see an improvement in placement metrics. 
+3. Experiment with overlap and hpwl penalty to further fine-tune the predictions. 

@@ -51,6 +51,12 @@ To use our dataset, the path is - &lt;repo_dir&gt;/new_workspace/flow/raw_graph/
 3. To run inference: \
 The trained code is saved under &lt;repo_dir&gt;/models/base_model/gnn_all.pth. 
 
+# Results 
+Validation Results on gcd_nangate45: \
+1. 3.9% Reduction in HPWL
+2. Number of Nesterov iterations by 60.
+3. Total loss calculated was 0.0029.
+
 # Further Improvements
 1. Incorporate ArtNet to generate diverse dataset for the model to train from. 
 2. Clustering is in progress. Will incorporate the algorithm to see an improvement in placement metrics. 

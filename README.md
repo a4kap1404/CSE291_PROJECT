@@ -38,9 +38,9 @@ Global-feature concatenation and MLP readout to predict coordinates per node.
 ```bash
 cd <repo_dir>/new_workspace/flow/
 source get_config_floorplan.sh
-source get_nets_text.sh  #set mode = 0
+source get_nets_text.sh  # set label = 0
 source extract_input_features.sh
-source get_nets_text.sh #set mode = 1
+source get_nets_text.sh #set label = 1
 source get_formatted_labels.sh
 ```
 
@@ -52,10 +52,10 @@ To use our dataset, the path is - &lt;repo_dir&gt;/new_workspace/flow/raw_graph/
 The trained code is saved under &lt;repo_dir&gt;/models/base_model/gnn_all.pth. 
 
 # Results 
-Validation Results on gcd_nangate45: 
+Validation Results on trained data gcd_nangate45: 
 1. 3.9% Reduction in HPWL
 2. Number of Nesterov iterations by 60.
-3. Total loss calculated was 0.0029.
+3. Total MSE loss calculated was 0.0029.
 
 # Further Improvements
 1. Incorporate ArtNet to generate diverse dataset for the model to train from. 

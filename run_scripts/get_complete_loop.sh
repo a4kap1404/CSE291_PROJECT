@@ -3,15 +3,16 @@
 counter_i=0.5
 counter_j=40
 counter_k=0.2
-DESIGN=aes
+DESIGN=gcd
 tech_node=nangate45
+
 
 base_config=./designs/$tech_node/$DESIGN/config.mk
 output_dir=./designs/$tech_node/$DESIGN/configs
 results_dir=./results/$tech_node/$DESIGN/
 mkdir -p "$output_dir"
 
-MAX_JOBS=8  # Adjust based on your CPU/core limits
+MAX_JOBS=1  # Adjust based on your CPU/core limits
 job_count=0
 
 for i in $(seq 1 5); do #5
@@ -25,9 +26,10 @@ for i in $(seq 1 5); do #5
                 new_results_path="${results_dir}/$FLOW_VARIANT"
                 # Launch each make process in the background
                 (
-                    echo "Starting $FLOW_VARIANT global_place and detailed_place"
-                    #export FLOW_VARIANT=$FLOW_VARIANT
-                    openroad -python -exit python_gen_labels.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -k "$counter_k"
+                    echo "Starting $FLOW_VARIANT global_place and detailed_place with predicted values"
+                    export FLOW_VARIANT=$FLOW_VARIANT
+                    openroad -python -exit python_complete_loop.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -f "$FLOW_VARIANT" -b "$counter_k" > "logs/new_output/${FLOW_VARIANT}.log" 2>&1
+                    openroad -exit my_script.tcl > log.txt
                     #DESIGN_CONFIG="$new_config" make place > "logs/${FLOW_VARIANT}.log" 2>&1
                     echo "Finished $FLOW_VARIANT"
                 ) &

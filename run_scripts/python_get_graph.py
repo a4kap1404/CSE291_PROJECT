@@ -27,7 +27,7 @@ def load_design(techNode, floorplanOdbFile, sdcFile):
   print("rcFile: ", rcFile)
 
   # Read technology files
-  libFiles = libDir.glob('*.lib')
+  libFiles = libDir.glob('*.lib*')
   lefFiles = lefDir.glob('*.lef')
   for libFile in libFiles:
     print("Reading library file: %s\n" % libFile)
@@ -320,6 +320,7 @@ if __name__ == "__main__":
     get_insts(design, inst_map, hg_file_name, vertex_id)
 
     # get all the connections
-    get_connection(large_net_threshold, hg_file_name, IO_map, inst_map)      
+    get_connection(large_net_threshold, hg_file_name, IO_map, inst_map)   
 
+    print("Done")
     # from here.  You should get the hypergraph file

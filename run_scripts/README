@@ -1,10 +1,7 @@
-#order of scripts
+# Scripts to run for data generation
 
-get_config_floorplan.sh # floorplan
-#get_lables.sh # placement
+# Set variables in set_variables.sh (do not have to run)
+# test_mode=1 during test runs.
 
-get_nets_text.sh # (label = 0) mode 0
-extract_input_features.sh
-
-get_nets_text.sh # (label = 1) mode 1
-get_formatted_labels.sh
+get_openroad_run.sh # run placement
+get_get_graph_label.sh # extract graph data and labels

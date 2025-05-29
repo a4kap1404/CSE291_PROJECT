@@ -21,7 +21,7 @@ import resource
 def load_design(techNode, floorplanOdbFile, sdcFile):
   tech = Tech()
   platform_dir = "./platforms/" + techNode + "/"
-  libDir = Path(platform_dir + "lib/")
+  libDir = Path(platform_dir + "lib/NLDM")
   lefDir = Path(platform_dir + "lef/")
   rcFile = platform_dir + "setRC.tcl"
 
@@ -30,7 +30,7 @@ def load_design(techNode, floorplanOdbFile, sdcFile):
   print("rcFile: ", rcFile)
 
   # Read technology files
-  libFiles = libDir.glob('*.lib')
+  libFiles = libDir.glob('*.lib*')
   lefFiles = lefDir.glob('*.lef')
   for libFile in libFiles:
     print("Reading library file: %s\n" % libFile)
@@ -73,7 +73,7 @@ def load_init_placement(file_name):
     inst.setLocation(x, y)
 
     '''
-    to check:
+    to check in CLI:
     block = design.getBlock()
     insts = block.getInsts()
     inst_0 = insts[0]
@@ -95,10 +95,12 @@ def run_incremental_placement(design):
 
   start_time = time.time()
   start_usage = resource.getrusage(resource.RUSAGE_SELF)
+
+  design.evalTclString("estimate_parasitics -placement")
   
   print(f"global_placement -density {place_density} -routability_driven -timing_driven -skip_initial_place -incremental")
   #design.evalTclString(f"global_placement -routability_driven -timing_driven -skip_initial_place -incremental")
-  design.evalTclString(f"global_placement -density {place_density} -routability_driven -timing_driven -skip_initial_place -incremental")
+  design.evalTclString(f"global_placement -density {place_density} -routability_driven -timing_driven")
   
   end_time = time.time()
   end_usage = resource.getrusage(resource.RUSAGE_SELF)
@@ -158,9 +160,6 @@ if __name__ == "__main__":
 
     pred_file_path = "./pred/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
 
-    #path = "./results/" + tech_node + "/" + design + "/base"
-    #path = "./results/" + tech_node + "/" + design + "/" + design +"_run_1"
-
     floorplan_odb_file = path + "/3_2_place_iop.odb"
     sdc_file = path + "/2_floorplan.sdc"
     
@@ -169,14 +168,14 @@ if __name__ == "__main__":
 
     # Load the initial placement and run incremental placement    
     #load_init_placement(pred_file_path)
-
     run_incremental_placement(design)
+
     print("Finished running global placement and detailed placement.")
     print("\n")
-    print("*************************************************************************************************")
-    print("Please use the generated 3_3_place_gp.def and 3_3_place_gp.odb files for remaining flows.")
-    print("You can use OpenROAD GUI to visualize the placement: openroad -gui")
-    print("After opening the OpenROAD GUI, then go to File -> Open DB and select the 3_3_place_gp.odb file.")
-    print("*************************************************************************************************")
-    print("Good luck with your project!")
-    print("*************************************************************************************************")
+    #print("*************************************************************************************************")
+    #print("Please use the generated 3_3_place_gp.def and 3_3_place_gp.odb files for remaining flows.")
+    #print("You can use OpenROAD GUI to visualize the placement: openroad -gui")
+    #print("After opening the OpenROAD GUI, then go to File -> Open DB and select the 3_3_place_gp.odb file.")
+    #print("*************************************************************************************************")
+    #print("Good luck with your project!")
+    #print("*************************************************************************************************")

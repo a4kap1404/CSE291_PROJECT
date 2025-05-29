@@ -35,13 +35,13 @@ Global-feature concatenation and MLP readout to predict coordinates per node.
 # Instructions to Run the Code
 1. Data generation: 
 
+Set variables in set_variables.sh (do not have to run)
+test_mode=1 during test runs.
+
 ```bash
 cd <repo_dir>/new_workspace/flow/
-source get_config_floorplan.sh
-source get_nets_text.sh  # set label = 0
-source extract_input_features.sh
-source get_nets_text.sh #set label = 1
-source get_formatted_labels.sh
+source get_openroad_run.sh # run placement
+source get_get_graph_label.sh # extract graph data and labels
 ```
 
 2. To Train the model: \

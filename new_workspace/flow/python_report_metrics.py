@@ -17,7 +17,7 @@ def load_design(techNode, odb_path, sdc_path):
     lef_dir = Path(platform_dir, "lef")
     rc_file = platform_dir + "setRC.tcl"
 
-    for lib_file in lib_dir.glob("*.lib"):
+    for lib_file in lib_dir.glob("*.lib*"):
         print("  -", lib_file)
         tech.readLiberty(str(lib_file))
 

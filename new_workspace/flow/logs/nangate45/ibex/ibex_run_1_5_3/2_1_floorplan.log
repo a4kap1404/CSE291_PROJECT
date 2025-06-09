@@ -3,8 +3,8 @@ Features included (+) or not (-): +GPU +GUI +Python : None
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
 [INFO ORD-0030] Using 16 thread(s).
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
 
 ==========================================================================
 Floorplan check_setup
@@ -609,7 +609,6 @@ repair_timing -verbose -setup_margin 0 -repair_tns 100
 [INFO RSZ-0041] Resized 62 instances.
 [INFO RSZ-0043] Swapped pins on 2 instances.
 [INFO RSZ-0033] No hold violations found.
-Took 5 seconds: repair_timing -verbose -setup_margin 0 -repair_tns 100
 Default units for flow
  time 1ns
  capacitance 1fF
@@ -624,4 +623,4 @@ Report metrics stage 2, floorplan final...
 floorplan final report_design_area
 --------------------------------------------------------------------------
 Design area 28787 u^2 69% utilization.
-Elapsed time: 0:15.88[h:]min:sec. CPU time: user 15.70 sys 0.17 (100%). Peak memory: 201612KB.
+Elapsed time: 0:10.03[h:]min:sec. CPU time: user 10.01 sys 0.01 (99%). Peak memory: 199304KB.

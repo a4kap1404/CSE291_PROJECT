@@ -3,8 +3,8 @@ Features included (+) or not (-): +GPU +GUI +Python : None
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
 [INFO ORD-0030] Using 16 thread(s).
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef, created 24 layers, 9 vias
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.lef, created 212 library cells
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef, created 24 layers, 9 vias
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.lef, created 212 library cells
 
 ==========================================================================
 Floorplan check_setup
@@ -1411,7 +1411,7 @@ repair_timing -verbose -setup_margin 0 -repair_tns 100
 [INFO RSZ-0049] Cloned 66 instances.
 [WARNING RSZ-0062] Unable to repair all setup violations.
 [INFO RSZ-0033] No hold violations found.
-Took 12 seconds: repair_timing -verbose -setup_margin 0 -repair_tns 100
+Took 10 seconds: repair_timing -verbose -setup_margin 0 -repair_tns 100
 Default units for flow
  time 1ps
  capacitance 1fF
@@ -1426,4 +1426,4 @@ Report metrics stage 2, floorplan final...
 floorplan final report_design_area
 --------------------------------------------------------------------------
 Design area 1730 u^2 69% utilization.
-Elapsed time: 0:16.61[h:]min:sec. CPU time: user 17.38 sys 0.23 (105%). Peak memory: 282980KB.
+Elapsed time: 0:14.38[h:]min:sec. CPU time: user 14.17 sys 0.20 (99%). Peak memory: 283400KB.

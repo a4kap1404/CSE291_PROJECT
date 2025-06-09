@@ -198,10 +198,10 @@ Warning: Ignoring module $paramod$696f85e1ea63d2b5ad7171a625fd3b51a665057d\dctu 
 Warning: Ignoring module $paramod$8f6708f3156f3d6d195809cddd67c9b8c08cd488\dctu because it contains processes (run 'proc' command first).
 20. Executing RTLIL backend.
 Warnings: 78 unique messages, 78 total
-End of script. Logfile hash: 8df98e5c0d, CPU: user 3.41s system 0.37s, MEM: 775.40 MB peak
+End of script. Logfile hash: 8df98e5c0d, CPU: user 3.98s system 0.38s, MEM: 775.61 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 92% 1x hierarchy (3 sec), 4% 4x read_liberty (0 sec), ...
-Elapsed time: 0:04.19[h:]min:sec. CPU time: user 3.73 sys 0.40 (98%). Peak memory: 795320KB.
+Time spent: 92% 1x hierarchy (4 sec), 4% 4x read_liberty (0 sec), ...
+Elapsed time: 0:04.90[h:]min:sec. CPU time: user 4.45 sys 0.40 (98%). Peak memory: 795528KB.
 mkdir -p ./results/nangate45/jpeg/jpeg_test ./logs/nangate45/jpeg/jpeg_test ./reports/nangate45/jpeg/jpeg_test ./objects/nangate45/jpeg/jpeg_test
 (env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /opt/oss-cad-suite/bin/yosys -v 3 -c /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/scripts/synth.tcl) 2>&1 | tee /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/logs/nangate45/jpeg/jpeg_test/1_1_yosys.log
 1. Executing RTLIL frontend.
@@ -617,10 +617,10 @@ Took 6 seconds: abc -script /work/CSE291/project/trial/CSE291_PROJECT/new_worksp
 25.1. Executing BMUXMAP pass.
 25.2. Executing DEMUXMAP pass.
 exec cp /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/designs/nangate45/jpeg/constraint.sdc ./results/nangate45/jpeg/jpeg_test/1_synth.sdc
-End of script. Logfile hash: 36bd930bdd, CPU: user 51.99s system 0.27s, MEM: 413.17 MB peak
+End of script. Logfile hash: 800bf48de0, CPU: user 54.55s system 0.23s, MEM: 414.56 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
 Time spent: 20% 57x opt_clean (12 sec), 19% 1x extract_fa (11 sec), ...
-Elapsed time: 1:00.11[h:]min:sec. CPU time: user 59.33 sys 0.65 (99%). Peak memory: 423084KB.
+Elapsed time: 1:02.71[h:]min:sec. CPU time: user 61.87 sys 0.70 (99%). Peak memory: 424508KB.
 mkdir -p ./results/nangate45/jpeg/jpeg_test ./logs/nangate45/jpeg/jpeg_test ./reports/nangate45/jpeg/jpeg_test
 cp ./results/nangate45/jpeg/jpeg_test/1_1_yosys.v ./results/nangate45/jpeg/jpeg_test/1_synth.v
 OpenROAD v2.0-19576-gec1bf1a13 
@@ -1482,17 +1482,17 @@ Report metrics stage 2, floorplan final...
 floorplan final report_design_area
 --------------------------------------------------------------------------
 Design area 89741 u^2 45% utilization.
-Elapsed time: 0:17.01[h:]min:sec. CPU time: user 16.70 sys 0.25 (99%). Peak memory: 383192KB.
+Elapsed time: 0:16.63[h:]min:sec. CPU time: user 16.42 sys 0.16 (99%). Peak memory: 383544KB.
 Running macro_place.tcl, stage 2_2_floorplan_macro
 No macros found: Skipping macro_placement
-Elapsed time: 0:00.54[h:]min:sec. CPU time: user 0.48 sys 0.04 (98%). Peak memory: 214824KB.
+Elapsed time: 0:00.53[h:]min:sec. CPU time: user 0.46 sys 0.06 (99%). Peak memory: 212100KB.
 Running tapcell.tcl, stage 2_3_floorplan_tapcell
 [INFO TAP-0004] Inserted 450 endcaps.
 [INFO TAP-0005] Inserted 567 tapcells.
-Elapsed time: 0:00.47[h:]min:sec. CPU time: user 0.43 sys 0.03 (98%). Peak memory: 179468KB.
+Elapsed time: 0:00.46[h:]min:sec. CPU time: user 0.42 sys 0.03 (97%). Peak memory: 179940KB.
 Running pdn.tcl, stage 2_4_floorplan_pdn
 [INFO PDN-0001] Inserting grid: grid
-Elapsed time: 0:00.86[h:]min:sec. CPU time: user 0.77 sys 0.07 (98%). Peak memory: 223460KB.
+Elapsed time: 0:00.83[h:]min:sec. CPU time: user 0.73 sys 0.08 (97%). Peak memory: 225324KB.
 cp ./results/nangate45/jpeg/jpeg_test/2_4_floorplan_pdn.odb ./results/nangate45/jpeg/jpeg_test/2_floorplan.odb
 cp ./results/nangate45/jpeg/jpeg_test/2_1_floorplan.sdc ./results/nangate45/jpeg/jpeg_test/2_floorplan.sdc
 Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
@@ -1696,8 +1696,8 @@ global_placement -skip_io -density 0.5714752769470215 -pad_left 0 -pad_right 0
 [NesterovSolve] Iter:  450 overflow: 0.128 HPWL: 1738085133
 [NesterovSolve] Iter:  460 overflow: 0.111 HPWL: 1737182451
 [NesterovSolve] Finished with Overflow: 0.098916
-Took 27 seconds: global_placement -skip_io -density 0.5714752769470215 -pad_left 0 -pad_right 0
-Elapsed time: 0:27.61[h:]min:sec. CPU time: user 351.79 sys 1.20 (1278%). Peak memory: 337904KB.
+Took 36 seconds: global_placement -skip_io -density 0.5714752769470215 -pad_left 0 -pad_right 0
+Elapsed time: 0:37.68[h:]min:sec. CPU time: user 488.93 sys 3.34 (1306%). Peak memory: 335528KB.
 Running io_placement.tcl, stage 3_2_place_iop
 place_pins -hor_layers metal5 -ver_layers metal6
 Found 0 macro blocks.
@@ -1709,7 +1709,7 @@ Using 2 tracks default min distance between IO pins.
 [INFO PPL-0005] Slots per section         200
 [INFO PPL-0008] Successfully assigned pins to sections.
 [INFO PPL-0012] I/O nets HPWL: 4061.75 um.
-Elapsed time: 0:00.61[h:]min:sec. CPU time: user 0.51 sys 0.09 (98%). Peak memory: 217584KB.
+Elapsed time: 0:00.63[h:]min:sec. CPU time: user 0.55 sys 0.07 (99%). Peak memory: 217708KB.
 Running global_place.tcl, stage 3_3_place_gp
 [INFO GPL-0002] DBU: 2000
 [INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
@@ -1838,14 +1838,14 @@ global_placement -density 0.5714752769470215 -pad_left 0 -pad_right 0
 [NesterovSolve] Iter:  460 overflow: 0.121 HPWL: 1791496217
 [NesterovSolve] Iter:  470 overflow: 0.105 HPWL: 1790737093
 [NesterovSolve] Finished with Overflow: 0.098712
-Took 30 seconds: global_placement -density 0.5714752769470215 -pad_left 0 -pad_right 0
+Took 42 seconds: global_placement -density 0.5714752769470215 -pad_left 0 -pad_right 0
 Report metrics stage 3, global place...
 
 ==========================================================================
 global place report_design_area
 --------------------------------------------------------------------------
 Design area 89741 u^2 45% utilization.
-Elapsed time: 0:45.66[h:]min:sec. CPU time: user 396.81 sys 1.05 (871%). Peak memory: 381008KB.
+Elapsed time: 1:00.57[h:]min:sec. CPU time: user 576.68 sys 3.76 (958%). Peak memory: 383524KB.
 Running detail_place.tcl, stage 3_5_place_dp
 Placement Analysis
 ---------------------------------
@@ -1923,6 +1923,6 @@ Report metrics stage 3, detailed place...
 detailed place report_design_area
 --------------------------------------------------------------------------
 Design area 89741 u^2 45% utilization.
-Elapsed time: 0:40.62[h:]min:sec. CPU time: user 40.37 sys 0.22 (99%). Peak memory: 509584KB.
+Elapsed time: 0:40.22[h:]min:sec. CPU time: user 39.93 sys 0.28 (99%). Peak memory: 510756KB.
 cp ./results/nangate45/jpeg/jpeg_test/3_5_place_dp.odb ./results/nangate45/jpeg/jpeg_test/3_place.odb
 cp ./results/nangate45/jpeg/jpeg_test/2_floorplan.sdc ./results/nangate45/jpeg/jpeg_test/3_place.sdc

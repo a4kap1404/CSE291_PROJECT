@@ -10,7 +10,7 @@ def one_hot_encoding(file_path):
     in_net_section = False
 
     with open(file_path, 'r') as f:
-        for _ in range(9):
+        for _ in range(12):
             next(f)
     
         for line in f:

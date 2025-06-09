@@ -9,7 +9,7 @@
 9. Executing Liberty frontend: ./objects/asap7/aes/aes_run_1_5_3/lib/asap7sc7p5t_OA_RVT_FF_nldm_211120.lib
 10. Executing Liberty frontend: ./objects/asap7/aes/aes_run_1_5_3/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_211120.lib
 11. Executing Liberty frontend: ./objects/asap7/aes/aes_run_1_5_3/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_220123.lib
-12. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_clkgate_R.v
+12. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_clkgate_R.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/asap7/aes/aes_run_1_5_3/clock_period.txt
 Setting clock period to 400
@@ -149,7 +149,7 @@ Setting clock period to 400
 15.3.26. Finished OPT passes. (There is nothing left to do.)
 15.4. Executing TECHMAP pass (map to technology primitives).
 15.4.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/techmap.v
-15.4.2. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/common/lcu_kogge_stone.v
+15.4.2. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/common/lcu_kogge_stone.v
 15.4.3. Continuing TECHMAP pass.
 15.5. Executing OPT pass (performing simple optimizations).
 15.5.1. Executing OPT_EXPR pass (perform const folding).
@@ -189,7 +189,7 @@ Setting clock period to 400
 16.16. Finished OPT passes. (There is nothing left to do.)
 17. Executing EXTRACT_FA pass (find and extract full/half adders).
 18. Executing TECHMAP pass (map to technology primitives).
-18.1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_adders_R.v
+18.1. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_adders_R.v
 18.2. Continuing TECHMAP pass.
 19. Executing TECHMAP pass (map to technology primitives).
 19.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/techmap.v
@@ -201,7 +201,7 @@ Setting clock period to 400
 20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 20.5. Finished fast OPT passes.
 21. Executing TECHMAP pass (map to technology primitives).
-21.1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_latch_R.v
+21.1. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/asap7/yoSys/cells_latch_R.v
 21.2. Continuing TECHMAP pass.
 22. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
 22.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
@@ -222,12 +222,12 @@ Setting clock period to 400
 23.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 23.15. Executing OPT_EXPR pass (perform const folding).
 23.16. Finished OPT passes. (There is nothing left to do.)
-abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/asap7/aes/aes_run_1_5_3/lib/merged.lib -constr ./objects/asap7/aes/aes_run_1_5_3/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 400
+abc -script /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/asap7/aes/aes_run_1_5_3/lib/merged.lib -constr ./objects/asap7/aes/aes_run_1_5_3/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 400
 24. Executing ABC pass (technology mapping using ABC).
 24.1. Extracting gate netlist of module `\aes_cipher_top' to `<abc-temp-dir>/input.blif'..
 24.1.1. Executing ABC.
 24.1.2. Re-integrating ABC results.
-Took 6 seconds: abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/asap7/aes/aes_run_1_5_3/lib/merged.lib -constr ./objects/asap7/aes/aes_run_1_5_3/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 400
+Took 6 seconds: abc -script /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/asap7/aes/aes_run_1_5_3/lib/merged.lib -constr ./objects/asap7/aes/aes_run_1_5_3/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 400
 25. Executing SETUNDEF pass (replace undef values with defined constants).
 26. Executing SPLITNETS pass (splitting up multi-bit signals).
 27. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -239,8 +239,8 @@ Took 6 seconds: abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/fl
 33. Executing Verilog backend.
 33.1. Executing BMUXMAP pass.
 33.2. Executing DEMUXMAP pass.
-exec cp /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/designs/asap7/aes/constraint.sdc ./results/asap7/aes/aes_run_1_5_3/1_synth.sdc
-End of script. Logfile hash: bfe671b3f7, CPU: user 11.71s system 0.07s, MEM: 160.93 MB peak
+exec cp /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/designs/asap7/aes/constraint.sdc ./results/asap7/aes/aes_run_1_5_3/1_synth.sdc
+End of script. Logfile hash: a2af5986ec, CPU: user 11.10s system 0.25s, MEM: 160.64 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 38% 2x abc (7 sec), 22% 1x extract_fa (4 sec), ...
-Elapsed time: 0:19.41[h:]min:sec. CPU time: user 18.28 sys 0.41 (96%). Peak memory: 336684KB.
+Time spent: 36% 2x abc (6 sec), 22% 1x extract_fa (3 sec), ...
+Elapsed time: 0:17.65[h:]min:sec. CPU time: user 17.15 sys 0.49 (99%). Peak memory: 336864KB.

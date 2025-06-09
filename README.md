@@ -110,6 +110,8 @@ Training and Testing Loss Curves when tested on gcd_nangate45:
     width="600" 
   />
 </p>
+
+
 Validation Results on trained data gcd_nangate45:
 1. Average Training MSE Loss was 0.015. 
 2. 3.9% Reduction in HPWL

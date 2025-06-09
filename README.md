@@ -92,6 +92,7 @@ These design choices together improved validation loss consistency and placement
 # Results 
 Training and Testing Loss Curves when tested on gcd_nangate45:
 <!-- Training Curve, scaled to 600px wide -->
+## Training Curve
 <p align="center">
   <img 
     src="https://raw.githubusercontent.com/a4kap1404/CSE291_PROJECT/main/training_curve.png" 
@@ -101,6 +102,7 @@ Training and Testing Loss Curves when tested on gcd_nangate45:
 </p>
 
 <!-- Testing Curve, scaled to 600px wide -->
+## Testing Curve
 <p align="center">
   <img 
     src="https://raw.githubusercontent.com/a4kap1404/CSE291_PROJECT/main/testing_curve.png" 

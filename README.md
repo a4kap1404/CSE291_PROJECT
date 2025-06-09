@@ -48,7 +48,7 @@ The generated dataset is present in new_workspace/flow/raw_graph/.  The dataset 
 Detailed information regarding new data generation and existing dataset is present in new_workspace/flow/.
 
 (If you wish to train on datahub, you can use the model at /base_model/base_model.ipynb
-Upload the corresponding train and test data into datahub and run the cells in order)
+Upload the corresponding train and test data into datahub and run the cells in order - we have provided our saved model called 'gnn_all.pth' for this model.)
 
 2. To Train the model:
 Details on running train.py are given in base_model/.

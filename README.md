@@ -47,6 +47,9 @@ Global-feature concatenation and MLP readout to predict coordinates per node.
 The generated dataset is present in new_workspace/flow/raw_graph/.  The dataset includes designs such as: gcd_nangate45, ibex_nangate45, aes_nangate45, gcd_asap7, ibex_asap7, aes_asap7, ariane136_nangate45.\
 Detailed information regarding new data generation and existing dataset is present in new_workspace/flow/.
 
+(If you wish to train on datahub, you can use the model at /base_model/base_model.ipynb
+Upload the corresponding train and test data into datahub and run the cells in order)
+
 2. To Train the model:
 Details on running train.py are given in base_model/.
 Launch training in one command:

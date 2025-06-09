@@ -191,7 +191,7 @@ def load_all_data(root_dir, train_list, test_list, batch_size=16, shuffle=True, 
             norm_coords = []
             is_io = []
             for nid in node_ids:
-                if nid in orig_coords:
+                if nid in fixed_ids:
                     x, y = orig_coords[nid]
                     x = max(0.0, min(1.0, (x - lx) / (ux - lx)))
                     y = max(0.0, min(1.0, (y - ly) / (uy - ly)))

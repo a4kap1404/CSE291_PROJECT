@@ -6,9 +6,10 @@ import argparse
 from data_utils import load_all_data, parse_formatted, map_nodes_to_coordinates
 from model import PlacementGNN
 from train import loss_function
+import time
 
 
-def infer_wrapper(model, test_loader, design_filter, clustering_mode=1, run_path='./raw_graph'):
+def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='./raw_graph'):
     # Load trained weights
     PATH = './best_model.pth'
     model.load_state_dict(torch.load(PATH, map_location=model.device))
@@ -21,7 +22,7 @@ def infer_wrapper(model, test_loader, design_filter, clustering_mode=1, run_path
         # Get records for naming/mapping
         if clustering_mode:
             cluster_file = os.path.join(run_path, data.design_name + '_mapping.txt')
-            name_map = os.path.join('./node_name_mapping', data.design_name + '_formatted.txt')
+            name_map = os.path.join('../../new_workspace/flow/raw_graph/', data.design_name + '_formatted.txt')
             _, records, _, _ = parse_formatted(name_map)
         else:
             formatted_fp = os.path.join(run_path, data.design_name + '_formatted.txt')
@@ -86,10 +87,13 @@ def infer_wrapper(model, test_loader, design_filter, clustering_mode=1, run_path
         print(f'Saved {out_path}')
 
     avg_loss = total_loss / len(test_loader.dataset)
+    end = time.time()
     print(f'MSE: {avg_loss:.4f}')
+    print(f"Inference time: {end - start:.2f} seconds")
 
 
 def main():
+    start = time.time()
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', required=True)
     parser.add_argument('--test-designs', nargs='+', required=True)
@@ -115,7 +119,7 @@ def main():
     model.device = device
 
     # Run inference
-    infer_wrapper(model, test_loader, args.test_designs, clustering_mode=args.clustering,
+    infer_wrapper(model, test_loader, start, clustering_mode=args.clustering,
                   run_path=args.data_dir)
 
 if __name__ == '__main__':

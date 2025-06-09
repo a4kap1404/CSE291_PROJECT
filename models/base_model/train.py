@@ -87,7 +87,7 @@ def main():
     val_loss = 0
     print("Iterating over epochs")
     best_val = float('inf')
-    for epoch in range(1,151):
+    for epoch in range(1,201):
         train_loss = train(train_loader, model, opt, criterion, device,epoch)
         val_loss   = validate(test_loader, model, criterion, device)
         if epoch % 10 == 0:

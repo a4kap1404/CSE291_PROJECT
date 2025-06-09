@@ -17,7 +17,7 @@ base_model/
 # 1. Environment Setup
 Conda (recommended)
 ```bash
-conda create -n gnnplace python=3.11 -y
+conda create -n gnnplace python=3.11.9 -y
 conda activate gnnplace
 pip install -r requirements.txt
 ```

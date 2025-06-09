@@ -91,7 +91,16 @@ These design choices together improved validation loss consistency and placement
 
 # Results 
 Validation Results on trained data gcd_nangate45: 
-1. 3.9% Reduction in HPWL
-2. Number of Nesterov iterations by 60.
-3. Total MSE loss calculated was 0.0029.
+
+The model has been evaluated on 100 variants of gcd_nangate45 with varying utilizations, place densities and aspect ratios. A detailed comparison between the proposed model and the default OpenRoad flow has been given in the placement_metrics file. The average improvement in HPWL, inference time and Nesterov Iterations is given below. Please note that negative values mean a degradation with respect to the default OpenRoad flow:
+
+1. HPWL Improvement:  -0.0275%
+2. Inference Time Improvement: 90.005%
+3. Improvement in Nesterov Iterations: 87
+
+The model has also been tested on the following designs:
+
+
+
+
 

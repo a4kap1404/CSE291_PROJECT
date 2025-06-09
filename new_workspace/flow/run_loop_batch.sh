@@ -3,7 +3,7 @@ design_folder="${1:-./sample_predictions}"
 mode="${2:-0}"  # default normal mode
 pred_dir="./pred_exp"
 config_base_dir="./designs"
-log_dir1="./logs_actual"
+log_dir1="./logs"
 log_dir2="./logs_predicted"
 output_file="./placement_metrics"
 > "$output_file"
@@ -62,13 +62,13 @@ for file_path in "$design_folder"/*predictions*; do
     pred_file_path="$pred_dir/$filename"
 
     echo "▶ Running for design=$design, tech=$tech, flow=$flow, lb_addon=$lb_addon, flag=$flag"
-    log_dir="logs_predicted"
+    log_dir="logs_predicted/$tech/$design"
     mkdir -p "$log_dir"
     if [[ "$mode" -eq 1 ]]; then
-        log_path="$log_dir/$tech/$design/${design}_test.log"
+        log_path="$log_dir/${design}_test.log"
         output_dir="./results/$tech/$design/${design}_test"
     else
-        log_path="$log_dir/$tech/$design/${design}_${flow}.log"
+        log_path="$log_dir/${design}_${flow}.log"
         output_dir="./results/$tech/$design/${design}_run_${flow}"
     fi
 
@@ -83,6 +83,7 @@ for file_path in "$design_folder"/*predictions*; do
         -f "$flow" \
         -b "$lb_addon" \
         -flag "$flag" \
+	-m "$mode" \
         -s "$design_folder" \
         -p "$output_dir" \
         -large_net_threshold 50 \

@@ -73,7 +73,13 @@ def load_init_placement(file_name):
     y = int(float(items[2]))
 
     # Set the position of the instance    
+    
+
     inst = block.findInst(instName)
+    if inst is None:
+         print(f"⚠️ Instance '{instName}' not found, skipping")
+         continue
+
     inst.setLocation(x, y)
 
     '''
@@ -181,7 +187,8 @@ if __name__ == "__main__":
     parser.add_argument("-m", default="0", help="Give the mode")
     parser.add_argument("-large_net_threshold", default="50", help="Large net threshold. We should remove global nets like reset.")
     parser.add_argument( "-s" , default="./sample_predictions", help="Directory where sample predictions are stored")
-
+    
+    
     
     args = parser.parse_args()
 
@@ -195,6 +202,8 @@ if __name__ == "__main__":
     predictions_dir = args.s
     mode = args.m
 
+    print("▶ MODE =", mode)
+
     log_dir = f"logs/{tech_node}/{design}"
     os.makedirs(log_dir, exist_ok=True)
     log_path = os.path.join(log_dir, f"{design}_{flow}.log")
@@ -206,8 +215,8 @@ if __name__ == "__main__":
 
     #pred_file_path = "./pred/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
    # pred_file_path = "./sample_predictions/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
-    if mode==1:
-        pattern = f"{predictions_dir}/{design}_{tech_node}_predictions*.txt"
+    if mode=="1":
+        pattern = f"{predictions_dir}/{design}_{tech_node}*_predictions*.txt"
     else:
         pattern = f"{predictions_dir}/{design}_{tech_node}_*{flow}_predictions*.txt"
     matches = glob.glob(pattern)
@@ -226,6 +235,14 @@ if __name__ == "__main__":
     print("Floorplan ODB:", floorplan_odb_file, os.path.exists(floorplan_odb_file))
     print("SDC file:", sdc_file, os.path.exists(sdc_file))
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file, log_path)
+
+    block = design.getBlock()
+    print(f"Number of instances in design block: {len(block.getInsts())}")
+    print("Example instance names:")
+    for i, inst in enumerate(block.getInsts()):
+      print(f"  {inst.getName()}")
+      if i > 20:
+        break
     print(f"Running placement flow for design={design}, tech={tech_node}, flow={flow}")
 
     # Load the initial placement and run incremental placement    

@@ -2,6 +2,8 @@
 
 This repository implements a workflow for predicting node placement coordinates in VLSI designs using a Graph Neural Network (GNN). It covers data parsing, graph construction, feature engineering, model training with custom loss functions, and final prediction export.
 
+For best reproducibility, clone the repositry into a docker container with openroad already built, preferably the ECE260C container.
+
 # Data Format
 
 Formatted file (*_formatted.txt): Contains core/die bounds (Die Width, Die Height, Core Width, Core Height, lx, ly, ux, uy), global metrics (Core Aspect Ratio, Utilization, Place Density), and a list of net records. Each record is a Python dict with a driver and list of sinks, each having id, name, is_fixed, is_macro, is_seq and area fields.
@@ -42,7 +44,7 @@ Global-feature concatenation and MLP readout to predict coordinates per node.
 
 # Instructions to Run the Code
 1. Data generation: 
-The generated dataset is present in new_workspace/flow/raw_graph/.  The training set includes designs such as: gcd_nangate45, ibex_nangate45, aes_nangate45, gcd_asap7, ibex_asap7, aes_asap7, ariane136_nangate45.\
+The generated dataset is present in new_workspace/flow/raw_graph/.  The dataset includes designs such as: gcd_nangate45, ibex_nangate45, aes_nangate45, gcd_asap7, ibex_asap7, aes_asap7, ariane136_nangate45.\
 Detailed information regarding new data generation and existing dataset is present in new_workspace/flow/.
 
 2. To Train the model:

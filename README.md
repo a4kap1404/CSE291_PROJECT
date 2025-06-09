@@ -92,7 +92,7 @@ These design choices together improved validation loss consistency and placement
 # Results 
 Validation Results on trained data gcd_nangate45: 
 
-The model has been evaluated on 100 variants of gcd_nangate45 with varying utilizations, place densities and aspect ratios. A detailed comparison between the proposed model and the default OpenRoad flow has been given in the placement_metrics file. The average improvement in HPWL, inference time and Nesterov Iterations is given below. Please note that negative values mean a degradation with respect to the default OpenRoad flow:
+The model has been evaluated on 100 variants of gcd_nangate45 with varying utilizations, place densities and aspect ratios. A detailed comparison between the proposed model and the default OpenRoad flow has been given in the placement_metrics file in the new_workspace/flow directory. The average improvement in HPWL, inference time and Nesterov Iterations is given below. Please note that negative values mean a degradation with respect to the default OpenRoad flow:
 
 1. HPWL Improvement:  -0.0275%
 2. Inference Time Improvement: 90.005%

@@ -5,5 +5,5 @@ counter_j=40 # utilization
 counter_k=0.2 # place density
 DESIGN=gcd
 tech_node=nangate45
-test_mode=0
+test_mode=1
 threshold=25

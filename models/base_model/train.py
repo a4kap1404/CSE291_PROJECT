@@ -66,7 +66,7 @@ def validate(loader, model, criterion, device):
 
 def main():
     p = argparse.ArgumentParser(description="Train PlacementGNN")
-    p.add_argument('--data-dir',        default='./raw_graph',
+    p.add_argument('--data-dir',        default='../../new_workspace/flow/raw_graph_clustered',
                    help="root folder containing *_formatted.txt graphs")
     p.add_argument('--train-designs',  nargs='+', required=True,
                    help="e.g. gcd_asap7")
@@ -81,7 +81,7 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_loader, test_loader = load_all_data(args.data_dir, train_list=args.train_designs, test_list=args.test_designs, batch_size=args.batch_size)
     print("Data Loading Done")
-    model     = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='sage').to(device)
+    model     = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=4, global_channels=5, conv_type='gcn').to(device)
     opt       = Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     criterion = MSELoss().to(device)
     val_loss = 0

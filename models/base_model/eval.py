@@ -22,7 +22,7 @@ def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='./raw_
         # Get records for naming/mapping
         if clustering_mode:
             cluster_file = os.path.join(run_path, data.design_name + '_mapping.txt')
-            name_map = os.path.join('../../new_workspace/flow/raw_graph/', data.design_name + '_formatted.txt')
+            name_map = os.path.join('../../new_workspace/flow/raw_graph', data.design_name + '_formatted.txt')
             _, records, _, _ = parse_formatted(name_map)
         else:
             formatted_fp = os.path.join(run_path, data.design_name + '_formatted.txt')
@@ -115,7 +115,7 @@ def main():
     # Instantiate model
     sample = next(iter(test_loader))
     in_dim = sample.x.shape[1]
-    model = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='gcn').to(device)
+    model = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='sage').to(device)
     model.device = device
 
     # Run inference

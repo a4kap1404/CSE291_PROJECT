@@ -26,12 +26,12 @@ Eigenvectors: Computed the top 10 non-trivial Laplacian eigenvectors of the norm
 Fixed-Pin Anchors: Append a binary is_fixed flag plus the normalized (x,y) coordinates of fixed pins, so the network has spatial anchor points. \
 Global Vector Matrix: Concatenate the shared, normalized global metrics (AR, Util, Density) onto each node’s feature vector via broadcasting in the data batch.
 
-Loss Functions: \
-Absolute Loss: Mean Squared Error between predicted and target normalized coordinates. \
-Relative Loss: MSE between predicted and true pairwise distances along each hyperedge — encourages correct spacing. \ 
-Density Penalty: Soft binning of (x,y) predictions into grid cells, penalizing bins that exceed a target density threshold. \
-HPWL: Sum of max-min x and y spans per net; can be added to loss to reduce wiring cost. \
-Overlap Loss: Penalizes predicted nodes that fall too close (less than min spacing) to each other.
+Loss Functions: 
+1. Absolute Loss: Mean Squared Error between predicted and target normalized coordinates. 
+2. Relative Loss: MSE between predicted and true pairwise distances along each hyperedge — encourages correct spacing.  
+3. Density Penalty: Soft binning of (x,y) predictions into grid cells, penalizing bins that exceed a target density threshold. 
+4. HPWL: Sum of max-min x and y spans per net; can be added to loss to reduce wiring cost. 
+5. Overlap Loss: Penalizes predicted nodes that fall too close (less than min spacing) to each other.
 
 Note: We omitted absolute coordinate MSE during final training because it dominated gradients and reduced generalization.
 

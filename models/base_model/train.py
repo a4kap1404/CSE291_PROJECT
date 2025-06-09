@@ -73,30 +73,29 @@ def main():
     p.add_argument('--test-designs',   nargs='+', required=True,
                    help="e.g. gcd_nangate45")
     p.add_argument('--batch-size',      type=int, default=4)
-    p.add_argument('--epochs',          type=int, default=150)
+    p.add_argument('--epochs',          type=int, default=100)
     p.add_argument('--lr',              type=float, default=2e-4)
     p.add_argument('--weight-decay',    type=float, default=1e-4)
     args = p.parse_args()
-    print("loading…")
-    #device = torch.device("cpu")
-    #torch.cuda.is_available = lambda : False    
+    print("Loading Data")  
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_loader, test_loader = load_all_data(args.data_dir, train_list=args.train_designs, test_list=args.test_designs, batch_size=args.batch_size)
-    print("loaded")
-    model     = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='gcn').to(device)
+    print("Data Loading Done")
+    model     = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='sage').to(device)
     opt       = Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     criterion = MSELoss().to(device)
-    #val_loss = 0
-    print("iterating…")
+    val_loss = 0
+    print("Iterating over epochs")
     best_val = float('inf')
     for epoch in range(1,151):
         train_loss = train(train_loader, model, opt, criterion, device,epoch)
         val_loss   = validate(test_loader, model, criterion, device)
         if epoch % 10 == 0:
             print(f"[{epoch:03d}] train={train_loss:.4f} | Val Loss: {val_loss:.4f}")
-        #if val_loss < best_val - 1e-6:
-            #best_val = val_loss
-    torch.save(model.state_dict(), 'best_model.pth')
+        if val_loss < best_val - 1e-6:
+            best_val = val_loss
+            torch.save(model.state_dict(), 'best_model.pth')
+    print("Best model saved under best_model.pth")
     print("Done")
 
 if __name__ == "__main__":

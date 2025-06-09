@@ -1,10 +1,11 @@
 This repository provides scripts to train and evaluate a Graph Neural Network (GNN) for initial placement coordinate prediction using hypergraph data (drivers & sinks). The two main entry points are:
 
-train.py — trains the PlacementGNN model
+train.py — trains the PlacementGNN model \
 eval.py — runs inference on held-out designs and writes predicted placements
 
 # 0. Directory Summary 
 ```bash
+base_model/
 ├── data_utils.py   # parsing + DataLoader builder
 ├── model.py        # PlacementGNN definition
 ├── train.py        # training script

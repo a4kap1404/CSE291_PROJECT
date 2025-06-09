@@ -87,7 +87,7 @@ class HypergraphClustering:
 
         actual_n_clusters = min(n_clusters, features.shape[1])
         #kmeans = KMeans(n_clusters=actual_n_clusters, random_state=42, n_init=10)
-        kmeans = KMeans(n_clusters=actual_n_clusters, n_init=10)
+        kmeans = KMeans(n_clusters=actual_n_clusters, random_state=42, n_init=5)
         clusters = kmeans.fit_predict(features)
 
         self.original_clusters = clusters.copy()
@@ -421,11 +421,13 @@ if __name__ == "__main__":
     test = args.m
 
     if test == "1":
-        input_file = "./raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
+        input_file = "./raw_graph_output/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_output.txt"
+        output_file_path = "./raw_graph_test/" + str(design) + "_" + str(tech_node) + "_" + str(flow)
     else:
         input_file = "./raw_graph_output/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_output.txt"
-
-    output_file_path = "./raw_graph_test/" + str(design) + "_" + str(tech_node) + "_" + str(flow)
+        output_file_path = "./raw_graph_clustered/" + str(design) + "_" + str(tech_node) + "_" + str(flow)
+        
+    #output_file_path = "./raw_graph_test/" + str(design) + "_" + str(tech_node) + "_" + str(flow)
     #output_file_path = "./raw_graph_clustered/" + str(design) + "_" + str(tech_node) + "_" + str(flow)
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
 

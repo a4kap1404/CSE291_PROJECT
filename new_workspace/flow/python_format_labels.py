@@ -12,7 +12,7 @@ def extract_ids_and_locations(input_file, output_file):
     extracted = []  # To store all (id, x_center, y_center)
 
     with open(input_file, 'r') as f:
-        for _ in range(9):  # Skip the first 9 header lines
+        for _ in range(12):  # Skip the first 9 header lines
             next(f)
 
         for line in f:
@@ -62,7 +62,7 @@ def extract_ids_and_locations(input_file, output_file):
 
     # Write output
     with open(output_file, "w") as out_file:
-        out_file.write("Instance ID x_center y_center\n")
+        out_file.write("Instance_ID x_center y_center\n")
         for inst_id, x, y in extracted:
             out_file.write(f"{inst_id} {x} {y}\n")
     out_file.close()
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     parser.add_argument("-t", default="nangate45", help="Give the technology node")
     parser.add_argument("-p", default="nangate45", help="Give the result_path")
     parser.add_argument("-f", default="nangate45", help="Give the flow variant")
-    parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
+    parser.add_argument("-large_net_threshold", default="50", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
 

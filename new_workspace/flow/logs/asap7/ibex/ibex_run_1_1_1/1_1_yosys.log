@@ -266,7 +266,7 @@ abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_s
 24.1. Extracting gate netlist of module `\ibex_core' to `<abc-temp-dir>/input.blif'..
 24.1.1. Executing ABC.
 24.1.2. Re-integrating ABC results.
-Took 38 seconds: abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_speed.script -liberty ./objects/asap7/ibex/ibex_run_1_1_1/lib/merged.lib -constr ./objects/asap7/ibex/ibex_run_1_1_1/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 1260
+Took 37 seconds: abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_speed.script -liberty ./objects/asap7/ibex/ibex_run_1_1_1/lib/merged.lib -constr ./objects/asap7/ibex/ibex_run_1_1_1/abc.constr -dont_use *x1p*_ASAP7* -dont_use *xp*_ASAP7* -dont_use SDF* -dont_use ICG* -D 1260
 25. Executing SETUNDEF pass (replace undef values with defined constants).
 26. Executing SPLITNETS pass (splitting up multi-bit signals).
 27. Executing OPT_CLEAN pass (remove unused cells and wires).
@@ -279,7 +279,7 @@ Took 38 seconds: abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/f
 33.1. Executing BMUXMAP pass.
 33.2. Executing DEMUXMAP pass.
 exec cp /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/designs/asap7/ibex/constraint.sdc ./results/asap7/ibex/ibex_run_1_1_1/1_synth.sdc
-End of script. Logfile hash: 50307e625f, CPU: user 16.11s system 0.25s, MEM: 188.04 MB peak
+End of script. Logfile hash: 1857cd96df, CPU: user 16.39s system 0.14s, MEM: 188.43 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 70% 2x abc (38 sec), 5% 1x extract_fa (3 sec), ...
-Elapsed time: 0:54.53[h:]min:sec. CPU time: user 53.96 sys 0.44 (99%). Peak memory: 193180KB.
+Time spent: 69% 2x abc (37 sec), 6% 1x extract_fa (3 sec), ...
+Elapsed time: 0:53.89[h:]min:sec. CPU time: user 53.45 sys 0.30 (99%). Peak memory: 193604KB.

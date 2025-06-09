@@ -29,7 +29,6 @@ for i in $(seq 1 5); do #5
                     echo "Starting $FLOW_VARIANT global_place and detailed_place with predicted values"
                     export FLOW_VARIANT=$FLOW_VARIANT
                     openroad -python -exit python_complete_loop.py -d "$DESIGN" -t "$tech_node" -p "$new_results_path" -f "$FLOW_VARIANT" -b "$counter_k" > "logs/new_output/${FLOW_VARIANT}.log" 2>&1
-                    openroad -exit my_script.tcl > log.txt
                     #DESIGN_CONFIG="$new_config" make place > "logs/${FLOW_VARIANT}.log" 2>&1
                     echo "Finished $FLOW_VARIANT"
                 ) &

@@ -21,7 +21,7 @@ import resource
 def load_design(techNode, floorplanOdbFile, sdcFile):
   tech = Tech()
   platform_dir = "./platforms/" + techNode + "/"
-  libDir = Path(platform_dir + "lib/NLDM")
+  libDir = Path(platform_dir + "lib/")
   lefDir = Path(platform_dir + "lef/")
   rcFile = platform_dir + "setRC.tcl"
 
@@ -96,10 +96,11 @@ def run_incremental_placement(design):
   start_time = time.time()
   start_usage = resource.getrusage(resource.RUSAGE_SELF)
 
-  design.evalTclString("estimate_parasitics -placement")
+  #design.evalTclString("estimate_parasitics -placement")
   
   print(f"global_placement -density {place_density} -routability_driven -timing_driven -skip_initial_place -incremental")
   #design.evalTclString(f"global_placement -routability_driven -timing_driven -skip_initial_place -incremental")
+  #design.evalTclString(f"global_placement -density {place_density} -skip_initial_place -incremental")
   design.evalTclString(f"global_placement -density {place_density} -skip_initial_place -incremental")
   
   end_time = time.time()
@@ -173,10 +174,3 @@ if __name__ == "__main__":
 
     print("Finished running global placement and detailed placement.")
     print("\n")
-    #print("*************************************************************************************************")
-    #print("Please use the generated 3_3_place_gp.def and 3_3_place_gp.odb files for remaining flows.")
-    #print("You can use OpenROAD GUI to visualize the placement: openroad -gui")
-    #print("After opening the OpenROAD GUI, then go to File -> Open DB and select the 3_3_place_gp.odb file.")
-    #print("*************************************************************************************************")
-    #print("Good luck with your project!")
-    #print("*************************************************************************************************")

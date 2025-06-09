@@ -59,7 +59,7 @@ def extract_sections_from_file(file_path):
     nets = []
 
     with open(file_path, 'r') as f:
-        lines = f.readlines()[9:]  # Skip header lines
+        lines = f.readlines()[12:]  # Skip header lines
     f.close()
 
     in_instance_section = False
@@ -89,7 +89,7 @@ def extract_sections_from_file(file_path):
                 "name": name,
                 #"cell_type":'pin',
                 #"cell_type_onehot": one_hot,
-                "direction": direction,
+                #"direction": direction,
                 "x": int(x),
                 "y": int(y)
             })
@@ -102,8 +102,8 @@ def extract_sections_from_file(file_path):
                 "name": instance_name,
                 #"cell_type": cell_name,
                 #"cell_type_onehot": one_hot,
-                "is_macro": isMacro == "True",
-                "is_seq": isSeq == "True",
+                #"is_macro": isMacro == "True",
+                #"is_seq": isSeq == "True",
                 "is_fixed": is_fixed == "True",
                 "x": int(x),
                 "y": int(y),
@@ -136,11 +136,11 @@ def get_node_features(pins, instances, nets):
                 feature = {
                     "id": node_id,
                     "name": pin['name'],
-                    "direction": pin['direction'],
+                    #"direction": pin['direction'],
                     #"cell_type": 'pin',
                     #"cell_type_onehot": pin['cell_type_onehot'],
-                    "is_macro": False,
-                    "is_seq": False,
+                    #"is_macro": False,
+                    #"is_seq": False,
                     "x": pin['x'],
                     "y": pin['y'],
                     "is_fixed": True,
@@ -151,11 +151,11 @@ def get_node_features(pins, instances, nets):
                 feature = {
                     "id": node_id,
                     "name": inst["name"],
-                    "direction": 'false',
+                    #"direction": 'false',
                     #"cell_type": inst["cell_type"],
                     #"cell_type_onehot": inst["cell_type_onehot"],
-                    "is_macro": inst['is_macro'],
-                    "is_seq": inst['is_seq'],
+                    #"is_macro": inst['is_macro'],
+                    #"is_seq": inst['is_seq'],
                     #"x": core_x_center,
                     "x": inst['x'],
                     #"y": core_y_center,
@@ -181,6 +181,12 @@ def extract_area_info(file_path):
         for line in f:
             if "Die width" in line:
                 area_info["die_width"] = int(line.strip().split(":")[1].split()[0])
+            elif "Core Aspect Ratio" in line:
+                area_info["Core Aspect Ratio"] = float(line.strip().split("=")[1].split()[0])
+            elif "Utilization" in line:
+                area_info["Utilization"] = float(line.strip().split("=")[1].split()[0])
+            elif "Place Density" in line:
+                area_info["Place Density"] = float(line.strip().split("=")[1].split()[0])
             elif "Die height" in line:
                 area_info["die_height"] = int(line.strip().split(":")[1].split()[0])
             elif "Core width" in line:
@@ -204,10 +210,11 @@ if __name__ == "__main__":
     parser.add_argument("-t", default="nangate45", help="Give the technology node")
     parser.add_argument("-p", default="nangate45", help="Give the result_path")
     parser.add_argument("-f", default="nangate45", help="Give the flow variant")
-    parser.add_argument("-i", default="0.5", help="Give the core aspect ratio")
-    parser.add_argument("-j", default="40", help="Give the utilization")
-    parser.add_argument("-k", default="0.4", help="Give the place density")
-    parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
+    #parser.add_argument("-i", default="0.5", help="Give the core aspect ratio")
+    #parser.add_argument("-j", default="40", help="Give the utilization")
+    #parser.add_argument("-k", default="0.4", help="Give the place density")
+    parser.add_argument("-c", default="0", help="Give if clustering mode")
+    parser.add_argument("-large_net_threshold", default="50", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
 
@@ -215,12 +222,19 @@ if __name__ == "__main__":
     design = args.d
     path = args.p
     flow = args.f
-    aspect_ratio = float(args.i)
-    util = float(args.j)
-    place_density = float(args.k)
+    cluster = args.c
+    #aspect_ratio = float(args.i)
+    #util = float(args.j)
+    #place_density = float(args.k)
     large_net_threshold = int(args.large_net_threshold)
-    file_path = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + ".txt"
-    hg_file_name = "./raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
+
+    if cluster == "0":
+        file_path = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + ".txt"
+        hg_file_name = "./raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_formatted.txt"
+    else:
+        file_path = path + "/raw_graph/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_label.txt"
+        hg_file_name = "./raw_graph_output/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_output.txt"
+    
     os.makedirs(os.path.dirname(hg_file_name), exist_ok=True)
     f = open(hg_file_name, "w")
     f.close()
@@ -249,9 +263,9 @@ if __name__ == "__main__":
     # Write to file
     with open(hg_file_name, 'a') as f:
         f.write(area_info_str)
-        f.write(f"Core Aspect Ratio = " + str(aspect_ratio) + "\n") 
-        f.write("Utilization = " + str(util) + "\n")
-        f.write("Place Density = " + str(place_density) + "\n\n")  
+        #f.write(f"Core Aspect Ratio = " + str(aspect_ratio) + "\n") 
+        #f.write("Utilization = " + str(util) + "\n")
+        #f.write("Place Density = " + str(place_density) + "\n\n")  
         for items in net_features:
             f.write('%s\n' % items)
     f.close()

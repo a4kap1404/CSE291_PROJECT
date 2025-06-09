@@ -1,7 +1,7 @@
-1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/workspace/flow/designs/src/gcd/gcd.v
+1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/designs/src/gcd/gcd.v
 2. Executing Liberty frontend: ./objects/nangate45/gcd/gcd_run_1_4_1/lib/NangateOpenCellLibrary_typical.lib
 3. Executing Liberty frontend: ./objects/nangate45/gcd/gcd_run_1_4_1/lib/NangateOpenCellLibrary_typical.lib
-4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/workspace/flow/platforms/nangate45/cells_clkgate.v
+4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_1_4_1/clock_period.txt
 Setting clock period to 0.46
@@ -31,7 +31,7 @@ Warning: Ignoring module GcdUnitCtrlRTL_0x4d0fc71ead8d3d9e because it contains p
 Warning: Ignoring module LtComparator_0x422b1f52edd46a85 because it contains processes (run 'proc' command first).
 8. Executing RTLIL backend.
 Warnings: 8 unique messages, 8 total
-End of script. Logfile hash: 60f8c8f02a, CPU: user 0.39s system 0.01s, MEM: 32.07 MB peak
+End of script. Logfile hash: 18a7a171cc, CPU: user 0.24s system 0.01s, MEM: 30.96 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 92% 4x read_liberty (0 sec), 2% 4x read_verilog (0 sec), ...
-Elapsed time: 0:00.48[h:]min:sec. CPU time: user 0.46 sys 0.00 (97%). Peak memory: 34056KB.
+Time spent: 90% 4x read_liberty (0 sec), 4% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.31[h:]min:sec. CPU time: user 0.29 sys 0.01 (99%). Peak memory: 34120KB.

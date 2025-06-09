@@ -7,6 +7,7 @@
 
 import sys
 import os
+import re
 import argparse
 import pdn, odb, utl
 from openroad import Tech, Design, Timing
@@ -58,6 +59,7 @@ def get_connection(large_net_threshold, file_name, IO_map, inst_map):
     if net.getName() == "VDD" or net.getName() == "VSS":
       continue
     if (len(net.getITerms()) + len(net.getBTerms()) >= large_net_threshold):
+      print("Ignore large number of Iterms and Bterms: ",net.getName())
       continue
 
     sinkPins = []
@@ -86,7 +88,7 @@ def get_connection(large_net_threshold, file_name, IO_map, inst_map):
       continue
    
     if (len(sinkPins) + 1 >= large_net_threshold):
-      print("Ignore large net: ",net.getName())
+      print("Ignore large number of sinks: ",net.getName())
       continue
 
     if (len(sinkPins) == 0):
@@ -154,14 +156,14 @@ def get_insts(design, inst_map, file_name, vertex_id):
     f.write(str(isFixed) + " ")
     if mode == "0":
         if (isMacro == True or isFixed == True):
-            f.write(str(x_center) + " ")
-            f.write(str(y_center) + " ")
+            f.write(str(int(x_center)) + " ")
+            f.write(str(int(y_center)) + " ")
         else:
-            f.write(str(0) + " ")
-            f.write(str(0) + " ")
+            f.write(str(int(x_center)) + " ")
+            f.write(str(int(y_center)) + " ")
     else:
-        f.write(str(x_center) + " ")
-        f.write(str(y_center) + " ")        
+        f.write(str(int(x_center)) + " ")
+        f.write(str(int(y_center)) + " ")        
     f.write(str(width) + " ")
     f.write(str(height) + " ")
     f.write("\n")
@@ -232,7 +234,7 @@ def get_IO_pins(IO_map, file_name):
 
 
 
-def get_basic_info(file_name):
+def get_basic_info(file_name, density):
   block = ord.get_db_block()
   design_name = block.getName()
   dbunits = block.getDbUnitsPerMicron()
@@ -242,6 +244,9 @@ def get_basic_info(file_name):
   core_height = block.getCoreArea().dy() 
   nets = block.getNets()
   insts = block.getInsts()
+  util = float(design.evalTclString(f"gpl::get_global_placement_uniform_density")) * 100
+  aspect_ratio = float(core_height/core_width)
+
 
   f = open(file_name, "a")
   f.write("*********************************************************************************************\n")
@@ -258,7 +263,13 @@ def get_basic_info(file_name):
                                                             block.getCoreArea().yMin(),
                                                             block.getCoreArea().xMax(),
                                                             block.getCoreArea().yMax()))
+  f.write("Core Aspect Ratio = %f\n"%aspect_ratio) 
+  f.write("Utilization = %f\n"%util)
+  f.write("Place Density = %f\n"%density)                                                    
   f.write("*********************************************************************************************\n")
+  
+
+
   f.close()
 
 
@@ -270,7 +281,8 @@ if __name__ == "__main__":
     parser.add_argument("-p", default="nangate45", help="Give the result_path")
     parser.add_argument("-f", default="nangate45", help="Give the flow variant")
     parser.add_argument("-m", default="0", help="Give the mode")
-    parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
+    parser.add_argument("-a", default="0", help="Give the path to logs_dir")
+    parser.add_argument("-large_net_threshold", default="50", help="Large net threshold. We should remove global nets like reset.")
     
     args = parser.parse_args()
 
@@ -279,6 +291,7 @@ if __name__ == "__main__":
     path = args.p
     flow = args.f
     mode = args.m
+    logs_dir = args.a
     large_net_threshold = int(args.large_net_threshold)
 
     if mode == "0":
@@ -291,6 +304,18 @@ if __name__ == "__main__":
         os.makedirs(os.path.dirname(hg_file_name), exist_ok=True)
         f = open(hg_file_name, "w")
         f.close()
+
+    log_path = os.path.join(logs_dir, flow, "3_1_place_gp_skip_io.log")
+    density = None
+    with open(log_path, "r") as log_file:
+        for line in log_file:
+            match = re.search(r"global_placement\s+-skip_io\s+-density\s+([0-9.]+)", line)
+            if match:
+                density = float(match.group(1))
+                break
+
+    if not density:
+        density = 0.7
 
     #path = "./results/" + tech_node + "/" + design + "/base"
     #path = "./results/" + tech_node + "/" + design + "/" + design +"_run_1"
@@ -308,7 +333,7 @@ if __name__ == "__main__":
     # Load the design
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file)
     # Get basic information
-    get_basic_info(hg_file_name)
+    get_basic_info(hg_file_name, density)
 
     # get all the IO pins
     IO_map = {}

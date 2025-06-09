@@ -11,7 +11,7 @@ import time
 
 def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='../../new_workspace/flow/raw_graph_test'):
     # Load trained weights
-    PATH = './best_model.pth'
+    PATH = './gnn_all.pth'
     model.load_state_dict(torch.load(PATH, map_location=model.device))
     os.makedirs('./predictions', exist_ok=True)
     model.eval()
@@ -138,7 +138,7 @@ def main():
     # Instantiate model
     sample = next(iter(test_loader))
     in_dim = sample.x.shape[1]
-    model = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='sage').to(device)
+    model = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=4, global_channels=5, conv_type='gcn').to(device)
     model.device = device
 
     # Run inference

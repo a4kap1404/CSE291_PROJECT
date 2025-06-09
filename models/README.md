@@ -62,7 +62,7 @@ The script will print per-epoch train & validation relative losses, and save the
 After training, run eval.py to generate (design)_predictions.txt for each test graph:
 ```bash
 python eval.py \
-  --data-dir     ./raw_graph \
+  --data-dir     ../../new_workspace/flow/raw_graph_test \
   --test-designs gcd_nangate45 \
   --batch-size    1 \
 ```

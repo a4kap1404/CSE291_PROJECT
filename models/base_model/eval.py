@@ -9,7 +9,7 @@ from train import loss_function
 import time
 
 
-def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='./raw_graph'):
+def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='../../new_workspace/flow/raw_graph_test'):
     # Load trained weights
     PATH = './best_model.pth'
     model.load_state_dict(torch.load(PATH, map_location=model.device))

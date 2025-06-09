@@ -13,82 +13,105 @@ def infer_wrapper(model, test_loader, start, clustering_mode=1, run_path='../../
     # Load trained weights
     PATH = './best_model.pth'
     model.load_state_dict(torch.load(PATH, map_location=model.device))
-    os.makedirs('./pred', exist_ok=True)
+    os.makedirs('./predictions', exist_ok=True)
     model.eval()
-    total_loss = 0.0
-    criterion = torch.nn.MSELoss()
+    total = 0.0
+    criterion = torch.nn.MSELoss().to(model.device)
     # Iterate over each graph in the test set
-    for data in test_loader.dataset:
-        # Get records for naming/mapping
-        if clustering_mode:
-            cluster_file = os.path.join(run_path, data.design_name + '_mapping.txt')
-            name_map = os.path.join('../../new_workspace/flow/raw_graph', data.design_name + '_formatted.txt')
-            _, records, _, _ = parse_formatted(name_map)
-        else:
-            formatted_fp = os.path.join(run_path, data.design_name + '_formatted.txt')
-            _, records, _, _ = parse_formatted(formatted_fp)
+    with torch.no_grad():
+        for i, data in enumerate(test_loader.dataset):
 
-        # Move to device
-        data = data.to(model.device)
-        batch_vec = torch.zeros(data.x.size(0), dtype=torch.long, device=model.device)
-        out = model(data.x, data.edge_index, batch_vec, data.u)
+            if (clustering_mode):
+                cluster_file = os.path.join(f"{run_path}", data.design_name + '_mapping.txt')
+                name_map_file = os.path.join(f"../../new_workspace/flow/raw_graph", data.design_name + '_formatted.txt')
+                _, records, _, _ = parse_formatted(name_map_file)
+            else:
+                formatted_fp = os.path.join(f"{run_path}", data.design_name + '_formatted.txt')
+                _, records, _, _ = parse_formatted(formatted_fp)
+                
+            data = data.to(model.device)
+            batch_vec = torch.zeros(data.x.size(0), dtype=torch.long, device=model.device)
+            out = model(data.x, data.edge_index, batch_vec, data.u)
 
-        # Compute loss
-        loss = loss_function(out, data, criterion)
-        total_loss += loss.item()
+            loss = loss_function(out, data, criterion)
+            total += loss.item()
+            
+            # out: shape [num_nodes, 2]
+            x = out[:, 0]
+            y = out[:, 1]
+            x_min, x_max = x.min(), x.max()
+            y_min, y_max = y.min(), y.max()
+            
+            x_range = x_max - x_min
+            y_range = y_max - y_min
+            x_range = x_range if x_range > 1e-6 else 1.0
+            y_range = y_range if y_range > 1e-6 else 1.0
+            
+            x_scaled = (x - x_min) / x_range
+            y_scaled = (y - y_min) / y_range
+            
+            out = torch.stack([x_scaled, y_scaled], dim=1)  # shape: [num_nodes, 2]
 
-        # Normalize predictions back to core bounds
-        x, y = out[:,0], out[:,1]
-        x_min, x_max = x.min(), x.max()
-        y_min, y_max = y.min(), y.max()
-        x_range = (x_max - x_min).clamp(min=1e-6)
-        y_range = (y_max - y_min).clamp(min=1e-6)
-        x_scaled = (x - x_min) / x_range
-        y_scaled = (y - y_min) / y_range
-        scaled = torch.stack([x_scaled, y_scaled], dim=1)
+            lx, ux = data.bounds['lx'], data.bounds['ux']
+            ly, uy = data.bounds['ly'], data.bounds['uy']
+            scale  = torch.tensor([ux - lx, uy - ly], device=out.device)
+            offset = torch.tensor([lx, ly], device=out.device)
+            preds  = (out * scale + offset).cpu().numpy()
+            
+            id2name = {}
+            fixed_ids = []
+            for rec in records:
+                d = rec['driver']
+                id2name[d['id']] = d.get('name', str(d['id']))
+                for s in rec['sinks']:
+                    id2name[s['id']] = s.get('name', str(s['id']))
 
-        lx, ly = data.bounds['lx'], data.bounds['ly']
-        ux, uy = data.bounds['ux'], data.bounds['uy']
-        scale = torch.tensor([ux - lx, uy - ly], device=scaled.device)
-        offset = torch.tensor([lx, ly], device=scaled.device)
-        preds = (scaled * scale + offset).detach().cpu().numpy()
+            if (clustering_mode):
+            
+                cluster_ids = data.node_ids.tolist() if torch.is_tensor(data.node_ids) else data.node_ids
+                combined_preds = [
+                    [int(cid), float(x), float(y)]
+                    for cid, (x, y) in zip(cluster_ids, preds)
+                ]
+                pred_mapped = map_nodes_to_coordinates(cluster_file, combined_preds)
+                
+                node_ids = np.array([int(row[0]) for row in pred_mapped])
+                
+                fixed_ids = [int(rec['driver']['id']) for rec in records if rec['driver'].get('is_fixed')]
+                fixed_ids += [int(s['id']) for rec in records for s in rec['sinks'] if s.get('is_fixed')]
+                
+                mask = ~np.isin(node_ids, fixed_ids)
+                names = [id2name.get(nid, str(nid)) for nid in node_ids]
+                names = [name for name, m in zip(names, mask) if m]
+                preds_new = np.array([[row[1], row[2]] for row in pred_mapped])[mask]
+    
+                fname = f"./predictions/{data.design_name}_predictions.txt"
+                with open(fname, "w", newline="") as f:
+                    f.write(f"InstanceName x_center y_center\n")
+                    for name, row in zip(names, preds_new):
+                        x_coord, y_coord = row
+                        f.write(f"{name} {x_coord:.4f} {y_coord:.4f}\n")
+                print(f"Saved {fname}")
+                f.close()
+                
+            else:
 
-        # Build id->name mapping
-        id2name = {}
-        for rec in records:
-            d = rec['driver']
-            id2name[d['id']] = d.get('name', str(d['id']))
-            for s in rec['sinks']:
-                id2name[s['id']] = s.get('name', str(s['id']))
-
-        # Handle clustering mapping
-        if clustering_mode:
-            cluster_ids = data.node_ids
-            combined = [[int(cid), float(px), float(py)] for cid,(px,py) in zip(cluster_ids, preds)]
-            pred_mapped = map_nodes_to_coordinates(cluster_file, combined)
-            node_ids = np.array([row[0] for row in pred_mapped])
-            vals     = np.array([row[1:] for row in pred_mapped])
-        else:
-            node_ids = np.array(data.node_ids)
-            vals     = preds
-
-        # Exclude fixed pins
-        fixed_ids = set(data.fixed_ids)
-        mask = [nid not in fixed_ids for nid in node_ids]
-        names = [id2name[nid] for nid, m in zip(node_ids, mask) if m]
-        coords = vals[mask]
-
-        # Write predictions
-        out_path = f'./pred/{data.design_name}_predictions.txt'
-        with open(out_path, 'w') as fout:
-            fout.write('InstanceName x_center y_center\n')
-            for name,(xv,yv) in zip(names, coords):
-                fout.write(f'{name} {xv:.4f} {yv:.4f}\n')
-        print(f'Saved {out_path}')
-
-    avg_loss = total_loss / len(test_loader.dataset)
+                node_ids   = data.node_ids.tolist() if torch.is_tensor(data.node_ids) else data.node_ids
+                names = [id2name.get(nid, str(nid)) for nid in node_ids]
+                if hasattr(data, 'fixed_ids') and data.fixed_ids:
+                    mask = ~np.isin(node_ids, data.fixed_ids)
+                    names = [name for name, m in zip(names, mask) if m]
+                    preds = preds[mask]
+        
+                fname = f"./pred/{data.design_name}_predictions.txt"
+                with open(fname, "w", newline="") as f:
+                    f.write(f"InstanceName x_center y_center\n")
+                    for name, (xv, yv) in zip(names, preds):
+                        f.write(f"{name} {xv:.4f} {yv:.4f}\n")
+                print(f"Saved {fname}")
+                f.close()
     end = time.time()
-    print(f'MSE: {avg_loss:.4f}')
+    print(f'MSE: {total/len(test_loader.dataset):.4f}')
     print(f"Inference time: {end - start:.2f} seconds")
 
 

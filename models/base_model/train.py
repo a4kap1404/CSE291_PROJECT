@@ -3,6 +3,7 @@ from torch.nn import MSELoss
 from torch.optim import Adam
 from data_utils import load_all_data
 from model import PlacementGNN
+import argparse
 
 
 def compute_relative_loss(out, data, criterion):
@@ -14,35 +15,6 @@ def compute_relative_loss(out, data, criterion):
     pred_dist = torch.norm(pred_src - pred_tgt, dim=1)
     true_dist = torch.norm(true_src - true_tgt, dim=1)
     loss = criterion(pred_dist, true_dist)
-
-    return loss
-
-def soft_density_loss(x, y, cell_area=0.0001, bin_size=0.05, density_threshold=0.4, sigma=0.01):
-    device = x.device
-    x = torch.clamp(x, 0.0, 1.0)
-    y = torch.clamp(y, 0.0, 1.0)
-    x_bins = torch.arange(bin_size / 2, 1.0, bin_size, device=device)
-    y_bins = torch.arange(bin_size / 2, 1.0, bin_size, device=device)
-    x_centers, y_centers = torch.meshgrid(x_bins, y_bins, indexing='ij')
-
-    Bx, By = x_centers.shape
-    num_bins = Bx * By
-
-    x_centers_flat = x_centers.flatten().unsqueeze(0)
-    y_centers_flat = y_centers.flatten().unsqueeze(0)
-    x_expand = x.unsqueeze(1)  # (N, 1)
-    y_expand = y.unsqueeze(1)  # (N, 1)
-
-    dx2 = (x_expand - x_centers_flat) ** 2
-    dy2 = (y_expand - y_centers_flat) ** 2
-    gauss = torch.exp(-(dx2 + dy2) / (2 * sigma**2))  # (N, B)
-
-    density_per_bin = torch.sum(gauss, dim=0) * cell_area  # (B,)
-    bin_area = bin_size * bin_size
-    density_norm = density_per_bin / bin_area  # (B,)
-
-    penalty = torch.clamp(density_norm - density_threshold, min=0.0)
-    loss = penalty.sum()
 
     return loss
 
@@ -93,14 +65,26 @@ def validate(loader, model, criterion, device):
 
 
 def main():
+    p = argparse.ArgumentParser(description="Train PlacementGNN")
+    p.add_argument('--data-dir',        default='./raw_graph',
+                   help="root folder containing *_formatted.txt graphs")
+    p.add_argument('--train-designs',  nargs='+', required=True,
+                   help="e.g. gcd_asap7")
+    p.add_argument('--test-designs',   nargs='+', required=True,
+                   help="e.g. gcd_nangate45")
+    p.add_argument('--batch-size',      type=int, default=4)
+    p.add_argument('--epochs',          type=int, default=150)
+    p.add_argument('--lr',              type=float, default=2e-4)
+    p.add_argument('--weight-decay',    type=float, default=1e-4)
+    args = p.parse_args()
     print("loading…")
     #device = torch.device("cpu")
     #torch.cuda.is_available = lambda : False    
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    train_loader, test_loader = load_all_data('raw_graph', train_list=['gcd_asap7'], test_list=['gcd_nangate45'], batch_size=4)
+    train_loader, test_loader = load_all_data(args.data_dir, train_list=args.train_designs, test_list=args.test_designs, batch_size=args.batch_size)
     print("loaded")
     model     = PlacementGNN(in_channels=13, hidden_channels=64, num_layers=6, global_channels=5, conv_type='gcn').to(device)
-    opt       = Adam(model.parameters(), lr=2e-4, weight_decay=1e-4)
+    opt       = Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     criterion = MSELoss().to(device)
     #val_loss = 0
     print("iterating…")

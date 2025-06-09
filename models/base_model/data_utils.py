@@ -57,12 +57,7 @@ def parse_label_formatted(label_path, node_ids, bounds):
     coords = [id2coord.get(nid, (0.0, 0.0)) for nid in node_ids]
     return torch.tensor(coords, dtype=torch.float)
 
-
 # ## Matrix/Feature Generation and Relative Loss
-
-# In[4]:
-
-
 def build_edge_index(node_ids, records, bidirectional=True):
     id2idx = {nid: i for i, nid in enumerate(node_ids)}
     edges = []
@@ -138,22 +133,37 @@ def shuffle_nodes(data: Data) -> Data:
     return data
 
 
-
-def load_all_data(root_dir, train_list, test_list, design_filter=[], batch_size=16, shuffle=True):
+def load_all_data(root_dir, train_list, test_list, batch_size=16, shuffle=True, device=None):
+    """
+    Loads DataLoaders for training and testing splits.
+    If train_list is empty, train_loader will be None.
+    """
     train_data_list = []
-    test_data_list = []
-    #data_list = []
+    test_data_list  = []
+
+    # Walk through files and assign to train or test lists
     for dp, _, files in os.walk(root_dir):
         for f in files:
             if not f.endswith('_formatted.txt') or f.endswith('_label_formatted.txt'):
                 continue
-            curr_file = f.rsplit('_', 6)[0]
-            if design_filter and curr_file not in design_filter:
+            # derive design name from first two tokens
+            parts = f.split('_')
+            curr_file = parts[0] + '_' + parts[1] if len(parts) >= 2 else parts[0]
+
+            if curr_file in train_list:
+                split = 'train'
+            elif curr_file in test_list:
+                split = 'test'
+            else:
                 continue
+
+            # construct paths
             fp = os.path.join(dp, f)
             lf = fp.replace('_formatted.txt', '_label_formatted.txt')
             if not os.path.exists(lf):
                 continue
+
+            # parse and build graph
             node_ids, records, globals_, bounds = parse_formatted(fp)
             orig_coords = {rec['driver']['id']:(rec['driver']['x'], rec['driver']['y']) for rec in records}
             for rec in records:
@@ -165,23 +175,21 @@ def load_all_data(root_dir, train_list, test_list, design_filter=[], batch_size=
                 ), dtype=torch.float
             )
             labels = parse_label_formatted(lf, node_ids, bounds)
-            # need to globally normalize these values
             u_vec = torch.tensor([
                 (globals_['Core Aspect Ratio'] - 0.5) / 0.4,
-                (globals_['Utilization'] - 40.0) / 28.0,
-                (globals_['Place Density'] - 0.2) / 0.3,
-                (globals_['core_width']/1000000),
-                (globals_['core_height']/1000000)
+                (globals_['Utilization']      - 40.0) / 28.0,
+                (globals_['Place Density']    - 0.2) / 0.3,
+                (globals_['core_width']     / 1e6),
+                (globals_['core_height']    / 1e6),
             ], dtype=torch.float).unsqueeze(0)
             edges = build_edge_index(node_ids, records)
-            
+
+            # fixed IO mask and coords
             fixed_ids = [rec['driver']['id'] for rec in records if rec['driver'].get('is_fixed')]
             fixed_ids += [s['id'] for rec in records for s in rec['sinks'] if s.get('is_fixed')]
-            
-            is_io = []
-            norm_coords = []
             lx, ly, ux, uy = bounds['lx'], bounds['ly'], bounds['ux'], bounds['uy']
-            
+            norm_coords = []
+            is_io = []
             for nid in node_ids:
                 if nid in orig_coords:
                     x, y = orig_coords[nid]
@@ -192,28 +200,78 @@ def load_all_data(root_dir, train_list, test_list, design_filter=[], batch_size=
             
                 norm_coords.append((x, y))
                 is_io.append(1.0 if nid in fixed_ids else 0.0)
-            
-            is_io_tensor = torch.tensor(is_io, dtype=torch.float).unsqueeze(1)
-            io_coords_tensor = torch.tensor(norm_coords, dtype=torch.float)
-            
-            feats = torch.cat([feats, is_io_tensor, io_coords_tensor], dim=1)
-            
+            is_io_tensor     = torch.tensor(is_io, dtype=torch.float).unsqueeze(1)
+            coords_tensor    = torch.tensor(norm_coords, dtype=torch.float)
+            feats = torch.cat([feats, is_io_tensor, coords_tensor], dim=1)
+
             data = Data(x=feats, edge_index=edges, u=u_vec, y=labels)
-            
-            data.design_name = f.replace('_formatted.txt','')
-            data.node_ids = node_ids
-            data.bounds = bounds
-            data.orig_coords = orig_coords
-            data.fixed_ids = fixed_ids
-            
+            data.design_name = f.replace('_formatted.txt', '')
+            data.node_ids    = node_ids
+            data.bounds      = bounds
+            data.fixed_ids   = fixed_ids
+
             data = shuffle_nodes(data)
-            
-            if curr_file in train_list:
+            if device:
+                data = data.to(device)
+
+            if split == 'train':
                 train_data_list.append(data)
-            elif curr_file in test_list:
+            else:
                 test_data_list.append(data)
 
-    train_loader = DataLoader(train_data_list, batch_size=batch_size, shuffle=shuffle, exclude_keys=['orig_coords','node_ids','bounds','fixed_ids', 'records'])
-    test_loader  = DataLoader(test_data_list,  batch_size=batch_size, shuffle=False, exclude_keys=['orig_coords','node_ids','bounds','fixed_ids', 'records'])
+    # Construct DataLoaders
+    if not test_data_list:
+        raise RuntimeError("No test graphs found; check your test_list names.")
+    test_loader = DataLoader(
+        test_data_list,
+        batch_size   = batch_size,
+        shuffle      = False,
+        exclude_keys = ['node_ids','bounds','fixed_ids']
+    )
+
+    train_loader = None
+    if train_list:
+        if not train_data_list:
+            raise RuntimeError("No training graphs found; check your train_list names.")
+        train_loader = DataLoader(
+            train_data_list,
+            batch_size   = batch_size,
+            shuffle      = shuffle,
+            exclude_keys = ['node_ids','bounds','fixed_ids']
+        )
+
     return train_loader, test_loader
+
+
+def map_nodes_to_coordinates(cluster_file, combined_preds):
+    node_to_cluster = {}
     
+    with open(cluster_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                cluster_part, nodes_part = line.split(': ')
+                cluster_id = int(cluster_part.split()[1])
+                nodes_str = nodes_part.strip('[]')
+                if nodes_str:
+                    nodes = [int(x.strip()) for x in nodes_str.split(',')]
+                    for node in nodes:
+                        node_to_cluster[node] = cluster_id
+    
+    cluster_coordinates = {}
+    for row in combined_preds:
+        cluster_id = int(row[0])
+        x_coord = float(row[1])
+        y_coord = float(row[2])
+        cluster_coordinates[cluster_id] = (x_coord, y_coord)
+    
+    output_data = []
+    for node in sorted(node_to_cluster.keys()):
+        cluster_id = node_to_cluster[node]
+        if cluster_id in cluster_coordinates:
+            x_coord, y_coord = cluster_coordinates[cluster_id]
+            output_data.append([node, x_coord, y_coord])
+        else:
+            print(f"Warning: No coordinates found for cluster {cluster_id}")
+    
+    return output_data

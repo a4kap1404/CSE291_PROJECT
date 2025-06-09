@@ -14,10 +14,7 @@ class PositionalEncoder(torch.nn.Module):
 
     def forward(self, pe):
         return self.pe_mlp(pe)
-
-
 # In[8]:
-
 
 class PlacementGNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels=64, num_layers=3, global_channels=3, conv_type='sage'):

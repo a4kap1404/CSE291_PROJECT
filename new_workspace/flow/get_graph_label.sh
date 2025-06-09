@@ -26,13 +26,13 @@ if [ "$test_mode" == "1" ]; then
     echo "Finished $FLOW_VARIANT"
 else
     echo "Running bulk data generation"
-    for i in $(seq 1 1); do #5
+    for i in $(seq 1 5); do #5
         formatted_counter_i=$(printf "%.2f" "$counter_i")
-        for j in $(seq 5 5); do #5
+        for j in $(seq 1 5); do #5
             formatted_counter_j=$(printf "%.2f" "$counter_j")
-            for k in $(seq 3 3); do #4
+            for k in $(seq 1 4); do #4
                 formatted_counter_k=$(printf "%.2f" "$counter_k")
-                FLOW_VARIANT="${DESIGN}_run_${i}_${j}_${k}_test"
+                FLOW_VARIANT="${DESIGN}_run_${i}_${j}_${k}"
                 new_config="${output_dir}/config_${i}_${j}_${k}.mk"
                 new_results_path="${results_dir}/$FLOW_VARIANT"
                 

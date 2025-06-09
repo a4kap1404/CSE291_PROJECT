@@ -1,7 +1,7 @@
 1. Executing RTLIL frontend.
 2. Executing Liberty frontend: ./objects/nangate45/gcd/gcd_run_1_5_2/lib/NangateOpenCellLibrary_typical.lib
 3. Executing Liberty frontend: ./objects/nangate45/gcd/gcd_run_1_5_2/lib/NangateOpenCellLibrary_typical.lib
-4. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/cells_clkgate.v
+4. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/cells_clkgate.v
 Using ABC area script.
 Extracting clock period from SDC file: ./results/nangate45/gcd/gcd_run_1_5_2/clock_period.txt
 Setting clock period to 0.46
@@ -127,7 +127,7 @@ Setting clock period to 0.46
 7.3.10. Finished OPT passes. (There is nothing left to do.)
 7.4. Executing TECHMAP pass (map to technology primitives).
 7.4.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/techmap.v
-7.4.2. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/common/lcu_kogge_stone.v
+7.4.2. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/common/lcu_kogge_stone.v
 7.4.3. Continuing TECHMAP pass.
 7.5. Executing OPT pass (performing simple optimizations).
 7.5.1. Executing OPT_EXPR pass (perform const folding).
@@ -166,7 +166,7 @@ Setting clock period to 0.46
 8.15. Executing OPT_EXPR pass (perform const folding).
 8.16. Finished OPT passes. (There is nothing left to do.)
 9. Executing TECHMAP pass (map to technology primitives).
-9.1. Executing Verilog-2005 frontend: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/cells_latch.v
+9.1. Executing Verilog-2005 frontend: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/cells_latch.v
 9.2. Continuing TECHMAP pass.
 10. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
 10.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
@@ -187,7 +187,7 @@ Setting clock period to 0.46
 11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
 11.15. Executing OPT_EXPR pass (perform const folding).
 11.16. Finished OPT passes. (There is nothing left to do.)
-abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_1_5_2/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_1_5_2/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.46
+abc -script /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/scripts/abc_area.script -liberty ./objects/nangate45/gcd/gcd_run_1_5_2/lib/NangateOpenCellLibrary_typical.lib -constr ./objects/nangate45/gcd/gcd_run_1_5_2/abc.constr -dont_use TAPCELL_X1 -dont_use FILLCELL_X1 -dont_use AOI211_X1 -dont_use OAI211_X1 -D 0.46
 12. Executing ABC pass (technology mapping using ABC).
 12.1. Extracting gate netlist of module `\gcd' to `<abc-temp-dir>/input.blif'..
 12.1.1. Executing ABC.
@@ -203,8 +203,8 @@ abc -script /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/scripts/abc_a
 21. Executing Verilog backend.
 21.1. Executing BMUXMAP pass.
 21.2. Executing DEMUXMAP pass.
-exec cp /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/designs/nangate45/gcd/constraint.sdc ./results/nangate45/gcd/gcd_run_1_5_2/1_synth.sdc
-End of script. Logfile hash: 016ca720c6, CPU: user 0.65s system 0.04s, MEM: 37.37 MB peak
+exec cp /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/designs/nangate45/gcd/constraint.sdc ./results/nangate45/gcd/gcd_run_1_5_2/1_synth.sdc
+End of script. Logfile hash: 13a38e2999, CPU: user 0.78s system 0.01s, MEM: 37.38 MB peak
 Yosys 0.51+85 (git sha1 d3aec12fe, clang++ 18.1.8 -fPIC -O3)
-Time spent: 24% 2x abc (0 sec), 23% 4x read_liberty (0 sec), ...
-Elapsed time: 0:00.98[h:]min:sec. CPU time: user 0.91 sys 0.05 (99%). Peak memory: 38868KB.
+Time spent: 24% 2x abc (0 sec), 24% 4x read_liberty (0 sec), ...
+Elapsed time: 0:01.15[h:]min:sec. CPU time: user 1.07 sys 0.08 (99%). Peak memory: 38884KB.

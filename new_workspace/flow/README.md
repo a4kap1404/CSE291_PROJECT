@@ -2,11 +2,15 @@
 
 This folder covers invocation of openroad, running synth, floorplan and placement upto step 3_2_place_iop, label generation, graph construction and formatting, and finally clustering of nodes using spectral clustering which will be used as our dataset.
 
+We experimented with various clustering methodologies to reduce the problem size including spectral clustering, METIS and HMETIS. Due to dependency issues for the later two we decided to use spectral clustering in our experiemnts.
+
 # Dataset Composition
 
-The training data includes variations of designs GCD-NanGate45, IBEX-NanGate45, AES-NanGate45, GCD-ASAP7, IBEX-ASAP7, AES-ASAP7, and ARIANE136-NanGate45 with parameters such as Core Utilization, Core Aspect Ratio, and Place Desnity being varied. It also includes 82 synthetic designs generated using Artnet.
+The training data includes variations of designs IBEX-NanGate45, AES-NanGate45, GCD-ASAP7, IBEX-ASAP7, AES-ASAP7, and ARIANE136-NanGate45 with parameters such as Core Utilization, Core Aspect Ratio, and Place Desnity being varied. It also includes 82 synthetic designs generated using Artnet accounting for a total of 590 designs.
 
-The test data includes JPEG-ASAP7, JPEG-NanGate45 and SWERV_WRAPPER-NanGate45.
+The test data includes JPEG-ASAP7, JPEG-NanGate45 and 100 variations of GCD-NanGate45.
+
+We excluded SWERV_WRAPPER-NanGate45 designs as the placement run errors out with the given config.mk.
 
 # Data Format
 

@@ -3,15 +3,15 @@ Features included (+) or not (-): +GPU +GUI +Python : None
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
 [INFO ORD-0030] Using 16 thread(s).
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
-[INFO ODB-0227] LEF file: /work/CSE291/project/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /work/CSE291/project/trial/CSE291_PROJECT/new_workspace/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef, created 135 library cells
 
 ==========================================================================
 Floorplan check_setup
 --------------------------------------------------------------------------
 number instances in verilog is 503
 [WARNING IFP-0028] Core area lower left (1.000, 1.000) snapped to (1.140, 1.400).
-[INFO IFP-0001] Added 20 rows of 217 site FreePDK45_38x28_10R_NP_162NW_34O.
+[INFO IFP-0001] Added 24 rows of 142 site FreePDK45_38x28_10R_NP_162NW_34O.
 repair_timing -verbose -setup_margin 0 -repair_tns 100
 [WARNING RSZ-0021] no estimated parasitics. Using wire load models.
 [INFO RSZ-0098] No setup violations found
@@ -29,5 +29,5 @@ Report metrics stage 2, floorplan final...
 ==========================================================================
 floorplan final report_design_area
 --------------------------------------------------------------------------
-Design area 650 u^2 56% utilization.
-Elapsed time: 0:00.30[h:]min:sec. CPU time: user 0.26 sys 0.04 (100%). Peak memory: 121460KB.
+Design area 650 u^2 72% utilization.
+Elapsed time: 0:00.33[h:]min:sec. CPU time: user 0.31 sys 0.02 (99%). Peak memory: 121812KB.

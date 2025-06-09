@@ -8,8 +8,8 @@ export ABC_AREA      = 1
 # Adders degrade GCD
 export ADDER_MAP_FILE :=
 
-export CORE_UTILIZATION = 61.00
-export PLACE_DENSITY_LB_ADDON = 0.30
+export CORE_UTILIZATION = 82.00
+export PLACE_DENSITY_LB_ADDON = 0.40
 export TNS_END_PERCENT        = 100
 export REMOVE_CELLS_FOR_EQY   = TAPCELL*
-export CORE_ASPECT_RATIO = 0.70
+export CORE_ASPECT_RATIO = 1.30

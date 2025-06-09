@@ -13,15 +13,17 @@ from openroad import Tech, Design, Timing
 import openroad as ord
 import time
 from pathlib import Path
+import glob
 
 import time
 import resource
+from contextlib import redirect_stdout, redirect_stderr
 
 
-def load_design(techNode, floorplanOdbFile, sdcFile):
+def load_design(techNode, floorplanOdbFile, sdcFile, global_log_path):
   tech = Tech()
   platform_dir = "./platforms/" + techNode + "/"
-  libDir = Path(platform_dir + "lib/")
+  libDir = Path(platform_dir + "lib/NLDM")
   lefDir = Path(platform_dir + "lef/")
   rcFile = platform_dir + "setRC.tcl"
 
@@ -43,6 +45,8 @@ def load_design(techNode, floorplanOdbFile, sdcFile):
     tech.readLef(lefFile.as_posix())
   
   design = Design(tech)
+
+  #design.evalTclString(f"logFile {global_log_path}")
 
   # read the odb file
   design.readDb(floorplanOdbFile)
@@ -82,59 +86,87 @@ def load_init_placement(file_name):
     '''
 
 
-def run_incremental_placement(design):
+def run_incremental_placement(design, flag):
   # Configure and run global placement
-  print("Running global placement")
-  PLACE_DENSITY_LB_ADDON = lb_addon
-  #os.environ["PLACE_DENSITY_LB_ADDON"] = "0.20"
-  #place_density_lb = design.evalTclString(f"gpl::get_global_placement_uniform_density -pad_left {pad} -pad_right {pad}")
-  place_density_lb = design.evalTclString(f"gpl::get_global_placement_uniform_density")
-  #print(place_density_lb)
-  place_density = float(place_density_lb) + ((1.0 - float(place_density_lb)) * float(PLACE_DENSITY_LB_ADDON)) + 0.01
-  #print(place_density)
-
-  start_time = time.time()
-  start_usage = resource.getrusage(resource.RUSAGE_SELF)
-
-  #design.evalTclString("estimate_parasitics -placement")
   
-  print(f"global_placement -density {place_density} -routability_driven -timing_driven -skip_initial_place -incremental")
-  #design.evalTclString(f"global_placement -routability_driven -timing_driven -skip_initial_place -incremental")
-  #design.evalTclString(f"global_placement -density {place_density} -skip_initial_place -incremental")
-  design.evalTclString(f"global_placement -density {place_density} -skip_initial_place -incremental")
-  
-  end_time = time.time()
-  end_usage = resource.getrusage(resource.RUSAGE_SELF)
+         
+            flag = int(flag)  # ensure it's an int if coming from CLI args
+            PLACE_DENSITY_LB_ADDON = float(lb_addon) if lb_addon else 0.0
 
-  elapsed_time = end_time - start_time
-  user_cpu = end_usage.ru_utime - start_usage.ru_utime
-  sys_cpu = end_usage.ru_stime - start_usage.ru_stime
-  total_cpu = user_cpu + sys_cpu
+            if flag == 0:
+                # Original behavior
+                place_density_lb = design.evalTclString("gpl::get_global_placement_uniform_density")
+                print(f"Uniform density (base): {place_density_lb}")
 
-  cpu_percent = (total_cpu / elapsed_time * 100) if elapsed_time > 0 else 0
-  peak_mem_kb = int(end_usage.ru_maxrss if os.uname().sysname == "Linux" else end_usage.ru_maxrss / 1024)
+                place_density = float(place_density_lb) + ((1.0 - float(place_density_lb)) * PLACE_DENSITY_LB_ADDON) + 0.01
+                print(f"Adjusted target density: {place_density}")
 
-  minutes, seconds = divmod(elapsed_time, 60)
-  hours, minutes = divmod(int(minutes), 60)
-  elapsed_str = f"{hours}:{minutes:02d}:{seconds:05.2f}" if hours else f"{minutes}:{seconds:05.2f}"
+                cmd = f"global_placement -density {place_density} -skip_initial_place -incremental"
 
-  print(f"Elapsed time: {elapsed_str}[h:]min:sec. "
-    f"CPU time: user {user_cpu:.2f} sys {sys_cpu:.2f} ({int(cpu_percent)}%). "
-    f"Peak memory: {peak_mem_kb}KB.")
+            elif flag == 1:
+                # Use lb_addon directly as density
+                place_density = PLACE_DENSITY_LB_ADDON
+                print(f"Using place_density from PLACE_DENSITY: {place_density}")
 
-  design.writeDef(results_path + "3_3_place_gp.def")
-  design.writeDb(results_path + "3_3_place_gp.odb")
+                cmd = f"global_placement -density {place_density} -skip_initial_place -incremental"
+
+            elif flag == 2:
+                # No density flag, run without -density argument
+                print("No PLACE_DENSITY_LB_ADDON or PLACE_DENSITY found, running without density option")
+                cmd = "global_placement -skip_initial_place -incremental"
+
+            else:
+                # fallback (should not happen)
+                print(f"Unknown flag {flag}, defaulting to no density")
+                cmd = "global_placement -skip_initial_place -incremental"
+
+            start_time = time.time()
+            start_usage = resource.getrusage(resource.RUSAGE_SELF)
+
+            print("Running: estimate_parasitics -placement")
+            est_par_output = design.evalTclString("estimate_parasitics -placement")
+            if est_par_output:
+                print(est_par_output)
+
+            print(f"Running: {cmd}")
+            gp_output = design.evalTclString(cmd)
+            if gp_output:
+                print(gp_output)
+
+            end_time = time.time()
+            end_usage = resource.getrusage(resource.RUSAGE_SELF)
+
+            elapsed_time = end_time - start_time
+            user_cpu = end_usage.ru_utime - start_usage.ru_utime
+            sys_cpu = end_usage.ru_stime - start_usage.ru_stime
+            total_cpu = user_cpu + sys_cpu
+            cpu_percent = (total_cpu / elapsed_time * 100) if elapsed_time > 0 else 0
+            peak_mem_kb = int(end_usage.ru_maxrss if os.uname().sysname == "Linux" else end_usage.ru_maxrss / 1024)
+
+            minutes, seconds = divmod(elapsed_time, 60)
+            hours, minutes = divmod(int(minutes), 60)
+            elapsed_str = f"{hours}:{minutes:02d}:{seconds:05.2f}" if hours else f"{minutes}:{seconds:05.2f}"
+
+            print(f"\n=== Placement Summary ===")
+            print(f"Elapsed time: {elapsed_str} [h:]min:sec")
+            print(f"CPU time: user {user_cpu:.2f}s, sys {sys_cpu:.2f}s ({cpu_percent:.1f}%)")
+            print(f"Peak memory: {peak_mem_kb} KB")
 
 
-  # Run initial detailed placement
-  site = design.getBlock().getRows()[0].getSite()
-  max_disp_x = int((design.getBlock().getBBox().xMax() - design.getBlock().getBBox().xMin()) / site.getWidth())
-  max_disp_y = int((design.getBlock().getBBox().yMax() - design.getBlock().getBBox().yMin()) / site.getHeight())
-  print("Running intial Detailed Placement")
-  design.getOpendp().detailedPlacement(max_disp_x, max_disp_y, "")
-  
-  design.writeDef(results_path + "3_5_place_dp.def")
-  design.writeDb(results_path + "3_5_place_dp.odb")
+
+            design.writeDef(results_path + "3_3_place_gp.def")
+            design.writeDb(results_path + "3_3_place_gp.odb")
+
+
+            # Run initial detailed placement
+            site = design.getBlock().getRows()[0].getSite()
+            max_disp_x = int((design.getBlock().getBBox().xMax() - design.getBlock().getBBox().xMin()) / site.getWidth())
+            max_disp_y = int((design.getBlock().getBBox().yMax() - design.getBlock().getBBox().yMin()) / site.getHeight())
+            print("Running intial Detailed Placement")
+            design.getOpendp().detailedPlacement(max_disp_x, max_disp_y, "")
+            
+            design.writeDef(results_path + "3_5_place_dp.def")
+            design.writeDb(results_path + "3_5_place_dp.odb")
 
 
 if __name__ == "__main__":
@@ -145,7 +177,11 @@ if __name__ == "__main__":
     parser.add_argument("-p", default="./", help="Give the result path")
     parser.add_argument("-f", default="gcd_run_1_1_1", help="Give the flow variant")
     parser.add_argument("-b", default="0.2", help="Give the place density lb addon")
-    parser.add_argument("-large_net_threshold", default="1000", help="Large net threshold. We should remove global nets like reset.")
+    parser.add_argument("-flag", default="0", help="Give the flag value")
+    parser.add_argument("-m", default="0", help="Give the mode")
+    parser.add_argument("-large_net_threshold", default="50", help="Large net threshold. We should remove global nets like reset.")
+    parser.add_argument( "-s" , default="./sample_predictions", help="Directory where sample predictions are stored")
+
     
     args = parser.parse_args()
 
@@ -153,24 +189,57 @@ if __name__ == "__main__":
     design = args.d
     path = args.p
     flow = args.f
+    flag = args.flag
     lb_addon = args.b
     large_net_threshold = int(args.large_net_threshold)
+    predictions_dir = args.s
+    mode = args.m
+
+    log_dir = f"logs/{tech_node}/{design}"
+    os.makedirs(log_dir, exist_ok=True)
+    log_path = os.path.join(log_dir, f"{design}_{flow}.log")
+    
+    
 
     results_path = path + "/new_output/"
     os.makedirs(os.path.dirname(results_path), exist_ok=True)
 
     #pred_file_path = "./pred/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
-    pred_file_path = "./pred_exp/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
-
+   # pred_file_path = "./sample_predictions/" + str(design) + "_" + str(tech_node) + "_" + str(flow) + "_predictions.txt"
+    if mode==1:
+        pattern = f"{predictions_dir}/{design}_{tech_node}_predictions*.txt"
+    else:
+        pattern = f"{predictions_dir}/{design}_{tech_node}_*{flow}_predictions*.txt"
+    matches = glob.glob(pattern)
+    if not matches:
+         raise FileNotFoundError(f"No prediction file found for pattern: {pattern}")
+    elif len(matches) > 1:
+         print(f"⚠️ Multiple matches found, using: {matches[0]}")
+    pred_file_path = matches[0]
     floorplan_odb_file = path + "/3_2_place_iop.odb"
     sdc_file = path + "/2_floorplan.sdc"
     
     # Load the design
-    tech, design = load_design(tech_node, floorplan_odb_file, sdc_file)
+    
+    #with open(log_path, "w") as log_file, redirect_stdout(log_file), redirect_stderr(log_file):
+    print("🧪 Path checks:")
+    print("Floorplan ODB:", floorplan_odb_file, os.path.exists(floorplan_odb_file))
+    print("SDC file:", sdc_file, os.path.exists(sdc_file))
+    tech, design = load_design(tech_node, floorplan_odb_file, sdc_file, log_path)
+    print(f"Running placement flow for design={design}, tech={tech_node}, flow={flow}")
 
     # Load the initial placement and run incremental placement    
     load_init_placement(pred_file_path)
-    run_incremental_placement(design)
+
+    
+    run_incremental_placement(design,flag)
 
     print("Finished running global placement and detailed placement.")
     print("\n")
+    #print("*************************************************************************************************")
+    #print("Please use the generated 3_3_place_gp.def and 3_3_place_gp.odb files for remaining flows.")
+    #print("You can use OpenROAD GUI to visualize the placement: openroad -gui")
+    #print("After opening the OpenROAD GUI, then go to File -> Open DB and select the 3_3_place_gp.odb file.")
+    #print("*************************************************************************************************")
+    #print("Good luck with your project!")
+    #print("*************************************************************************************************")

@@ -90,7 +90,8 @@ We conducted several studies to refine our placement model:
 These design choices together improved validation loss consistency and placement quality on unseen designs.
 
 # Results 
-
+Training and Testing Loss Curves when tested on gcd_nangate45.
+![Training Curve](https://github.com/a4kap1404/CSE291_PROJECT.git/training_curve.png)
 Validation Results on trained data gcd_nangate45:
 1. Average Training MSE Loss was 0.015. 
 2. 3.9% Reduction in HPWL

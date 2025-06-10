@@ -92,15 +92,15 @@ These design choices together improved validation loss consistency and placement
 # Results 
 Validation Results on trained data gcd_nangate45: 
 
-<!-- Training Curve, scaled to 600px wide -->More actions
+<!-- Training Curve, scaled to 600px wide -->
 ## Training Curve
 <p align="center">
   <img 
     src="https://raw.githubusercontent.com/a4kap1404/CSE291_PROJECT/main/training_curve.png" 
     alt="Training Curve" 
-    width="600" 
+    width="400" 
   />
-</p>More actions
+</p>
 
 <!-- Testing Curve, scaled to 600px wide -->
 ## Testing Curve
@@ -108,7 +108,7 @@ Validation Results on trained data gcd_nangate45:
   <img 
     src="https://raw.githubusercontent.com/a4kap1404/CSE291_PROJECT/main/testing_curve.png" 
     alt="Testing Curve" 
-    width="600" 
+    width="400" 
   />
 </p>
 

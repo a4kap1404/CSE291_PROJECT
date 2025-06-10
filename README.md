@@ -81,7 +81,7 @@ We conducted several studies to refine our placement model:
 
 1. Loss Functions: We found that training with only the relative-distance loss (pairwise edge-length MSE) yielded better validation performance compared to combining with absolute coordinate MSE, which tended to dominate gradients and hurt generalization.
 
-2. GNN Layers: We compared GCNConv, GATv2Conv, and GraphSAGE. GraphSAGE with 6 layers provided the best trade‑off between expressiveness and stability, and worked inductively on unseen netlists. It was also more stable than full-graph attention (GAT) or dense normalization (GCN) on big, sparse hypergraphs.
+2. GNN Layers: We compared GCNConv, GATv2Conv, and GraphSAGE. GCNConv with 4 layers provided the best trade‑off between expressiveness and stability, and worked efficiently on unseen large netlists. Its simple message-passing mechanism converged faster and generalized more reliably than attention-based (GATv2) or neighborhood-sampling (GraphSAGE) layers.
 
 3. Fixed-pin Features: Appending each node’s fixed-pin normalized (x,y) coordinates as extra features helped the model anchor mobile nodes relative to fixed endpoints.
 

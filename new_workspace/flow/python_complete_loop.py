@@ -77,7 +77,7 @@ def load_init_placement(file_name):
 
     inst = block.findInst(instName)
     if inst is None:
-         print(f"⚠️ Instance '{instName}' not found, skipping")
+         print(f"Instance '{instName}' not found, skipping")
          continue
 
     inst.setLocation(x, y)
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     predictions_dir = args.s
     mode = args.m
 
-    print("▶ MODE =", mode)
+    print("MODE =", mode)
 
     log_dir = f"logs/{tech_node}/{design}"
     os.makedirs(log_dir, exist_ok=True)
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     if not matches:
          raise FileNotFoundError(f"No prediction file found for pattern: {pattern}")
     elif len(matches) > 1:
-         print(f"⚠️ Multiple matches found, using: {matches[0]}")
+         print(f"Multiple matches found, using: {matches[0]}")
     pred_file_path = matches[0]
     floorplan_odb_file = path + "/3_2_place_iop.odb"
     sdc_file = path + "/2_floorplan.sdc"
@@ -231,7 +231,7 @@ if __name__ == "__main__":
     # Load the design
     
     #with open(log_path, "w") as log_file, redirect_stdout(log_file), redirect_stderr(log_file):
-    print("🧪 Path checks:")
+    print("Path checks:")
     print("Floorplan ODB:", floorplan_odb_file, os.path.exists(floorplan_odb_file))
     print("SDC file:", sdc_file, os.path.exists(sdc_file))
     tech, design = load_design(tech_node, floorplan_odb_file, sdc_file, log_path)

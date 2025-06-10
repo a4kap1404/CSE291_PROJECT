@@ -23,7 +23,7 @@ for pred_file in "$PREDICTION_DIR"/*_predictions.txt; do
 
             config_path="./designs/$tech/$design/config.mk"
         else
-            echo "❌ Filename does not match expected test mode pattern: $filename"
+            echo "Filename does not match expected test mode pattern: $filename"
             continue
         fi
     else
@@ -36,13 +36,13 @@ for pred_file in "$PREDICTION_DIR"/*_predictions.txt; do
 
             config_path="./designs/$tech/$design/configs/config_${flow}.mk"
         else
-            echo "❌ Filename does not match expected pattern: $filename"
+            echo "Filename does not match expected pattern: $filename"
             continue
         fi
     fi
 
     if [[ ! -f "$config_path" ]]; then
-        echo "❌ Config not found for design=$design, tech=$tech, flow=$flow at $config_path"
+        echo "Config not found for design=$design, tech=$tech, flow=$flow at $config_path"
         continue
     fi
 
@@ -57,12 +57,12 @@ for pred_file in "$PREDICTION_DIR"/*_predictions.txt; do
     fi
     
 
-    echo "▶ Running placement for $FLOW_VARIANT using config $config_path"
+    echo "Running placement for $FLOW_VARIANT using config $config_path"
     
     export FLOW_VARIANT=$FLOW_VARIANT
 
     DESIGN_CONFIG="$config_path" make place > "$log_path" 2>&1
 
-    echo "✔ Finished $FLOW_VARIANT, log saved to $log_path"
+    echo "Finished $FLOW_VARIANT, log saved to $log_path"
     echo
 done

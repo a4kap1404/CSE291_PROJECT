@@ -21,7 +21,7 @@ for file_path in "$design_folder"/*predictions*; do
             flow=""  # no flow in test mode
             config_file="$config_base_dir/$tech/$design/config.mk"
         else
-            echo "❌ Filename does not match expected test mode format: $filename"
+            echo "Filename does not match expected test mode format: $filename"
             continue
         fi
     else
@@ -32,13 +32,13 @@ for file_path in "$design_folder"/*predictions*; do
             flow="${BASH_REMATCH[3]}"
             config_file="$config_base_dir/$tech/$design/configs/config_$flow.mk"
         else
-            echo "❌ Filename does not match expected format: $filename"
+            echo "Filename does not match expected format: $filename"
             continue
         fi
     fi
 
     if [[ ! -f "$config_file" ]]; then
-        echo "❌ Config not found for design=$design, tech=$tech, flow=$flow at $config_file"
+        echo "Config not found for design=$design, tech=$tech, flow=$flow at $config_file"
         continue
     fi
 
@@ -61,7 +61,7 @@ for file_path in "$design_folder"/*predictions*; do
     # Full path to the prediction file
     pred_file_path="$pred_dir/$filename"
 
-    echo "▶ Running for design=$design, tech=$tech, flow=$flow, lb_addon=$lb_addon, flag=$flag"
+    echo "Running for design=$design, tech=$tech, flow=$flow, lb_addon=$lb_addon, flag=$flag"
     log_dir="logs_predicted/$tech/$design"
     mkdir -p "$log_dir"
     if [[ "$mode" -eq 1 ]]; then
@@ -99,6 +99,6 @@ for file_path in "$design_folder"/*predictions*; do
         "$flow" \
         "$output_file"
 
-    echo "✔ Finished processing $filename, log saved to $log_path"
+    echo "Finished processing $filename, log saved to $log_path"
     echo
 done

@@ -112,4 +112,4 @@ printf "%-12s | %10s %10s %12s %10s || %10s %10s %12s %10s || %10s%% %10s%% %10s
   "$iter2" "$of2" "$hpwl2" "$sec2" \
   "$hpwl_improvement_percent" "$time_improvement_percent" "$iter_improvement_percent" >> "$output_file"
 
-echo "✓ Comparison written to $output_file"
+echo "Comparison written to $output_file"

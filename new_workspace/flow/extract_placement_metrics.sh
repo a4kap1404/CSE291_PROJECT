@@ -103,7 +103,7 @@ if [[ ! -s "$output_file" ]]; then
     printf "%-12s | %10s %10s %12s %10s || %10s %10s %12s %10s || %10s %10s %10s\n" \
       "Design" "Def_Iter" "Def_OF" "Def_HPWL" "Def_Time(s)" \
       "New_Iter" "New_OF" "New_HPWL" "New_Time(s)" \
-      "HPWL_Imp(%%)" "Time_Imp(%%)" "Iter_Imp" > "$output_file"
+      "HPWL_Imp(%)" "Time_Imp(%)" "Iter_Imp" > "$output_file"
 fi
 
 # Append formatted result row

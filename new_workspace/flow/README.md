@@ -78,3 +78,12 @@ bash run_comparison.sh ./sample_predictions 0
 After this script is run, it stores this comparison in a file named **placement_metrics** which can be viewed by the user.
 
 By default the path to the predicted files is **../../models/base_model/pred** as the model, during inference, stores its predictions in this specific directory. Users are free to modify this path according to convenience. All paths are relative to the flow directory inside OpenRoad and this script must be called inside flow to be functional.
+
+Currently, the ../../models/base_model/pred directory has predicted files for 100 gcd_nangate45 variants. If the user wishes to run comparison on these designs with respect to the default OpenRoad flow, they must run the command below:
+
+```bash 
+bash run_comparison.sh 
+
+```
+
+
